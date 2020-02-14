@@ -40,42 +40,62 @@
 * Change `src/App.js` to use at least one Porsche Design System component, for example:
   ```
   import React from 'react';
-  import { PHeadline, PIcon } from '@porsche-design-system/components-react';
+  import { PHeadline, PIcon, PButton } from '@porsche-design-system/components-react';
   
-  function App() {
-    return (
-      <div className="App">
-        <PHeadline>Hello</PHeadline>
-        <PIcon name="delete"></PIcon>
-      </div>
-    );
+  class App extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        submitted: false
+      };
+    }
+  
+    submit(event) {
+      event.nativeEvent.preventDefault();
+      this.setState({
+        submitted: true
+      });
+    }
+  
+    render() {
+      return (
+        <div className="App">
+          { this.state.submitted ? <PHeadline>Hello</PHeadline> : '' }
+          <PIcon name="delete"></PIcon>
+          <form onSubmit={e => this.submit(e)}>
+            <PButton type={"submit"}>Submit</PButton>
+          </form>
+        </div>
+      );
+    }
   }
   
   export default App;
   ```
 * Run the application ```npm start``` and check the page if the components are shown correctly
-* Update jest configuration in `package.json` to add the Porsche Design System module to the `transformIgnorePatterns`:
-  ```
-  [...]
-  "jest": {
-      "transformIgnorePatterns": [
-      "node_modules/(?!(@porsche-design-system)/)"
-    ]
-  }
-  [...]
-  ```  
-  https://jestjs.io/docs/en/configuration
 * Update tests for `src/App.js` in `src/App.test.js` to the new application code, for example:
   ```
   import React from 'react';
   import { render } from '@testing-library/react';
   import App from './App';
   
-  test('renders a headline from Porsche Design System', () => {
+  jest.mock('@porsche-design-system/components-react', () => ({
+    PHeadline: props => <mock-PHeadline>{ props.children }</mock-PHeadline>,
+    PIcon: () => <mock-PIcon></mock-PIcon>,
+    PButton: props => <button>{ props.children }</button>
+  }));
+  
+  test('renders a headline from Porsche Design System', async () => {
     const { getByText } = render(<App />);
+    const submitButtonElement = getByText(/Submit/i);
+    submitButtonElement.click();
     const headLineElement = getByText(/Hello/i);
     expect(headLineElement).toBeInTheDocument();
   });
   ```
 * Run tests via `npm test` to verify that it's working
 * Cleanup unused files remove `src/App.css` and `src/logo.svg` and remove contents from `src/index.css`
+
+## About testing
+If you test with jest it's not yet possible to render web components via jsdom. For this reason it's required
+to mock the used components.
