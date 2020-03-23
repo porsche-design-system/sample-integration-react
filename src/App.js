@@ -27,10 +27,20 @@ class App extends React.Component {
             selectValue: 'Change this Headline by selecting',
             textFieldValue: 'Change this Headline by typing',
             checked: false,
-            radioChecked: false
+            radioChecked: false,
+            activePage: 1,
+            pageChangeCount: 0,
         };
         this.handleChangeSelect = this.handleChangeSelect.bind(this);
         this.handleChangeTextField = this.handleChangeTextField.bind(this);
+    }
+
+    pageChange(event) {
+        const page = event.detail.page;
+        this.setState({
+            activePage: page,
+            pageChangeCount: this.state.pageChangeCount + 1
+        });
     }
 
     submit(event) {
@@ -69,7 +79,6 @@ class App extends React.Component {
 
     getHeadline(stateValue) {
         const headline = stateValue;
-
         return headline;
     }
 
@@ -84,10 +93,10 @@ class App extends React.Component {
                         <hr/>
                         <br/>
                     </PGridItem>
-                    {/*To illustrate the mock procedure during the tests the buttons insert/dismiss a headline*/}
-                    {this.state.submitted ? <PHeadline variant={"headline-4"}>Hello</PHeadline> : ''}
 
                     <PGridItem>
+                    {/*To illustrate the mock procedure during the tests the buttons insert/dismiss a headline*/}
+                    {this.state.submitted ? <PHeadline variant={"headline-4"}>Hello</PHeadline> : ''}
                         <form onSubmit={e => this.submit(e)}>
                             <PButton type={"submit"}>Submit</PButton>
                         </form>
@@ -155,6 +164,17 @@ class App extends React.Component {
                                        onChange={this.handleChangeTextField}></input>
                             </PTextFieldWrapper>
                         </form>
+                        <br/>
+                        <form>
+                            <PFlexItem>
+                                <PTextFieldWrapper>
+                                    <span slot={"label"}>Some label with a <a data-testid="slottedHref"
+                                                                              href={"https://designsystem.porsche.com"}>Slotted Link</a>.</span>
+                                    <input data-testid="slottedInput" type={"text"} aria-invalid={true}
+                                           name={"some-name"} onChange={this.handleChangeTextField}></input>
+                                </PTextFieldWrapper>
+                            </PFlexItem>
+                        </form>
                     </PFlexItem>
                     <PFlexItem>
                         <br/>
@@ -164,16 +184,16 @@ class App extends React.Component {
                         <br/>
                     </PFlexItem>
                     <PFlexItem>
-                        <a href="https://www.porsche.com" target="_blank" rel="noopener noreferrer">
-                            <PLink variant={"primary"}>porsche.com</PLink>
+                        <a href="https://www.porsche.com">
+                            <PLink>porsche.com</PLink>
                         </a>
                     </PFlexItem>
                     <br/>
                     <PFlexItem>
-                        <a href="https://www.porsche.com" target="_blank" rel="noopener noreferrer">
-                            <PLinkPure>porsche.com</PLinkPure>
+                        <a href="#hashTest">
+                            <PLinkPure>Test PLinkPure</PLinkPure>
                         </a>
-                        <PLinkPure href="https://www.porsche.com">Porsche.Com</PLinkPure>
+                        <PLinkPure href="#propHashTest">Test propHash</PLinkPure>
                     </PFlexItem>
                     <PFlexItem>
                         <br/>
@@ -183,9 +203,12 @@ class App extends React.Component {
                     </PFlexItem>
                     <PFlexItem>
                         <PIcon size={"medium"} name={"highway"} ariaLabel={"Highway icon"} role={"img"}></PIcon>
+                        <br/>
+                        <br/>
+                        <hr/>
                     </PFlexItem>
-                    <PPagination totalItemsCount={9} itemsPerPage={3} activePage={1}
-                                 maxNumberOfPageLinks={4}></PPagination>
+                    <PHeadline variant={"headline-4"}>You are on Page {this.state.activePage} Page is changed {this.state.pageChangeCount} times</PHeadline>
+                    <PPagination data-testid="pagination" totalItemsCount={11} itemsPerPage={3} activePage={this.state.activePage} onPageChange={e => this.pageChange(e)}></PPagination>
                 </PFlex>
             </div>
         );
