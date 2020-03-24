@@ -1,5 +1,5 @@
-import React, {createRef, useEffect} from 'react';
-import {render, fireEvent} from '@testing-library/react';
+import React from 'react';
+import {fireEvent, render} from '@testing-library/react';
 import App from './App';
 
 jest.mock('@porsche-design-system/components-react', () => ({
@@ -16,67 +16,26 @@ jest.mock('@porsche-design-system/components-react', () => ({
     PRadioButtonWrapper: props => <mock-PRadioButtonWraper>{props.children}</mock-PRadioButtonWraper>,
     PTextareaWrapper: () => <mock-PTextareaWrapper></mock-PTextareaWrapper>,
     PTextFieldWrapper: props => <mock-PTextFieldWrapper>{props.children}</mock-PTextFieldWrapper>,
-    PLink: props =>{ if (props.href){
-        return <a href={props.href}>{props.children}</a>
-    } return <mock-PLink>{props.children}</mock-PLink>},
-    PLinkPure: props =>{ if (props.href){
-        return <a href={props.href}>{props.children}</a>
-    } return <mock-PLinkPure>{props.children}</mock-PLinkPure>},
-    PSpinner: () => <mock-PSpinner></mock-PSpinner>,
-    PPagination:  (props) => {
-        const [state, setState] = useState({
-            last: 1,
-            current: 1,
-            changed: false,
-            listenerAttached: false
-        });
-        const host = createRef();
 
-        if (state.current !== props.activePage) {
-            setState({
-                ...state,
-                last: state.current,
-                current: props.activePage,
-                changed: true
-            });
+    /* To enable testing in wrapped Links we have to check if there is a href on our web-component before we simulate the native behaviour */
+    PLink: props => {
+        if (props.href) {
+            return <a href={props.href}>{props.children}</a>
         }
+        return <mock-PLink>{props.children}</mock-PLink>
+    },
+    PLinkPure: props => {
+        if (props.href) {
+            return <a href={props.href}>{props.children}</a>
+        }
+        return <mock-PLinkPure>{props.children}</mock-PLinkPure>
+    },
+    PSpinner: () => <mock-PSpinner></mock-PSpinner>,
 
-        useEffect(() => {
-            if (!state.listenerAttached) {
-                host.current.addEventListener('pageChange', event => {
-                    if (props.onPageChange) {
-                        props.onPageChange(event);
-                    }
-                });
-
-                setState({
-                    ...state,
-                    listenerAttached: true
-                });
-            }
-
-            if (state.changed) {
-                setState({
-                    ...state,
-                    changed: false
-                });
-
-                const pageChangeEvent = new CustomEvent('pageChange', {
-                    detail: {
-                        page: state.current,
-                        previousPage: state.last
-                    },
-                    bubbles: true
-                });
-
-                host.current.dispatchEvent(pageChangeEvent);
-            }
-        });
-
-        return (
-            <mock-PPagination ref={host}>{ state.current }</mock-PPagination>
-        );
-    }
+    /* PPagination uses the onPageChange Event, which you could test. Unfortunately Jest and JS-Dom have many Restrictions (usage of useState is not allowed)
+    * to trigger a Mocked Custom Event.
+    * If you Use a different Testing-Framework which also requires mocking, you can use triggerCustomEvent.js as mock example for PPagination */
+    PPagination: props => <mockPPagination>{props.children}</mockPPagination>,
 }));
 
 test('renders a headline from Porsche Design System', async () => {
@@ -101,9 +60,9 @@ test('dissmisses the headline from Porsche Design System', async () => {
 test('headline should be changed according the selected value', async () => {
     const {getByText, getByTestId} = render(<App/>);
     expect(getByText("Change this Headline by selecting")).toBeInTheDocument();
-    fireEvent.change(getByTestId("select", { target: { value: 'Headline B' } }));
+    fireEvent.change(getByTestId("select", {target: {value: 'Headline B'}}));
     expect(getByText("Headline B")).toBeInTheDocument();
-    fireEvent.change(getByTestId("select", { target: { value: 'Headline C' } }));
+    fireEvent.change(getByTestId("select", {target: {value: 'Headline C'}}));
     expect(getByText("Headline C")).toBeInTheDocument();
 });
 
@@ -124,13 +83,13 @@ test('headline should be displayed after click on RadioButton', async () => {
 test('headline should be changed according the typed value', async () => {
     const {getByText, getByTestId} = render(<App/>);
     expect(getByText("Change this Headline by typing")).toBeInTheDocument();
-    fireEvent.change(getByTestId("input", { target: { value: 'Headline A' } }));
+    fireEvent.change(getByTestId("input", {target: {value: 'Headline A'}}));
     expect(getByText("Headline A")).toBeInTheDocument();
-    fireEvent.change(getByTestId("select", { target: { value: 'Headline B' } }));
+    fireEvent.change(getByTestId("select", {target: {value: 'Headline B'}}));
     expect(getByText("Headline B")).toBeInTheDocument();
 });
 
-// jsdom has some limitations. One of them is the fact that we cant change location.
+/* jsdom has some limitations. One of them is the fact that we cant change location. But we are able to test the closest href */
 test('slotted Link should navigate to PDS while mocked', async () => {
     const {getByText} = render(<App/>);
     expect(getByText('Slotted Link').closest('a')).toHaveAttribute('href', 'https://designsystem.porsche.com')
@@ -146,12 +105,4 @@ test('a wrapped Link should navigate to #hashTest', async () => {
     const {getByText} = render(<App/>);
     const link = getByText(/Test propHash/i);
     expect(link.closest('a')).toHaveAttribute('href', '#propHashTest')
-});
-
-test('should return different active page', async () => {
-    const {getByTestId} = render(<App/>);
-
-    fireEvent.getByTestId('pagination').
-
-
 });
