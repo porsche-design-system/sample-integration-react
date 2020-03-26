@@ -115,6 +115,7 @@ class App extends React.Component {
                         <br/>
                         <hr/>
                         <br/>
+                        {/*To illustrate the mock procedure during the tests the selected value is displayed in the headline */}
                         <PHeadline variant={"headline-4"}>{this.getHeadline(this.state.selectValue)}</PHeadline>
                         <form>
                             <PSelectWrapper>
@@ -131,6 +132,7 @@ class App extends React.Component {
                         <br/>
                         <hr/>
                         <br/>
+                        {/* Checking the Checkbox makes the headline appear */}
                         {this.state.checked ? <PHeadline variant={"headline-4"}>Checkbox Works</PHeadline> : ''}
                         <form onInput={e => this.check(e)}>
                             <PCheckboxWrapper label={"Some label"} hideLabel={false}>
@@ -138,6 +140,7 @@ class App extends React.Component {
                             </PCheckboxWrapper>
                         </form>
                         <br/>
+                        {/* Clicking the Radiobutton makes the headline appear */}
                         {this.state.radioChecked ? <PHeadline variant={"headline-4"}>Radio Works</PHeadline> : ''}
                         <form onInput={e => this.radioCheck(e)}>
                             <PRadioButtonWrapper label={"Some label"} hideLabel={false}>
@@ -157,6 +160,7 @@ class App extends React.Component {
                         <br/>
                     </PFlexItem>
                     <PFlexItem>
+                        {/* The headline changes according to the textfield input */}
                         <PHeadline variant={"headline-4"}>{this.getHeadline(this.state.textFieldValue)}</PHeadline>
                         <form>
                             <PTextFieldWrapper label={"Test TextField"} hideLabel={false}>
@@ -168,6 +172,7 @@ class App extends React.Component {
                         <form>
                             <PFlexItem>
                                 <PTextFieldWrapper>
+                                    {/* Example of slotted links */}
                                     <span slot={"label"}>Some label with a <a data-testid="slottedHref"
                                                                               href={"https://designsystem.porsche.com"}>Slotted Link</a>.</span>
                                     <input data-testid="slottedInput" type={"text"} aria-invalid={true}
@@ -207,6 +212,7 @@ class App extends React.Component {
                         <br/>
                         <hr/>
                     </PFlexItem>
+                    {/* Simple usage of PPagination. By linking state to activePage, we can listen to the pageChange event of the component */}
                     <PHeadline variant={"headline-4"}>You are on Page {this.state.activePage} Page is changed {this.state.pageChangeCount} times</PHeadline>
                     <PPagination data-testid="pagination" totalItemsCount={11} itemsPerPage={3} activePage={this.state.activePage} onPageChange={e => this.pageChange(e)}></PPagination>
                 </PFlex>
