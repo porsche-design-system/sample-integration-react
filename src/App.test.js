@@ -1,6 +1,8 @@
 import React from 'react';
 import {fireEvent, render} from '@testing-library/react';
 import App from './App';
+import {ComponentsCollection} from "./pages/componentsCollection";
+import {Forms} from "./pages/forms";
 
 jest.mock('@porsche-design-system/components-react', () => ({
     PHeadline: props => <mock-PHeadline>{props.children}</mock-PHeadline>,
@@ -35,11 +37,11 @@ jest.mock('@porsche-design-system/components-react', () => ({
     /* PPagination uses the onPageChange Event, which you could test. Unfortunately Jest and JS-Dom have many Restrictions (usage of useState is not allowed)
     * to trigger a Mocked Custom Event.
     * If you Use a different Testing-Framework which also requires mocking, you can use triggerCustomEvent.js as mock example for PPagination */
-    PPagination: props => <mockPPagination>{props.children}</mockPPagination>,
+    PPagination: props => <mock-PPagination>{props.children}</mock-PPagination>,
 }));
 
 test('renders a headline from Porsche Design System', async () => {
-    const {getByText} = render(<App/>);
+    const {getByText} = render(<ComponentsCollection/>);
     const submitButtonElement = getByText(/Submit/i);
     submitButtonElement.click();
     const headLineElement = getByText(/Hello/i);
@@ -47,7 +49,7 @@ test('renders a headline from Porsche Design System', async () => {
 });
 
 test('dissmisses the headline from Porsche Design System', async () => {
-    const {getByText} = render(<App/>);
+    const {getByText} = render(<ComponentsCollection/>);
     const submitButtonElement = getByText(/Submit/i);
     submitButtonElement.click();
     const headLineElement = getByText(/Hello/i);
@@ -58,7 +60,7 @@ test('dissmisses the headline from Porsche Design System', async () => {
 });
 
 test('headline should be changed according the selected value', async () => {
-    const {getByText, getByTestId} = render(<App/>);
+    const {getByText, getByTestId} = render(<Forms/>);
     expect(getByText("Change this Headline by selecting")).toBeInTheDocument();
     fireEvent.change(getByTestId("select", {target: {value: 'Headline B'}}));
     expect(getByText("Headline B")).toBeInTheDocument();
@@ -67,21 +69,21 @@ test('headline should be changed according the selected value', async () => {
 });
 
 test('headline should be displayed after click on Checkbox', async () => {
-    const {getByText, getByTestId} = render(<App/>);
+    const {getByText, getByTestId} = render(<Forms/>);
     const input = getByTestId('checkbox');
     input.click();
     expect(getByText("Checkbox Works")).toBeInTheDocument();
 });
 
 test('headline should be displayed after click on RadioButton', async () => {
-    const {getByText, getByTestId} = render(<App/>);
+    const {getByText, getByTestId} = render(<Forms/>);
     const input = getByTestId('radiobutton');
     input.click();
     expect(getByText("Radio Works")).toBeInTheDocument();
 });
 
 test('headline should be changed according the typed value', async () => {
-    const {getByText, getByTestId} = render(<App/>);
+    const {getByText, getByTestId} = render(<Forms/>);
     expect(getByText("Change this Headline by typing")).toBeInTheDocument();
     fireEvent.change(getByTestId("input", {target: {value: 'Headline A'}}));
     expect(getByText("Headline A")).toBeInTheDocument();
@@ -91,18 +93,18 @@ test('headline should be changed according the typed value', async () => {
 
 /* jsdom has some limitations. One of them is the fact that we cant change location. But we are able to test the closest href */
 test('slotted Link should navigate to PDS while mocked', async () => {
-    const {getByText} = render(<App/>);
+    const {getByText} = render(<Forms/>);
     expect(getByText('Slotted Link').closest('a')).toHaveAttribute('href', 'https://designsystem.porsche.com')
 });
 
 test('a wrapped Link should navigate to #hashTest', async () => {
-    const {getByText} = render(<App/>);
+    const {getByText} = render(<ComponentsCollection/>);
     const link = getByText(/Test PLinkPure/i);
     expect(link.closest('a')).toHaveAttribute('href', '#hashTest')
 });
 
 test('a wrapped Link should navigate to #hashTest', async () => {
-    const {getByText} = render(<App/>);
+    const {getByText} = render(<ComponentsCollection/>);
     const link = getByText(/Test propHash/i);
     expect(link.closest('a')).toHaveAttribute('href', '#propHashTest')
 });
