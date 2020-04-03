@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Introduction
+
+This is project shows the example usage of the Porsche Design System Components in react. 
+Documentation about the project and information about Porsche Design System you can find [here](https://designsystem.porsche.com/v1/#/start-coding/example-project-react)
+
 ## Available Scripts
 
 In the project directory, you can run:
