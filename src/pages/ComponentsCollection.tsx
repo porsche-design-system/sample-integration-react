@@ -19,12 +19,12 @@ export function ComponentsCollection() {
     const [activePage, setActivePage] = useState(1);
 
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    const handleSubmit = (e: React.MouseEvent<HTMLPButtonElement>): void => {
         e.preventDefault();
         setSubmit(true);
     };
 
-    const handleDismiss = (e: React.FormEvent<HTMLFormElement>): void => {
+    const handleDismiss = (e: React.MouseEvent<HTMLPButtonPureElement>): void => {
         e.preventDefault();
         setSubmit(false);
     };
@@ -44,14 +44,10 @@ export function ComponentsCollection() {
             <PGridItem size="12">
                 {/*To illustrate the mock procedure during the tests the buttons insert/dismiss a headline*/}
                 {submit ? <PHeadline variant={"headline-4"}>Hello</PHeadline> : ''}
-                <form onSubmit={e => handleSubmit(e)}>
-                    <PButton type={"submit"}>Submit</PButton>
-                </form>
+                <PButton type={"submit"} onClick={e => handleSubmit(e)}>Submit</PButton>
             </PGridItem>
             <PGridItem className={'contentWrapperSmall'}>
-                <form onSubmit={e => handleDismiss(e)}>
-                    <PButtonPure type={"submit"}>Dismiss</PButtonPure>
-                </form>
+                <PButtonPure type={"submit"} onClick={e => handleDismiss(e)}>Dismiss</PButtonPure>
             </PGridItem>
             <PGridItem size="12">
                 <PDivider className={'divider'}/>

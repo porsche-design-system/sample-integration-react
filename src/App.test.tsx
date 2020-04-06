@@ -4,54 +4,32 @@ import { ComponentsCollection } from "./pages/ComponentsCollection";
 import { Forms } from "./pages/Forms";
 
 jest.mock('@porsche-design-system/components-react', () => {
-
-    const {PHeadlineMock, PIconMock, PButtonMock, PButtonPureMock, PDividerMock, PGridMock, PGridItemMock, PFlexMock, PFlexItemMock, PSelectWrapperMock, PCheckboxWrapperMock, PRadioButtonWrapperMock, PTextareaWrapperMock, PTextFieldWrapperMock, PLinkMock, PLinkPureMock, PSpinnerMock, PPaginationMock} = require('@porsche-design-system/components-react/dist/mocks/jest-Mocks');
-
-    return ({
-        PHeadline: PHeadlineMock,
-        PIcon: PIconMock,
-        PButton: PButtonMock,
-        PButtonPure: PButtonPureMock,
-        PDivider: PDividerMock,
-        PGrid: PGridMock,
-        PGridItem: PGridItemMock,
-        PFlex: PFlexMock,
-        PFlexItem: PFlexItemMock,
-        PSelectWrapper: PSelectWrapperMock,
-        PCheckboxWrapper: PCheckboxWrapperMock,
-        PRadioButtonWrapper: PRadioButtonWrapperMock,
-        PTextareaWrapper: PTextareaWrapperMock,
-        PTextFieldWrapper: PTextFieldWrapperMock,
-        PLink: PLinkMock,
-        PLinkPure: PLinkPureMock,
-        PSpinner: PSpinnerMock,
-        PPagination: PPaginationMock
-    });
+    return require('@porsche-design-system/components-react/dist/mocks/mock-collection');
 });
 
 
 test('renders a headline from Porsche Design System', async () => {
+
     const {getByText} = render(<ComponentsCollection/>);
-    const submitButtonElement = getByText(/Submit/i);
-    submitButtonElement.click();
+    const submitButtonElement = getByText("Submit");
+    fireEvent.click(submitButtonElement);
     const headLineElement = getByText(/Hello/i);
     expect(headLineElement).toBeInTheDocument();
 });
 
 test('dissmisses the headline from Porsche Design System', async () => {
     const {getByText} = render(<ComponentsCollection/>);
-    const submitButtonElement = getByText(/Submit/i);
-    submitButtonElement.click();
-    const headLineElement = getByText(/Hello/i);
+    const submitButtonElement = getByText("Submit");
+    fireEvent.click(submitButtonElement);
+    const headLineElement = getByText("Hello");
 
-    const dismissButtonElement = getByText(/Dismiss/i);
-    dismissButtonElement.click();
+    const dismissButtonElement = getByText("Dismiss");
+    fireEvent.click(dismissButtonElement);
     expect(headLineElement).not.toBeInTheDocument();
 });
 
 test('headline should be changed according the selected value', async () => {
     const {getByText, getByTestId} = render(<Forms/>)
-    /*const {getByText, getByTestId} = render(<Forms/>);*/
     expect(getByText("Change this Headline by selecting")).toBeInTheDocument();
     fireEvent.change(getByTestId('select'), {target: {value: 'Headline B'}});
     expect(getByText("Headline B")).toBeInTheDocument();
