@@ -42,6 +42,53 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## About Testing
+
+**Jest** uses **jsdom**. It is not yet possible to render web components via jsdom. 
+
+To ensure your tests dont fail, we provide mocks for every Porsche Design System Component. 
+They are consumed in the **setupTest.ts** file in the root folder.
+
+```
+setupTest.ts
+
+jest.mock('@porsche-design-system/components-react', () => {
+    return require('@porsche-design-system/components-react/mocks/all');
+});
+```
+We have to access the mocks in the Mock-Factory of the `jest.mock()` function. We have to use `require` because the mock factory doesn't allow otherwise. 
+
+If you only need a single component mock you can also consume the mock directly in your test. All of the mocks are named like **p-name-mock** for example **p-headline-mock**.
+
+```
+SingleComponent.tsx
+
+export function SingleComponent() {
+
+    return (
+        <PHeadline>Show single mock usage</PHeadline>
+    )
+}
+
+------
+SingleComponent.test.tsx
+
+jest.mock('@porsche-design-system/components-react', () => {
+    return require('@porsche-design-system/components-react/mocks/p-headline-mock');
+});
+
+test('renders a headline from Porsche Design System', async () => {
+    const {getByText} = render(<SingleComponent/>);
+    const headLineElement = getByText('Show single mock usage');
+    expect(headLineElement).toBeInTheDocument();
+});
+```
+
+Use this solution until **Creat React App** upgrades to a newer **jsdom** version, which
+provides support for **webcomponents**. In the meantime we keep providing mocks.
+ 
+You find detailed information on how to use mock functions in jest [here](https://jestjs.io/docs/en/mock-functions.html).
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

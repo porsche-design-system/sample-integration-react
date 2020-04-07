@@ -1,12 +1,7 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import { ComponentsCollection } from "./pages/ComponentsCollection";
-import { Forms } from "./pages/Forms";
-
-jest.mock('@porsche-design-system/components-react', () => {
-    return require('@porsche-design-system/components-react/dist/mocks/mock-collection');
-});
-
+import { ComponentsCollection } from "../pages/ComponentsCollection";
+import { Forms } from "../pages/Forms";
 
 test('renders a headline from Porsche Design System', async () => {
 
