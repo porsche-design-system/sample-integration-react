@@ -58,6 +58,7 @@ export function ComponentsCollection() {
             <PGridItem size="12">
                 <PDivider className={'divider'}/>
             </PGridItem>
+            {/*Example of all Link variation which are provided by the Porsche Design System*/}
             <PGridItem size="12">
                 <a href="https://www.porsche.com" className={'removeLinkStyle'}>
                     <PLink>porsche.com</PLink>
@@ -79,10 +80,10 @@ export function ComponentsCollection() {
                 <PDivider className={'divider'}/>
             </PGridItem>
             <PGridItem size="12">
-                <PSpinner size={"small"}></PSpinner>
+                <PSpinner size={"small"}/>
             </PGridItem>
             <PGridItem size="12">
-                <PIcon size={"medium"} name={"highway"} role={"img"}></PIcon>
+                <PIcon size={"medium"} name={"highway"} role={"img"}/>
             </PGridItem>
             <PGridItem size="12">
                 <PDivider className={'divider'}/>
@@ -90,12 +91,12 @@ export function ComponentsCollection() {
             <PGridItem size="12">
                 {/* Simple usage of PPagination. By linking state to activePage, we can listen to the pageChange event of
                 the component*/}
-                <PHeadline variant={"headline-4"}>You are on Page {activePage} Page </PHeadline>
+                <PHeadline variant={"headline-4"}>You are on Page {activePage} Page</PHeadline>
             </PGridItem>
             <PGridItem size="12">
                 <PPagination data-testid="pagination" totalItemsCount={11} itemsPerPage={3}
                              activePage={activePage} onPageChange={e => handleActivePage(e)}
-                ></PPagination>
+                />
             </PGridItem>
         </PGrid>
     );

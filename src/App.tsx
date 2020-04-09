@@ -24,7 +24,7 @@ export function App() {
                 <div className={'pageLayout'}>
                     <PGrid>
                         <PGridItem size={12}>
-                            <PHeadline variant={"headline-2"}>Example Projekt to display usage of Porsche Design
+                            <PHeadline variant={"headline-2"}>Example Project to display usage of Porsche Design
                                 System</PHeadline>
                         </PGridItem>
                         <PGridItem size={12}>
@@ -44,6 +44,9 @@ export function App() {
                         </PGridItem>
                     </PGrid>
                     <Switch>
+                        <Route path="/">
+                            <ComponentsCollection/>
+                        </Route>
                         <Route path="/componentsCollection">
                             <ComponentsCollection/>
                         </Route>

@@ -22,7 +22,7 @@ export function Forms() {
         setSelect(e.target.value)
     };
 
-    const handleCheckBox = (e: FormEvent<HTMLFormElement>): void => {
+    const handleCheckBox = (e: FormEvent<HTMLInputElement>): void => {
         if (checkBox) {
             setCheckBox(false)
         } else {
@@ -30,7 +30,7 @@ export function Forms() {
         }
     };
 
-    const handleRadioButton = (e: FormEvent<HTMLFormElement>): void => {
+    const handleRadioButton = (e: FormEvent<HTMLInputElement>): void => {
         setRadioButton(true)
     };
 
@@ -66,20 +66,18 @@ export function Forms() {
             <PFlexItem>
                 {/*Checking the Checkbox makes the headline appear*/}
                 {checkBox ? <PHeadline variant={"headline-4"}>Checkbox Works</PHeadline> : ''}
-                <form onInput={e => handleCheckBox(e)}>
-                    <PCheckboxWrapper label={"Some label"} hideLabel={false}>
-                        <input data-testid="checkbox" type={"checkbox"} name={"TestBox"}></input>
-                    </PCheckboxWrapper>
-                </form>
+                <PCheckboxWrapper label={"Some label"} hideLabel={false}>
+                    <input data-testid="checkbox" type={"checkbox"} name={"TestBox"}
+                           onInput={e => handleCheckBox(e)}/>
+                </PCheckboxWrapper>
             </PFlexItem>
             <PFlexItem className={'contentWrapperSmall'}>
                 {/* Clicking the Radiobutton makes the headline appear*/}
                 {radioButton ? <PHeadline variant={"headline-4"}>Radio Works</PHeadline> : ''}
-                <form onInput={e => handleRadioButton(e)}>
-                    <PRadioButtonWrapper label={"Some label"} hideLabel={false}>
-                        <input data-testid="radiobutton" type={"radio"} name={"RadioButton"}></input>
-                    </PRadioButtonWrapper>
-                </form>
+                <PRadioButtonWrapper label={"Some label"} hideLabel={false}>
+                    <input data-testid="radiobutton" type={"radio"} name={"RadioButton"}
+                           onInput={e => handleRadioButton(e)}/>
+                </PRadioButtonWrapper>
             </PFlexItem>
             <PFlexItem>
                 <PDivider className={'divider'}/>
@@ -92,14 +90,12 @@ export function Forms() {
                 </form>
             </PFlexItem>
             <PFlexItem className={'contentWrapperSmall'}>
-                {/*The headline changes according to the textfield input*/}
+                {/*The headline changes according to the text field input*/}
                 <PHeadline variant={"headline-4"}>{textField}</PHeadline>
-                <form>
-                    <PTextFieldWrapper label={"Test TextField"} hideLabel={false}>
-                        <input data-testid="input" type={"text"} name={"Textfield"}
-                               onChange={e => handleTextField(e)}></input>
-                    </PTextFieldWrapper>
-                </form>
+                <PTextFieldWrapper label={"Test TextField"} hideLabel={false}>
+                    <input data-testid="input" type={"text"} name={"Textfield"}
+                           onChange={e => handleTextField(e)}/>
+                </PTextFieldWrapper>
             </PFlexItem>
             <PFlexItem className={'contentWrapperSmall'}>
                 <form>
@@ -109,7 +105,7 @@ export function Forms() {
                             <span slot={"label"}>Some label with a <a data-testid="slottedHref"
                                                                       href={"https://designsystem.porsche.com"}>Slotted Link</a>.</span>
                             <input data-testid="slottedInput" type={"text"} aria-invalid={true}
-                                   name={"some-name"} onChange={e => handleTextField(e)}></input>
+                                   name={"some-name"} onChange={e => handleTextField(e)}/>
                         </PTextFieldWrapper>
                     </PFlexItem>
                 </form>

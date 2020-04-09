@@ -4,7 +4,7 @@ import { SingleComponent } from '../pages/SingleComponent';
 
 
 jest.mock('@porsche-design-system/components-react', () => {
-    return require('@porsche-design-system/components-react/dist/mocks/p-headline-mock');
+    return require('@porsche-design-system/components-react/mocks/p-headline-mock');
 });
 
 test('renders a headline from Porsche Design System', async () => {
