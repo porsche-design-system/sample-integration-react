@@ -44,7 +44,7 @@ export function App() {
                         </PGridItem>
                     </PGrid>
                     <Switch>
-                        <Route path="/">
+                        <Route path="/" exact>
                             <ComponentsCollection/>
                         </Route>
                         <Route path="/componentsCollection">
