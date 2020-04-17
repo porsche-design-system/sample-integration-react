@@ -53,7 +53,7 @@ They are consumed in the **setupTest.ts** file in the root folder.
 setupTest.ts
 
 jest.mock('@porsche-design-system/components-react', () => {
-    return require('@porsche-design-system/components-react/mocks/all');
+    return require('@porsche-design-system/components-react/mocks');
 });
 ```
 We have to access the mocks in the Mock-Factory of the `jest.mock()` function. We have to use `require` because the mock factory doesn't allow otherwise. 
