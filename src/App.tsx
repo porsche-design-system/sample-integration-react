@@ -32,11 +32,10 @@ export function App() {
                         </PGridItem>
                         <PGridItem size={12}>
                             <Link to="/componentsCollection" className={'removeLinkStyle'}>
-                                {/*To call props of PLinkPure use the spread operator*/}
-                                <PLinkPure {...{icon: 'globe'}}>Components Collection</PLinkPure>
+                                <PLinkPure>Components Collection</PLinkPure>
                             </Link>
                             <Link to="/forms" className={'removeLinkStyle'}>
-                                <PLinkPure {...{icon: 'document'}}>Forms</PLinkPure>
+                                <PLinkPure>Forms</PLinkPure>
                             </Link>
                         </PGridItem>
                         <PGridItem size={12}>
