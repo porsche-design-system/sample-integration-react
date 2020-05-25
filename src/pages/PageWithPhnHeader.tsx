@@ -7,9 +7,9 @@ import {
 
 export const PageWithPhnHeader = () => (
   <>
-    <phn-header />
+    <phn-header style={{ position: 'absolute', left: 0, right: 0 }} />
 
-    <div style={{ paddingTop: 20 }}>
+    <div style={{ paddingTop: 150 }}>
       <div>
         <PButton>Some PButton</PButton>
       </div>
