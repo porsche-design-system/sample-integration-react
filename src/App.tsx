@@ -15,6 +15,7 @@ import {
 import './App.css';
 import { ComponentsCollection } from './pages/ComponentsCollection';
 import { Forms } from './pages/Forms';
+import { PageWithPhnHeader } from './pages/PageWithPhnHeader';
 
 export function App() {
 
@@ -37,6 +38,9 @@ export function App() {
                             <Link to="/forms" className={'removeLinkStyle'}>
                                 <PLinkPure>Forms</PLinkPure>
                             </Link>
+                            <Link to="/phn-header" className={'removeLinkStyle'}>
+                                <PLinkPure>Phn Header</PLinkPure>
+                            </Link>
                         </PGridItem>
                         <PGridItem size={12}>
                             <PDivider className={'divider'}/>
@@ -51,6 +55,9 @@ export function App() {
                         </Route>
                         <Route path="/forms">
                             <Forms/>
+                        </Route>
+                        <Route path="/phn-header">
+                            <PageWithPhnHeader/>
                         </Route>
                     </Switch>
                 </div>
