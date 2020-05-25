@@ -1227,17 +1227,17 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@porsche-design-system/components-js@1.4.0-rc.0":
-  version "1.4.0-rc.0"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-1.4.0-rc.0.tgz#e1a6cb5d0e1afa5a6eb4d0e7a81efca7033e7ff0"
-  integrity sha1-4abLXQ4a+lputNDnqB78pwM+f/A=
+"@porsche-design-system/components-js@1.4.0":
+  version "1.4.0"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-1.4.0.tgz#56bd2e05c770b5a8093cfaee2d79ddd98042b5a7"
+  integrity sha1-Vr0uBcdwtagJPPruLXnd2YBCtac=
 
-"@porsche-design-system/components-react@1.4.0-rc.0":
-  version "1.4.0-rc.0"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-1.4.0-rc.0.tgz#80c8ab2ee6da2eecb4076b74426cfc3ca00352a1"
-  integrity sha1-gMirLubaLuy0B2t0Qmz8PKADUqE=
+"@porsche-design-system/components-react@^1.4.0":
+  version "1.4.0"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-1.4.0.tgz#0c85fe4584bddd6ac1f60bc33b62d575e9cffbb9"
+  integrity sha1-DIX+RYS93WrB9gvDO2LVdenP+7k=
   dependencies:
-    "@porsche-design-system/components-js" "1.4.0-rc.0"
+    "@porsche-design-system/components-js" "1.4.0"
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
