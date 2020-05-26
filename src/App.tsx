@@ -18,7 +18,6 @@ import { Forms } from './pages/Forms';
 import { PageWithPhnHeader } from './pages/PageWithPhnHeader';
 
 export function App() {
-
     return (
         <Router>
             <div className={'pageLayout'}>
