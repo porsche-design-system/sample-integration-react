@@ -11,4 +11,4 @@ export COMPOSE_PROJECT_NAME="sample-integration-react"
 
 docker-compose -f "${SCRIPT_DIR}/docker-compose.yml" build
 docker-compose -f "${SCRIPT_DIR}/docker-compose.yml" run --rm change-volume-owner
-docker-compose -f "${SCRIPT_DIR}/docker-compose.yml" run --service-ports --rm "sample-integration-react" "${@}"
+docker-compose -f "${SCRIPT_DIR}/docker-compose.yml" run --service-ports --rm "sample-integration" "${@}"
