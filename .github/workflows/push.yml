@@ -2,8 +2,7 @@ on:
   push:
     branches:
       - master
-      - v*
-      - issue/*
+      - feature/*
       - housekeeping/*
 name: "Sample Integration React"
 jobs:
