@@ -1,6 +1,6 @@
 FROM node:12.16.1-stretch@sha256:facc1cbde6e5aa3255092b1a1417451953c80bd31ab5a4403f8bcd90b90a8407
 
-ENV PATH="/opt/sample/bin:${PATH}"
+ENV PATH="/opt/sample-integration-react/bin:${PATH}"
 
 # RUN apt-get update && \
 #     apt-get install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
@@ -11,8 +11,8 @@ ENV PATH="/opt/sample/bin:${PATH}"
 #     libgtk2.0-0 xvfb && \
 #     rm -rf /var/lib/apt/lists/*
 
-COPY ./entrypoint.sh "/opt/sample/entrypoint.sh"
-COPY ./bin "/opt/sample/bin"
-COPY ./shared "/opt/sample/shared"
+COPY ./entrypoint.sh "/opt/sample-integration-react/entrypoint.sh"
+COPY ./bin "/opt/sample-integration-react/bin"
+COPY ./shared "/opt/sample-integration-react/shared"
 
-ENTRYPOINT [ "/opt/sample/entrypoint.sh" ]
+ENTRYPOINT ["/opt/sample-integration-react/entrypoint.sh"]

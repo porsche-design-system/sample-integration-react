@@ -9,7 +9,8 @@ services:
       - "61423:61423"
     environment:
       - HOME=/home/sample-integration-react
-      - PORSCHE_NPM_REGISTRY_TOKEN
+    env_file:
+    - .env
     volumes:
       - ./:/opt/sample-integration-react-app:cached
       - home:/home/sample-integration-react
