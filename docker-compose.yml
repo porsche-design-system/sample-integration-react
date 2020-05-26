@@ -1,0 +1,26 @@
+version: "3.5"
+
+services:
+  sample-integration-react:
+    build: ./docker/node
+    working_dir: /opt/sample-integration-react-app
+    user: "${RUN_UID}:${RUN_GID}"
+    ports:
+      - "61423:61423"
+    environment:
+      - HOME=/home/sample-integration-react
+      - PORSCHE_NPM_REGISTRY_TOKEN
+    volumes:
+      - ./:/opt/sample-integration-react-app:cached
+      - home:/home/sample-integration-react
+      - node-modules:/opt/sample-integration-react-app/node_modules
+  change-volume-owner:
+    image: node:10.15.3-alpine@sha256:b85a3b0ef76f5543b3f467e8a25694e72594d2c2bfcf140fa584d4f40ace4130
+    volumes:
+      - home:/opt/sample-integration-react-volumes/home
+      - node-modules:/opt/sample-integration-react-volumes/node_modules
+    command: |
+      sh -c "chown ${RUN_UID}:${RUN_GID} /opt/sample-integration-react-volumes/*"
+volumes:
+  home:
+  node-modules:
