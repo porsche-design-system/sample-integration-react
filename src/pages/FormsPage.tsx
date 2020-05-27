@@ -11,8 +11,7 @@ import {
     PTextFieldWrapper
 } from "@porsche-design-system/components-react";
 
-
-export function Forms() {
+export const FormsPage = (): JSX.Element => {
     const [select, setSelect] = useState('Change this Headline by selecting');
     const [checkBox, setCheckBox] = useState(false);
     const [radioButton, setRadioButton] = useState(false);

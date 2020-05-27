@@ -3,7 +3,8 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    Redirect
 } from 'react-router-dom'
 import {
     PGrid,
@@ -13,11 +14,9 @@ import {
     PDivider,
 } from '@porsche-design-system/components-react';
 import './App.css';
-import { ComponentsCollection } from './pages/ComponentsCollection';
-import { Forms } from './pages/Forms';
-import { PageWithPhnHeader } from './pages/PageWithPhnHeader';
+import { CollectionPage, FormsPage, PhnHeaderPage } from './pages';
 
-export function App() {
+export const App = (): JSX.Element => {
     return (
         <Router>
             <div className={'pageLayout'}>
@@ -29,7 +28,7 @@ export function App() {
                         <PDivider className={'divider'}/>
                     </PGridItem>
                     <PGridItem size={12}>
-                        <Link to="/componentsCollection" className={'removeLinkStyle'}>
+                        <Link to="/collection" className={'removeLinkStyle'}>
                             <PLinkPure>Components Collection</PLinkPure>
                         </Link>
                         <Link to="/forms" className={'removeLinkStyle'}>
@@ -45,21 +44,19 @@ export function App() {
                 </PGrid>
                 <Switch>
                     <Route path="/" exact>
-                        <ComponentsCollection/>
+                        <Redirect to="/collection" />
                     </Route>
-                    <Route path="/componentsCollection">
-                        <ComponentsCollection/>
+                    <Route path="/collection">
+                        <CollectionPage />
                     </Route>
                     <Route path="/forms">
-                        <Forms/>
+                        <FormsPage />
                     </Route>
                     <Route path="/phn-header">
-                        <PageWithPhnHeader/>
+                        <PhnHeaderPage />
                     </Route>
                 </Switch>
             </div>
         </Router>
     );
 }
-
-export default App;

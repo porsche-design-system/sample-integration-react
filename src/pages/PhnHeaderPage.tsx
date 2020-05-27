@@ -5,7 +5,7 @@ import {
   PLinkPure,
 } from "@porsche-design-system/components-react";
 
-export const PageWithPhnHeader = () => (
+export const PhnHeaderPage = (): JSX.Element => (
   <>
     <phn-header style={{ position: 'absolute', left: 0, right: 0 }} />
 
