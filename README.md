@@ -32,15 +32,42 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Requirements
+* [Node.js](https://nodejs.org)
+* [Yarn](https://yarnpkg.com)
+* [Docker](https://www.docker.com) ([see below](#docker-installation-steps))
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Getting started
+1. Clone [`sample-integration-react` repository](https://github.com/porscheui/porsche-sample-integration-react)
+1. Switch to __project root directory__
+1. Execute command `npm login --registry=https://porscheui.jfrog.io/porscheui/api/npm/npm/`
+1. Enter username, password (Artifactory API Key, __not__ Artifactory password!) and e-mail address when asked in terminal
+1. Execute `cat ~/.npmrc`, find following line `//porscheui.jfrog.io/porscheui/api/npm/npm/:_authToken=` and copy the generated _npm registry token_ from the file to your clipboard
+1. Create an `.env` file within __project root directory__ (never push this file to Git because it will contain secrets – by default it's ignored by `.gitignore`)
+1. Add _npm registry token_ in following format `PORSCHE_NPM_REGISTRY_TOKEN=YOUR_TOKEN_GOES_HERE`
+1. Make sure that Docker app is running
+1. Run `./docker.sh run-install` - this may take up to several minutes at first start depending on your internet connection
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+*Note: `./docker.sh run-install` should be executed after every pull.*
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Docker installation steps
+1. Register your Docker account on [Hub-Docker](https://hub.docker.com)
+1. Download Docker app locally on your machine and login
+1. Start Docker
+
+### Start
+1. Switch to __project root directory__
+1. Run `./docker.sh run-start` (starts test server for sample-integration-react itself)
+
+### Build
+1. Switch to __project root directory__
+1. Run `./docker.sh run-build` (builds releasable sample-integration-react npm package)
+
+### Test
+1. Switch to __project root directory__
+1. Run `./docker.sh run-test` (executes test for sample-integration-react)
 
 ## About Testing
 

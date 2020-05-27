@@ -3,8 +3,7 @@ import {
     PHeadline
 } from '@porsche-design-system/components-react';
 
-export function SingleComponent() {
-
+export const SingleComponent = (): JSX.Element => {
     return (
         <PHeadline>Show single mock usage</PHeadline>
     )
