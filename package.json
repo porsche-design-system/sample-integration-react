@@ -2,6 +2,7 @@
   "name": "sample-integration-react-typescript",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://porscheui.github.io/sample-integration-react",
   "dependencies": {
     "@porsche-design-system/components-react": "^1.4.0",
     "@porschehn/navigation": "^1.2.0",
