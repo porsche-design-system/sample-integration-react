@@ -1251,10 +1251,10 @@
   dependencies:
     "@porsche-design-system/components-js" "1.4.0"
 
-"@porschehn/navigation@^1.2.0":
-  version "1.2.0"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porschehn/navigation/-/@porschehn/navigation-1.2.0.tgz#f4e96e40da73238a6eea0167d412121099a51004"
-  integrity sha1-9OluQNpzI4pu6gFn1BISEJmlEAQ=
+"@porschehn/navigation@^1.2.1":
+  version "1.2.1"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porschehn/navigation/-/@porschehn/navigation-1.2.1.tgz#c68ddb8839a0c3ecfbc5e2fb3dbc01f26fd4a8c5"
+  integrity sha1-xo3biDmgw+z7xeL7PbwB8m/UqMU=
   dependencies:
     "@openid/appauth" "^1.2.6"
     "@rollup/plugin-replace" "^2.2.1"
