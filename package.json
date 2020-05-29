@@ -22,13 +22,15 @@
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
+    "prettier": "^2.0.5",
     "serve": "^11.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "serve": "yarn build && serve -s build"
+    "serve": "yarn build && serve -s build",
+    "prettier": "prettier --write 'src/**/*.{ts,tsx}'"
   },
   "eslintConfig": {
     "extends": "react-app"
