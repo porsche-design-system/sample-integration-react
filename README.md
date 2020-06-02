@@ -1,9 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React - Sample integration with Porsche Design System
 
 ## Introduction
 
 This is project shows the example usage of the Porsche Design System Components in React. 
 See also the [project documentation](https://designsystem.porsche.com/v1/#/start-coding/react) and the [deployed project](https://porscheui.github.io/sample-integration-react).
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 ## Available Scripts
 
