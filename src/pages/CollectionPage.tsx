@@ -14,17 +14,20 @@ import {
 } from '@porsche-design-system/components-react';
 
 export const CollectionPage = (): JSX.Element => {
-  const [submit, setSubmit] = useState(false);
+  const [showHeadline, setShowHeadline] = useState(false);
   const [activePage, setActivePage] = useState(1);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleSubmit = (e: React.MouseEvent<HTMLPButtonElement>): void => {
     e.preventDefault();
-    setSubmit(true);
+    setShowHeadline(true);
+    setIsDisabled((prev) => !prev);
   };
 
   const handleDismiss = (e: React.MouseEvent<HTMLPButtonPureElement>): void => {
     e.preventDefault();
-    setSubmit(false);
+    setShowHeadline(false);
+    setIsDisabled((prev) => !prev);
   };
 
   const handleActivePage = (event: CustomEvent): void => {
@@ -40,17 +43,21 @@ export const CollectionPage = (): JSX.Element => {
         <PDivider className="divider" />
       </PGridItem>
       <PGridItem size="12">
-        {/*To illustrate the mock procedure during the tests the buttons insert/dismiss a headline*/}
-        {submit ? <PHeadline variant="headline-4">Hello</PHeadline> : ''}
-        <PButton type="submit" onClick={(e) => handleSubmit(e)}>
+        <PButton type="submit" disabled={isDisabled} onClick={handleSubmit}>
           Submit
         </PButton>
       </PGridItem>
-      <PGridItem className={'contentWrapperSmall'}>
-        <PButtonPure type="submit" onClick={(e) => handleDismiss(e)}>
+      <PGridItem size="12" className="contentWrapperSmall">
+        <PButtonPure type="submit" disabled={!isDisabled} onClick={(e) => handleDismiss(e)}>
           Dismiss
         </PButtonPure>
       </PGridItem>
+      {showHeadline && (
+        <PGridItem size="12" className="contentWrapperSmall">
+          {/*To illustrate the mock procedure during the tests the buttons insert/dismiss a headline*/}
+          <PHeadline variant="headline-4">Headline appears through Button click</PHeadline>
+        </PGridItem>
+      )}
       <PGridItem size="12">
         <PDivider className="divider" />
       </PGridItem>
