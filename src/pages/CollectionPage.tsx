@@ -18,14 +18,12 @@ export const CollectionPage = (): JSX.Element => {
   const [activePage, setActivePage] = useState(1);
   const [isDisabled, setIsDisabled] = useState(false);
 
-  const handleSubmit = (e: React.MouseEvent<HTMLPButtonElement>): void => {
-    e.preventDefault();
+  const handleSubmit = (): void => {
     setShowHeadline(true);
     setIsDisabled((prev) => !prev);
   };
 
-  const handleDismiss = (e: React.MouseEvent<HTMLPButtonPureElement>): void => {
-    e.preventDefault();
+  const handleDismiss = (): void => {
     setShowHeadline(false);
     setIsDisabled((prev) => !prev);
   };
@@ -43,12 +41,12 @@ export const CollectionPage = (): JSX.Element => {
         <PDivider className="divider" />
       </PGridItem>
       <PGridItem size="12">
-        <PButton type="submit" disabled={isDisabled} onClick={handleSubmit}>
+        <PButton disabled={isDisabled} onClick={handleSubmit}>
           Submit
         </PButton>
       </PGridItem>
       <PGridItem size="12" className="contentWrapperSmall">
-        <PButtonPure type="submit" disabled={!isDisabled} onClick={handleDismiss}>
+        <PButtonPure disabled={!isDisabled} onClick={handleDismiss}>
           Dismiss
         </PButtonPure>
       </PGridItem>
@@ -98,8 +96,7 @@ export const CollectionPage = (): JSX.Element => {
         <PDivider className="divider" />
       </PGridItem>
       <PGridItem size="12">
-        {/* Simple usage of PPagination. By linking state to activePage, we can listen to the pageChange event of
-                the component*/}
+        {/* Simple usage of PPagination. By linking state to activePage, we can listen to the pageChange event of the component */}
         <PHeadline variant="headline-4">You are on Page {activePage} Page</PHeadline>
       </PGridItem>
       <PGridItem size="12">
