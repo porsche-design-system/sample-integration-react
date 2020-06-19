@@ -48,7 +48,7 @@ export const CollectionPage = (): JSX.Element => {
         </PButton>
       </PGridItem>
       <PGridItem size="12" className="contentWrapperSmall">
-        <PButtonPure type="submit" disabled={!isDisabled} onClick={(e) => handleDismiss(e)}>
+        <PButtonPure type="submit" disabled={!isDisabled} onClick={handleDismiss}>
           Dismiss
         </PButtonPure>
       </PGridItem>
