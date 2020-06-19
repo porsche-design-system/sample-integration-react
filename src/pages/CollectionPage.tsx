@@ -105,7 +105,7 @@ export const CollectionPage = (): JSX.Element => {
           totalItemsCount={11}
           itemsPerPage={3}
           activePage={activePage}
-          onPageChange={(e) => handleActivePage(e)}
+          onPageChange={handleActivePage}
         />
       </PGridItem>
     </PGrid>
