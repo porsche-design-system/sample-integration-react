@@ -14,17 +14,18 @@ import {
 } from '@porsche-design-system/components-react';
 
 export const CollectionPage = (): JSX.Element => {
-  const [submit, setSubmit] = useState(false);
+  const [showHeadline, setShowHeadline] = useState(false);
   const [activePage, setActivePage] = useState(1);
+  const [isDisabled, setIsDisabled] = useState(false);
 
-  const handleSubmit = (e: React.MouseEvent<HTMLPButtonElement>): void => {
-    e.preventDefault();
-    setSubmit(true);
+  const handleSubmit = (): void => {
+    setShowHeadline(true);
+    setIsDisabled((prev) => !prev);
   };
 
-  const handleDismiss = (e: React.MouseEvent<HTMLPButtonPureElement>): void => {
-    e.preventDefault();
-    setSubmit(false);
+  const handleDismiss = (): void => {
+    setShowHeadline(false);
+    setIsDisabled((prev) => !prev);
   };
 
   const handleActivePage = (event: CustomEvent): void => {
@@ -40,17 +41,21 @@ export const CollectionPage = (): JSX.Element => {
         <PDivider className="divider" />
       </PGridItem>
       <PGridItem size="12">
-        {/*To illustrate the mock procedure during the tests the buttons insert/dismiss a headline*/}
-        {submit ? <PHeadline variant="headline-4">Hello</PHeadline> : ''}
-        <PButton type="submit" onClick={(e) => handleSubmit(e)}>
+        <PButton disabled={isDisabled} onClick={handleSubmit}>
           Submit
         </PButton>
       </PGridItem>
-      <PGridItem className={'contentWrapperSmall'}>
-        <PButtonPure type="submit" onClick={(e) => handleDismiss(e)}>
+      <PGridItem size="12" className="contentWrapperSmall">
+        <PButtonPure disabled={!isDisabled} onClick={handleDismiss}>
           Dismiss
         </PButtonPure>
       </PGridItem>
+      {showHeadline && (
+        <PGridItem size="12" className="contentWrapperSmall">
+          {/*To illustrate the mock procedure during the tests the buttons insert/dismiss a headline*/}
+          <PHeadline variant="headline-4">Headline appears through Button click</PHeadline>
+        </PGridItem>
+      )}
       <PGridItem size="12">
         <PDivider className="divider" />
       </PGridItem>
@@ -91,8 +96,7 @@ export const CollectionPage = (): JSX.Element => {
         <PDivider className="divider" />
       </PGridItem>
       <PGridItem size="12">
-        {/* Simple usage of PPagination. By linking state to activePage, we can listen to the pageChange event of
-                the component*/}
+        {/* Simple usage of PPagination. By linking state to activePage, we can listen to the pageChange event of the component */}
         <PHeadline variant="headline-4">You are on Page {activePage} Page</PHeadline>
       </PGridItem>
       <PGridItem size="12">
@@ -101,7 +105,7 @@ export const CollectionPage = (): JSX.Element => {
           totalItemsCount={11}
           itemsPerPage={3}
           activePage={activePage}
-          onPageChange={(e) => handleActivePage(e)}
+          onPageChange={handleActivePage}
         />
       </PGridItem>
     </PGrid>

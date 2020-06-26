@@ -6,7 +6,7 @@ test('renders a headline from Porsche Design System', async () => {
   const { getByText } = render(<CollectionPage />);
   const submitButtonElement = getByText('Submit');
   fireEvent.click(submitButtonElement);
-  const headLineElement = getByText(/Hello/i);
+  const headLineElement = getByText(/Headline appears through Button click/i);
   expect(headLineElement).toBeInTheDocument();
 });
 
@@ -14,7 +14,7 @@ test('dismisses the headline from Porsche Design System', async () => {
   const { getByText } = render(<CollectionPage />);
   const submitButtonElement = getByText('Submit');
   fireEvent.click(submitButtonElement);
-  const headLineElement = getByText('Hello');
+  const headLineElement = getByText('Headline appears through Button click');
 
   const dismissButtonElement = getByText('Dismiss');
   fireEvent.click(dismissButtonElement);
