@@ -1254,17 +1254,17 @@
     form-data "^3.0.0"
     opener "^1.5.1"
 
-"@porsche-design-system/components-js@1.5.1":
-  version "1.5.1"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-1.5.1.tgz#e4da48e161a91cd3e50e8f7bc465f27ca5ce384b"
-  integrity sha1-5NpI4WGpHNPlDo97xGXyfKXOOEs=
+"@porsche-design-system/components-js@1.5.2":
+  version "1.5.2"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-1.5.2.tgz#25d5b34e58a09db6ff2e3c6fa9fd1b16761c0695"
+  integrity sha1-JdWzTlignbb/Ljxvqf0bFnYcBpU=
 
-"@porsche-design-system/components-react@^1.5.1":
-  version "1.5.1"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-1.5.1.tgz#ce04ab6cf49de3e26c2c1dd9f3c96dc98d62e2e0"
-  integrity sha1-zgSrbPSd4+JsLB3Z88ltyY1i4uA=
+"@porsche-design-system/components-react@^1.5.2":
+  version "1.5.2"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-1.5.2.tgz#d800676c2adc0a3b1e4909ba40d3337d36592db8"
+  integrity sha1-2ABnbCrcCjseSQm6QNMzfTZZLbg=
   dependencies:
-    "@porsche-design-system/components-js" "1.5.1"
+    "@porsche-design-system/components-js" "1.5.2"
 
 "@porschehn/navigation@^1.2.1":
   version "1.2.1"
