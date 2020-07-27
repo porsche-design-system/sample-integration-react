@@ -5,6 +5,7 @@ on:
       - feature/*
       - housekeeping/*
       - issue/*
+      - dependabot/*
 name: "Sample Integration React"
 jobs:
   build:
