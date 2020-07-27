@@ -4,6 +4,7 @@ on:
       - master
       - feature/*
       - housekeeping/*
+      - issue/*
 name: "Sample Integration React"
 jobs:
   build:
