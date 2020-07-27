@@ -5,7 +5,9 @@
   "homepage": "https://porscheui.github.io/sample-integration-react",
   "dependencies": {
     "@porsche-design-system/components-react": "^1.5.2",
+    "@porsche-design-system/utilities": "1.0.5-rc.1",
     "@porschehn/navigation": "^1.2.1",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",

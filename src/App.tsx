@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import { PGrid, PGridItem, PHeadline, PLinkPure, PDivider } from '@porsche-design-system/components-react';
 import './App.css';
-import { CollectionPage, FormsPage, PhnHeaderPage } from './pages';
+import { CollectionPage, FormsPage, PhnHeaderPage, UtilitiesPage } from './pages';
 
 export const App = (): JSX.Element => {
   return (
@@ -24,6 +24,9 @@ export const App = (): JSX.Element => {
             <Link to="/forms" className="removeLinkStyle">
               <PLinkPure>Forms</PLinkPure>
             </Link>
+            <Link to="/utilities" className="removeLinkStyle">
+              <PLinkPure>Utilities</PLinkPure>
+            </Link>
             <Link to="/phn-header" className="removeLinkStyle">
               <PLinkPure>Phn Header</PLinkPure>
             </Link>
@@ -41,6 +44,9 @@ export const App = (): JSX.Element => {
           </Route>
           <Route path="/forms">
             <FormsPage />
+          </Route>
+          <Route path="/utilities">
+            <UtilitiesPage />
           </Route>
           <Route path="/phn-header">
             <PhnHeaderPage />
