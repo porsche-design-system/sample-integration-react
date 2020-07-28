@@ -1283,10 +1283,10 @@
   resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/scss-utils/-/@porsche-design-system/scss-utils-1.0.1.tgz#41dde3d8c426b182e23fe668fcb9f559eb5d5613"
   integrity sha1-Qd3j2MQmsYLiP+Zo/Ln1WetdVhM=
 
-"@porsche-design-system/utilities@1.0.5":
-  version "1.0.5"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/utilities/-/@porsche-design-system/utilities-1.0.5.tgz#15a456144653158c538189f9b445ef0d9d156a42"
-  integrity sha1-FaRWFEZTFYxTgYn5tEXvDZ0VakI=
+"@porsche-design-system/utilities@1.0.6-rc.0":
+  version "1.0.6-rc.0"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/utilities/-/@porsche-design-system/utilities-1.0.6-rc.0.tgz#541b361722baaa43ff4e9b9b211841e5cbe80351"
+  integrity sha1-VBs2FyK6qkP/TpubIRhB5cvoA1E=
   dependencies:
     csstype "^2.6.11"
 
