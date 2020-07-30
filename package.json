@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://porscheui.github.io/sample-integration-react",
   "dependencies": {
+    "@porsche-design-system/browser-notification-banner": "1.0.0-alpha.6",
     "@porsche-design-system/components-react": "^1.5.2",
     "@porsche-design-system/utilities": "1.0.6",
     "@porschehn/navigation": "^1.2.1",

@@ -1,10 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import { PGrid, PGridItem, PHeadline, PLinkPure, PDivider } from '@porsche-design-system/components-react';
 import './App.css';
 import { CollectionPage, FormsPage, PhnHeaderPage, UtilitiesPage } from './pages';
+import { CDN_BASE_URL, JS_MANIFEST } from '@porsche-design-system/browser-notification-banner';
 
 export const App = (): JSX.Element => {
+  const url = CDN_BASE_URL;
+  const initFileName = JS_MANIFEST.init;
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = `${url}/${initFileName}`;
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, [url, initFileName]);
+
   return (
     <Router>
       <div className="pageLayout">
