@@ -3,6 +3,7 @@ import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-route
 import { PGrid, PGridItem, PHeadline, PLinkPure, PDivider } from '@porsche-design-system/components-react';
 import './App.css';
 import { CollectionPage, FormsPage, PhnHeaderPage, UtilitiesPage } from './pages';
+import { TestComponentsPage1 } from './pages/TestComponentsPage1';
 
 export const App = (): JSX.Element => {
   return (
@@ -30,6 +31,9 @@ export const App = (): JSX.Element => {
             <Link to="/phn-header" className="removeLinkStyle">
               <PLinkPure>Phn Header</PLinkPure>
             </Link>
+            <Link to="/testpage" className="removeLinkStyle">
+              <PLinkPure>Test Page</PLinkPure>
+            </Link>
           </PGridItem>
           <PGridItem size={12}>
             <PDivider className="divider" />
@@ -50,6 +54,9 @@ export const App = (): JSX.Element => {
           </Route>
           <Route path="/phn-header">
             <PhnHeaderPage />
+          </Route>
+          <Route path="/testpage">
+            <TestComponentsPage1 />
           </Route>
         </Switch>
       </div>
