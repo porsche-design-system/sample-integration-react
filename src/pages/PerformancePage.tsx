@@ -1,54 +1,65 @@
-import { PCheckboxWrapper, PText } from '@porsche-design-system/components-react';
-import React from 'react';
-interface SelectOption {
-  key: string;
-  name: string;
-}
-interface MultiSelectProps {
-  options: SelectOption[];
-  value?: string[];
-}
-const PMultiSelect: React.FunctionComponent<MultiSelectProps> = ({ options }) => (
-  <>
-    {options.map((option: SelectOption) => (
-      <PCheckboxWrapper key={option.key} label={option.name}>
-        <input type="checkbox" id={option.key} name={option.key} title={option.name} />
-      </PCheckboxWrapper>
-    ))}
-  </>
-);
-const MultiSelect: React.FunctionComponent<MultiSelectProps> = ({ options }) => (
-  <>
-    {options.map((option) => (
-      <React.Fragment key={option.key}>
-        <input type="checkbox" id={option.key} name={option.key} title={option.name} />
-        <label>{option.name}</label>
-      </React.Fragment>
-    ))}
-  </>
-);
-const options = [
-  { name: '911', key: '911' },
-  { name: '718 / Boxster / Cayman', key: '718' },
-];
-const value: string[] = [];
+import {
+  PCheckboxWrapper,
+  PText,
+  PButton,
+  PSelectWrapper,
+  PGrid,
+  PGridItem,
+  PHeadline,
+} from '@porsche-design-system/components-react';
+import React, { ChangeEvent, useState } from 'react';
 
-export const PerformancePage = () => (
-  <>
-    {/* Components with PCheckboxWrapper */}
-    {Array.from(Array(20)).map((i) => (
-      <PMultiSelect key={'P' + i} options={options} value={value} />
-    ))}
-{/*    {Array.from(Array(20)).map((i) => (
-        <PText key={'P' + i} children={'Lorem Ipsum'} />
-    ))}*/}
+export const PerformancePage = () => {
+  const [element, setElement] = useState('text');
+  const [count, setCount] = useState(25);
 
+  const changeElement = (e: ChangeEvent<HTMLSelectElement>): void => {
+    setElement(e.target.value);
+  };
 
+  const changeCount = (e: ChangeEvent<HTMLSelectElement>): void => {
+    setCount(+e.target.value);
+  };
 
+  const chooseElement = (count?: number) => {
+    if (element === 'checkbox') {
+      return (
+        <PCheckboxWrapper key={count} label={element + ' ' + count}>
+          <input type="checkbox" title={element + count} />
+        </PCheckboxWrapper>
+      );
+    } else if (element === 'button') {
+      return <PButton variant="primary" key={'P' + count}>Lorem Ipsum {count}</PButton>;
+    } else return <PText key={'P' + count} children={'Lorem Ipsum ' + count} />;
+  };
 
-    {/* Components without PCheckboxWrapper */}
-    {Array.from(Array(20)).map((i) => (
-      <MultiSelect key={'M' + i} options={options} value={value} />
-    ))}
-  </>
-);
+  return (
+    <PGrid>
+      <PGridItem size="12">
+        <PHeadline variant="headline-4">Choose Element and Count</PHeadline>
+      </PGridItem>
+      <PGridItem size="2">
+        <PSelectWrapper>
+          <select value={element} onChange={(e) => changeElement(e)}>
+            <option value="text">text</option>
+            <option value="checkbox">checkbox</option>
+            <option value="button">button</option>
+          </select>
+        </PSelectWrapper>
+      </PGridItem>
+      <PGridItem size="2">
+        <PSelectWrapper>
+          <select value={count} onChange={(e) => changeCount(e)}>
+            <option value="0">0</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </PSelectWrapper>
+      </PGridItem>
+      <PGridItem size="12" style={{ marginTop: '2rem' }}>
+        {Array.from(Array(count)).map((value, i) => chooseElement(i))}
+      </PGridItem>
+    </PGrid>
+  );
+};
