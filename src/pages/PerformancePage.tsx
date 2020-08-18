@@ -43,7 +43,7 @@ export const PerformancePage = () => {
         <PGridItem size="12">
           <PHeadline variant="headline-4">Choose Element and Count</PHeadline>
         </PGridItem>
-        <PGridItem size="2">
+        <PGridItem size="4">
           <PSelectWrapper>
             <select value={element} onChange={(e) => changeElement(e)}>
               <option value="text">text</option>
@@ -52,7 +52,7 @@ export const PerformancePage = () => {
             </select>
           </PSelectWrapper>
         </PGridItem>
-        <PGridItem size="2">
+        <PGridItem size="4">
           <PSelectWrapper>
             <select value={count} onChange={(e) => changeCount(e)}>
               <option value="0">0</option>
