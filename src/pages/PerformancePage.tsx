@@ -23,7 +23,7 @@ export const PerformancePage = () => {
   const onCountChange = (e: ChangeEvent<HTMLSelectElement>): void => setCount(+e.target.value);
   const onShouldRenderChange = (e: ChangeEvent<HTMLInputElement>): void => setShouldRender(e.target.checked);
 
-  const chooseElement = (count: number) => {
+  const createElement = (count: number) => {
     const children = 'Lorem Ipsum ' + count;
     switch (element) {
       case 'checkbox':
@@ -70,7 +70,7 @@ export const PerformancePage = () => {
         </PGridItem>
       </PGrid>
       <PGrid style={{ marginTop: '2rem' }}>
-        <PGridItem size="4">{shouldRender && Array.from(Array(count)).map((value, i) => chooseElement(i))}</PGridItem>
+        <PGridItem size="12">{shouldRender && Array.from(Array(count)).map((value, i) => createElement(i))}</PGridItem>
       </PGrid>
     </>
   );
