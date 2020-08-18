@@ -9,32 +9,34 @@ import {
 } from '@porsche-design-system/components-react';
 import React, { ChangeEvent, useState } from 'react';
 
+type SelectableElement = 'text' | 'checkbox' | 'button';
+
+const SELECTABLE_ELEMENTS: SelectableElement[] = ['text', 'checkbox', 'button'];
+const SELECTABLE_COUNTS = [25, 50, 100];
+
 export const PerformancePage = () => {
-  const [element, setElement] = useState('text');
+  const [element, setElement] = useState<SelectableElement>('text');
   const [count, setCount] = useState(25);
+  const [shouldRender, setShouldRender] = useState(true);
 
-  const changeElement = (e: ChangeEvent<HTMLSelectElement>): void => {
-    setElement(e.target.value);
-  };
+  const onElementChange = (e: ChangeEvent<HTMLSelectElement>): void => setElement(e.target.value as SelectableElement);
+  const onCountChange = (e: ChangeEvent<HTMLSelectElement>): void => setCount(+e.target.value);
+  const onShouldRenderChange = (e: ChangeEvent<HTMLInputElement>): void => setShouldRender(e.target.checked);
 
-  const changeCount = (e: ChangeEvent<HTMLSelectElement>): void => {
-    setCount(+e.target.value);
-  };
-
-  const chooseElement = (count?: number) => {
-    if (element === 'checkbox') {
-      return (
-        <PCheckboxWrapper key={count} label={element + ' ' + count}>
-          <input type="checkbox" title={element + count} />
-        </PCheckboxWrapper>
-      );
-    } else if (element === 'button') {
-      return (
-        <PButton variant="primary" key={'P' + count}>
-          Lorem Ipsum {count}
-        </PButton>
-      );
-    } else return <PText key={'P' + count} children={'Lorem Ipsum ' + count} />;
+  const chooseElement = (count: number) => {
+    const children = 'Lorem Ipsum ' + count;
+    switch (element) {
+      case 'checkbox':
+        return (
+          <PCheckboxWrapper key={count} label={children}>
+            <input type="checkbox" />
+          </PCheckboxWrapper>
+        );
+      case 'button':
+        return <PButton key={count} variant="primary" children={children} />;
+      case 'text':
+        return <PText key={count} children={children} />;
+    }
   };
 
   return (
@@ -45,28 +47,30 @@ export const PerformancePage = () => {
         </PGridItem>
         <PGridItem size="4">
           <PSelectWrapper>
-            <select value={element} onChange={(e) => changeElement(e)}>
-              <option value="text">text</option>
-              <option value="checkbox">checkbox</option>
-              <option value="button">button</option>
+            <select value={element} onChange={onElementChange}>
+              {SELECTABLE_ELEMENTS.map((value) => (
+                <option key={value} value={value} children={value} />
+              ))}
             </select>
           </PSelectWrapper>
         </PGridItem>
         <PGridItem size="4">
           <PSelectWrapper>
-            <select value={count} onChange={(e) => changeCount(e)}>
-              <option value="0">0</option>
-              <option value="25">25</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
+            <select value={count} onChange={onCountChange}>
+              {SELECTABLE_COUNTS.map((value) => (
+                <option key={value} value={value} children={value} />
+              ))}
             </select>
           </PSelectWrapper>
         </PGridItem>
+        <PGridItem size="4">
+          <PCheckboxWrapper label="Render">
+            <input type="checkbox" onChange={onShouldRenderChange} checked={shouldRender}/>
+          </PCheckboxWrapper>
+        </PGridItem>
       </PGrid>
       <PGrid style={{ marginTop: '2rem' }}>
-        <PGridItem size="4">
-          {Array.from(Array(count)).map((value, i) => chooseElement(i))}
-        </PGridItem>
+        <PGridItem size="4">{shouldRender && Array.from(Array(count)).map((value, i) => chooseElement(i))}</PGridItem>
       </PGrid>
     </>
   );
