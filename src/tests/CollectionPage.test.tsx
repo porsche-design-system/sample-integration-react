@@ -33,7 +33,7 @@ describe('CollectionPage', () => {
     const { getByText } = render(<CollectionPage />);
     const link = getByText(/Test propHash/i);
 
-    expect(link.closest('a')).toHaveAttribute('href', '#propHashTest');
+    expect(link).toHaveAttribute('href', '#propHashTest');
   });
 
   it('pagination should return page 2', () => {

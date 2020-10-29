@@ -2,8 +2,4 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom/extend-expect';
-
-jest.mock('@porsche-design-system/components-react', () => {
-  return require('@porsche-design-system/components-react/mocks');
-});
+import '@testing-library/jest-dom';

@@ -100,13 +100,7 @@ export const CollectionPage = (): JSX.Element => {
         <PHeadline variant="headline-4">You are on Page {activePage} Page</PHeadline>
       </PGridItem>
       <PGridItem size="12">
-        <PPagination
-          data-testid="pagination"
-          totalItemsCount={11}
-          itemsPerPage={3}
-          activePage={activePage}
-          onPageChange={handleActivePage}
-        />
+        <PPagination totalItemsCount={11} itemsPerPage={3} activePage={activePage} onPageChange={handleActivePage} />
       </PGridItem>
     </PGrid>
   );
