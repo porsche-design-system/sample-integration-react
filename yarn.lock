@@ -1313,10 +1313,10 @@
   dependencies:
     "@porsche-design-system/components-js" "2.0.0-alpha.6"
 
-"@porsche-design-system/partials@2.0.0":
-  version "2.0.0"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/partials/-/@porsche-design-system/partials-2.0.0.tgz#70b100e7853aa9df7d8737f17944d6274f4c0602"
-  integrity sha1-cLEA54U6qd99hzfxeUTWJ09MBgI=
+"@porsche-design-system/partials@2.2.0":
+  version "2.2.0"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/partials/-/@porsche-design-system/partials-2.2.0.tgz#623e40a693314ef22f165cfa4acf96c2d5f86867"
+  integrity sha1-Yj5AppMxTvIvFlz6Ss+WwtX4aGc=
 
 "@porsche-design-system/utilities@2.0.0":
   version "2.0.0"
