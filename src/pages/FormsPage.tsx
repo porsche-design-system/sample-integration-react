@@ -50,7 +50,7 @@ export const FormsPage = (): JSX.Element => {
         <PHeadline variant="headline-4">{select}</PHeadline>
         <form>
           <PSelectWrapper>
-            <select data-testid="select" value={select} onChange={(e) => handleSelect(e)}>
+            <select data-testid="select" value={select} onChange={handleSelect}>
               <option value="Headline A">A</option>
               <option value="Headline B">B</option>
               <option value="Headline C">C</option>
@@ -63,16 +63,16 @@ export const FormsPage = (): JSX.Element => {
       </PFlexItem>
       <PFlexItem>
         {/*Checking the Checkbox makes the headline appear*/}
-        {checkBox ? <PHeadline variant="headline-4">Checkbox Works</PHeadline> : ''}
+        {checkBox && <PHeadline variant="headline-4">Checkbox Works</PHeadline>}
         <PCheckboxWrapper label="Some label" hideLabel={false}>
-          <input data-testid="checkbox" type="checkbox" name="TestBox" onInput={(e) => handleCheckBox(e)} />
+          <input data-testid="checkbox" type="checkbox" name="TestBox" onInput={handleCheckBox} />
         </PCheckboxWrapper>
       </PFlexItem>
       <PFlexItem className="contentWrapperSmall">
         {/* Clicking the Radiobutton makes the headline appear*/}
-        {radioButton ? <PHeadline variant="headline-4">Radio Works</PHeadline> : ''}
+        {radioButton && <PHeadline variant="headline-4">Radio Works</PHeadline>}
         <PRadioButtonWrapper label="Some label" hideLabel={false}>
-          <input data-testid="radiobutton" type="radio" name="RadioButton" onInput={(e) => handleRadioButton(e)} />
+          <input data-testid="radiobutton" type="radio" name="RadioButton" onInput={handleRadioButton} />
         </PRadioButtonWrapper>
       </PFlexItem>
       <PFlexItem>
@@ -81,7 +81,7 @@ export const FormsPage = (): JSX.Element => {
       <PFlexItem>
         <form>
           <PTextareaWrapper label="Test TextArea" hideLabel={false}>
-            <textarea name="Testarea"></textarea>
+            <textarea name="Textarea"></textarea>
           </PTextareaWrapper>
         </form>
       </PFlexItem>
@@ -89,7 +89,7 @@ export const FormsPage = (): JSX.Element => {
         {/*The headline changes according to the text field input*/}
         <PHeadline variant="headline-4">{textField}</PHeadline>
         <PTextFieldWrapper label="Test TextField" hideLabel={false}>
-          <input data-testid="input" type="text" name="Textfield" onChange={(e) => handleTextField(e)} />
+          <input data-testid="input" type="text" name="Textfield" onChange={handleTextField} />
         </PTextFieldWrapper>
       </PFlexItem>
       <PFlexItem className="contentWrapperSmall">
@@ -109,7 +109,7 @@ export const FormsPage = (): JSX.Element => {
                 type="text"
                 aria-invalid={true}
                 name="some-name"
-                onChange={(e) => handleTextField(e)}
+                onChange={handleTextField}
               />
             </PTextFieldWrapper>
           </PFlexItem>
