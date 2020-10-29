@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 import { CollectionPage } from '../pages';
 
 describe('CollectionPage', () => {
-  it('renders a headline from Porsche Design System', async () => {
+  it('renders a headline from Porsche Design System', () => {
     const { getByText } = render(<CollectionPage />);
     const submitButtonElement = getByText('Submit');
     fireEvent.click(submitButtonElement);
@@ -11,7 +11,7 @@ describe('CollectionPage', () => {
     expect(headLineElement).toBeInTheDocument();
   });
 
-  it('dismisses the headline from Porsche Design System', async () => {
+  it('dismisses the headline from Porsche Design System', () => {
     const { getByText } = render(<CollectionPage />);
     const submitButtonElement = getByText('Submit');
     fireEvent.click(submitButtonElement);
@@ -22,21 +22,21 @@ describe('CollectionPage', () => {
     expect(headLineElement).not.toBeInTheDocument();
   });
 
-  it('a wrapped Link should navigate to #hashTest', async () => {
+  it('a wrapped Link should navigate to #hashTest', () => {
     const { getByText } = render(<CollectionPage />);
     const link = getByText(/Test PLinkPure/i);
 
     expect(link.closest('a')).toHaveAttribute('href', '#hashTest');
   });
 
-  it('a wrapped Link should navigate to #propHashTest', async () => {
+  it('a wrapped Link should navigate to #propHashTest', () => {
     const { getByText } = render(<CollectionPage />);
     const link = getByText(/Test propHash/i);
 
     expect(link.closest('a')).toHaveAttribute('href', '#propHashTest');
   });
 
-  it('pagination should return page 2', async () => {
+  it('pagination should return page 2', () => {
     const { container, getByText } = render(<CollectionPage />);
 
     if (!container.querySelector('li[value=NEXT_PAGE_LINK]')) {

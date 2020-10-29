@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 import { FormsPage } from '../pages';
 
 describe('FormsPage', () => {
-  it('headline should be changed according the selected value', async () => {
+  it('headline should be changed according the selected value', () => {
     const { getByText, getByTestId } = render(<FormsPage />);
     expect(getByText('Change this Headline by selecting')).toBeInTheDocument();
 
@@ -14,7 +14,7 @@ describe('FormsPage', () => {
     expect(getByText('Headline C')).toBeInTheDocument();
   });
 
-  it('headline should be displayed after click on Checkbox', async () => {
+  it('headline should be displayed after click on Checkbox', () => {
     const { getByText, getByTestId } = render(<FormsPage />);
     const input = getByTestId('checkbox');
 
@@ -22,7 +22,7 @@ describe('FormsPage', () => {
     expect(getByText('Checkbox Works')).toBeInTheDocument();
   });
 
-  it('headline should be displayed after click on RadioButton', async () => {
+  it('headline should be displayed after click on RadioButton', () => {
     const { getByText, getByTestId } = render(<FormsPage />);
     const input = getByTestId('radiobutton');
 
@@ -30,7 +30,7 @@ describe('FormsPage', () => {
     expect(getByText('Radio Works')).toBeInTheDocument();
   });
 
-  it('headline should be changed according the typed value', async () => {
+  it('headline should be changed according the typed value', () => {
     const { getByText, getByTestId } = render(<FormsPage />);
     getByText('Change this Headline by typing');
 
@@ -42,7 +42,7 @@ describe('FormsPage', () => {
   });
 
   /* jsdom has some limitations. One of them is the fact that we cant change location. But we are able to test the closest href */
-  it('slotted Link should navigate to PDS while mocked', async () => {
+  it('slotted Link should navigate to PDS while mocked', () => {
     const { getByText } = render(<FormsPage />);
 
     expect(getByText('Slotted Link').closest('a')).toHaveAttribute('href', 'https://designsystem.porsche.com');
