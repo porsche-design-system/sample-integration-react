@@ -65,7 +65,7 @@ export const PerformancePage = () => {
         </PGridItem>
         <PGridItem size="4">
           <PCheckboxWrapper label="Render">
-            <input type="checkbox" onChange={onShouldRenderChange} checked={shouldRender}/>
+            <input type="checkbox" onChange={onShouldRenderChange} checked={shouldRender} />
           </PCheckboxWrapper>
         </PGridItem>
       </PGrid>
