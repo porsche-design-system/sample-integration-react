@@ -67,14 +67,18 @@ export const CollectionPage = (): JSX.Element => {
       </PGridItem>
       {/*Example of all Link variation which are provided by the Porsche Design System*/}
       <PGridItem size="12">
-        <a href="https://www.porsche.com" className="removeLinkStyle">
-          <PLink>porsche.com</PLink>
-        </a>
+        <PLink>
+          <a href="https://www.porsche.com" className="removeLinkStyle">
+            porsche.com
+          </a>
+        </PLink>
       </PGridItem>
       <PGridItem size="12" className="contentWrapperBig">
-        <a href="#hashTest" className="removeLinkStyle">
-          <PLinkPure>Test PLinkPure</PLinkPure>
-        </a>
+        <PLinkPure>
+          <a href="#hashTest" className="removeLinkStyle">
+            Test PLinkPure
+          </a>
+        </PLinkPure>
         <PLinkPure href="#propHashTest">Test propHash</PLinkPure>
       </PGridItem>
       <PGridItem size="12">
@@ -100,13 +104,7 @@ export const CollectionPage = (): JSX.Element => {
         <PHeadline variant="headline-4">You are on Page {activePage} Page</PHeadline>
       </PGridItem>
       <PGridItem size="12">
-        <PPagination
-          data-testid="pagination"
-          totalItemsCount={11}
-          itemsPerPage={3}
-          activePage={activePage}
-          onPageChange={handleActivePage}
-        />
+        <PPagination totalItemsCount={11} itemsPerPage={3} activePage={activePage} onPageChange={handleActivePage} />
       </PGridItem>
     </PGrid>
   );

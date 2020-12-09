@@ -1,9 +1,11 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { CollectionPage, FormsPage } from '../pages';
+import { componentsReady } from '@porsche-design-system/components-react';
 
 test('renders a headline from Porsche Design System', async () => {
   const { getByText } = render(<CollectionPage />);
+  await componentsReady();
   const submitButtonElement = getByText('Submit');
   fireEvent.click(submitButtonElement);
   const headLineElement = getByText(/Headline appears through Button click/i);
@@ -12,6 +14,7 @@ test('renders a headline from Porsche Design System', async () => {
 
 test('dismisses the headline from Porsche Design System', async () => {
   const { getByText } = render(<CollectionPage />);
+  await componentsReady();
   const submitButtonElement = getByText('Submit');
   fireEvent.click(submitButtonElement);
   const headLineElement = getByText('Headline appears through Button click');
@@ -23,6 +26,7 @@ test('dismisses the headline from Porsche Design System', async () => {
 
 test('headline should be changed according the selected value', async () => {
   const { getByText, getByTestId } = render(<FormsPage />);
+  await componentsReady();
   expect(getByText('Change this Headline by selecting')).toBeInTheDocument();
 
   fireEvent.change(getByTestId('select'), { target: { value: 'Headline B' } });
@@ -34,6 +38,7 @@ test('headline should be changed according the selected value', async () => {
 
 test('headline should be displayed after click on Checkbox', async () => {
   const { getByText, getByTestId } = render(<FormsPage />);
+  await componentsReady();
   const input = getByTestId('checkbox');
 
   input.click();
@@ -42,6 +47,7 @@ test('headline should be displayed after click on Checkbox', async () => {
 
 test('headline should be displayed after click on RadioButton', async () => {
   const { getByText, getByTestId } = render(<FormsPage />);
+  await componentsReady();
   const input = getByTestId('radiobutton');
 
   input.click();
@@ -50,6 +56,7 @@ test('headline should be displayed after click on RadioButton', async () => {
 
 test('headline should be changed according the typed value', async () => {
   const { getByText, getByTestId } = render(<FormsPage />);
+  await componentsReady();
   getByText('Change this Headline by typing');
 
   fireEvent.change(getByTestId('input'), { target: { value: 'Headline C' } });
@@ -62,26 +69,31 @@ test('headline should be changed according the typed value', async () => {
 /* jsdom has some limitations. One of them is the fact that we cant change location. But we are able to test the closest href */
 test('slotted Link should navigate to PDS while mocked', async () => {
   const { getByText } = render(<FormsPage />);
+  await componentsReady();
+  const link = getByText('Slotted Link');
 
-  expect(getByText('Slotted Link').closest('a')).toHaveAttribute('href', 'https://designsystem.porsche.com');
+  expect(link).toHaveAttribute('href', 'https://designsystem.porsche.com');
 });
 
-test('a wrapped Link should navigate to #hashTest', async () => {
+test('link should navigate to #hashTest', async () => {
   const { getByText } = render(<CollectionPage />);
+  await componentsReady();
   const link = getByText(/Test PLinkPure/i);
 
-  expect(link.closest('a')).toHaveAttribute('href', '#hashTest');
+  expect(link).toHaveAttribute('href', '#hashTest');
 });
 
-test('a wrapped Link should navigate to #hashTest', async () => {
+test('link should navigate to #propHashTest', async () => {
   const { getByText } = render(<CollectionPage />);
+  await componentsReady();
   const link = getByText(/Test propHash/i);
 
-  expect(link.closest('a')).toHaveAttribute('href', '#propHashTest');
+  expect(link).toHaveAttribute('href', '#propHashTest');
 });
 
 test('pagination should return page 2', async () => {
   const { container, getByText } = render(<CollectionPage />);
+  await componentsReady();
 
   if (!container.querySelector('li[value=NEXT_PAGE_LINK]')) {
     return;

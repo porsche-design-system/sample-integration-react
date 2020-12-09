@@ -98,19 +98,9 @@ export const FormsPage = (): JSX.Element => {
             <PTextFieldWrapper>
               {/*Example of slotted links*/}
               <span slot="label">
-                Some label with a{' '}
-                <a data-testid="slottedHref" href="https://designsystem.porsche.com">
-                  Slotted Link
-                </a>
-                .
+                Some label with a <a href="https://designsystem.porsche.com">Slotted Link</a>.
               </span>
-              <input
-                data-testid="slottedInput"
-                type="text"
-                aria-invalid={true}
-                name="some-name"
-                onChange={(e) => handleTextField(e)}
-              />
+              <input type="text" aria-invalid={true} name="some-name" onChange={(e) => handleTextField(e)} />
             </PTextFieldWrapper>
           </PFlexItem>
         </form>
