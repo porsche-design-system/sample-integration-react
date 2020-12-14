@@ -1420,17 +1420,17 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@porsche-design-system/components-js@2.0.0-alpha.9":
-  version "2.0.0-alpha.9"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-2.0.0-alpha.9.tgz#5ff46bc185c9177e9d0e92c24850a7d8a28c77f3"
-  integrity sha1-X/RrwYXJF36dDpLCSFCn2KKMd/M=
+"@porsche-design-system/components-js@2.0.0-alpha.10":
+  version "2.0.0-alpha.10"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-2.0.0-alpha.10.tgz#72c61e06e9418ce0329343076c1a4876fa086cd0"
+  integrity sha1-csYeBulBjOAyk0MHbBpIdvoIbNA=
 
-"@porsche-design-system/components-react@2.0.0-alpha.9":
-  version "2.0.0-alpha.9"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-2.0.0-alpha.9.tgz#0d514c8e0906c08abdde80d09fac7e8812911138"
-  integrity sha1-DVFMjgkGwIq93oDQn6x+iBKRETg=
+"@porsche-design-system/components-react@2.0.0-alpha.10":
+  version "2.0.0-alpha.10"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-2.0.0-alpha.10.tgz#ce81cf7b01108390a5942c91dc5c3d634199285e"
+  integrity sha1-zoHPewEQg5CllCyR3Fw9Y0GZKF4=
   dependencies:
-    "@porsche-design-system/components-js" "2.0.0-alpha.9"
+    "@porsche-design-system/components-js" "2.0.0-alpha.10"
 
 "@porsche-design-system/partials@^2.2.0":
   version "2.2.0"
