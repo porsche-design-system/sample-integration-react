@@ -52,7 +52,7 @@ export const CollectionPage = (): JSX.Element => {
       </PGridItem>
       {showHeadline && (
         <PGridItem size="12" className="contentWrapperSmall">
-          {/*To illustrate the mock procedure during the tests the buttons insert/dismiss a headline*/}
+          {/*To illustrate working custom elements during the tests the buttons insert/dismiss a headline*/}
           <PHeadline variant="headline-4">Headline appears through Button click</PHeadline>
         </PGridItem>
       )}

@@ -67,7 +67,7 @@ test('headline should be changed according the typed value', async () => {
 });
 
 /* jsdom has some limitations. One of them is the fact that we cant change location. But we are able to test the closest href */
-test('slotted Link should navigate to PDS while mocked', async () => {
+test('slotted Link should navigate to PDS', async () => {
   const { getByText } = render(<FormsPage />);
   await componentsReady();
   const link = getByText('Slotted Link');

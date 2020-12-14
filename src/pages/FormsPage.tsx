@@ -46,7 +46,7 @@ export const FormsPage = (): JSX.Element => {
         <PDivider className="divider" />
       </PFlexItem>
       <PFlexItem>
-        {/*To illustrate the mock procedure during the tests the selected value is displayed in the headline */}
+        {/*To illustrate working custom elements during the tests the selected value is displayed in the headline */}
         <PHeadline variant="headline-4">{select}</PHeadline>
         <form>
           <PSelectWrapper>
