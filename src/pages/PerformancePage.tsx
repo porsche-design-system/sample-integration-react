@@ -7,7 +7,7 @@ import {
   PGridItem,
   PHeadline,
 } from '@porsche-design-system/components-react';
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 type SelectableElement = 'text' | 'checkbox' | 'button';
 

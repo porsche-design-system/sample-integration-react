@@ -1,4 +1,3 @@
-import React from 'react';
 import { color, text } from '@porsche-design-system/utilities';
 import './UtilitiesPage.scss';
 

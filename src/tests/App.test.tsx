@@ -1,4 +1,3 @@
-import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { CollectionPage, FormsPage } from '../pages';
 import { componentsReady } from '@porsche-design-system/components-react';
