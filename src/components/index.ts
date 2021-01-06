@@ -1,1 +1,2 @@
-export * from './SingleComponent';
+export * from './Loading';
+export * from './Sample';

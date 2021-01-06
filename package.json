@@ -8,6 +8,7 @@
     "@porsche-design-system/partials": "^2.2.0",
     "@porsche-design-system/utilities": "^3.0.0",
     "@porschehn/navigation": "^1.12.0",
+    "clsx": "^1.1.1",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-app-polyfill": "^2.0.0",
