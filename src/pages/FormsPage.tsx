@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import {
   PCheckboxWrapper,
   PDivider,
@@ -46,11 +46,11 @@ export const FormsPage = (): JSX.Element => {
         <PDivider className="divider" />
       </PFlexItem>
       <PFlexItem>
-        {/*To illustrate the mock procedure during the tests the selected value is displayed in the headline */}
+        {/*To illustrate working custom elements during the tests the selected value is displayed in the headline */}
         <PHeadline variant="headline-4">{select}</PHeadline>
         <form>
           <PSelectWrapper>
-            <select data-testid="select" value={select} onChange={handleSelect}>
+            <select data-testid="select" value={select} onChange={(e) => handleSelect(e)}>
               <option value="Headline A">A</option>
               <option value="Headline B">B</option>
               <option value="Headline C">C</option>
@@ -63,16 +63,16 @@ export const FormsPage = (): JSX.Element => {
       </PFlexItem>
       <PFlexItem>
         {/*Checking the Checkbox makes the headline appear*/}
-        {checkBox && <PHeadline variant="headline-4">Checkbox Works</PHeadline>}
+        {checkBox ? <PHeadline variant="headline-4">Checkbox Works</PHeadline> : ''}
         <PCheckboxWrapper label="Some label" hideLabel={false}>
-          <input data-testid="checkbox" type="checkbox" name="TestBox" onInput={handleCheckBox} />
+          <input data-testid="checkbox" type="checkbox" name="TestBox" onInput={(e) => handleCheckBox(e)} />
         </PCheckboxWrapper>
       </PFlexItem>
       <PFlexItem className="contentWrapperSmall">
         {/* Clicking the Radiobutton makes the headline appear*/}
-        {radioButton && <PHeadline variant="headline-4">Radio Works</PHeadline>}
+        {radioButton ? <PHeadline variant="headline-4">Radio Works</PHeadline> : ''}
         <PRadioButtonWrapper label="Some label" hideLabel={false}>
-          <input data-testid="radiobutton" type="radio" name="RadioButton" onInput={handleRadioButton} />
+          <input data-testid="radiobutton" type="radio" name="RadioButton" onInput={(e) => handleRadioButton(e)} />
         </PRadioButtonWrapper>
       </PFlexItem>
       <PFlexItem>
@@ -81,7 +81,7 @@ export const FormsPage = (): JSX.Element => {
       <PFlexItem>
         <form>
           <PTextareaWrapper label="Test TextArea" hideLabel={false}>
-            <textarea name="Textarea"></textarea>
+            <textarea name="Testarea"></textarea>
           </PTextareaWrapper>
         </form>
       </PFlexItem>
@@ -89,7 +89,7 @@ export const FormsPage = (): JSX.Element => {
         {/*The headline changes according to the text field input*/}
         <PHeadline variant="headline-4">{textField}</PHeadline>
         <PTextFieldWrapper label="Test TextField" hideLabel={false}>
-          <input data-testid="input" type="text" name="Textfield" onChange={handleTextField} />
+          <input data-testid="input" type="text" name="Textfield" onChange={(e) => handleTextField(e)} />
         </PTextFieldWrapper>
       </PFlexItem>
       <PFlexItem className="contentWrapperSmall">
@@ -98,19 +98,9 @@ export const FormsPage = (): JSX.Element => {
             <PTextFieldWrapper>
               {/*Example of slotted links*/}
               <span slot="label">
-                Some label with a{' '}
-                <a data-testid="slottedHref" href="https://designsystem.porsche.com">
-                  Slotted Link
-                </a>
-                .
+                Some label with a <a href="https://designsystem.porsche.com">Slotted Link</a>.
               </span>
-              <input
-                data-testid="slottedInput"
-                type="text"
-                aria-invalid={true}
-                name="some-name"
-                onChange={handleTextField}
-              />
+              <input type="text" aria-invalid={true} name="some-name" onChange={(e) => handleTextField(e)} />
             </PTextFieldWrapper>
           </PFlexItem>
         </form>

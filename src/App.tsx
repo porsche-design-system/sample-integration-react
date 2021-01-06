@@ -1,4 +1,3 @@
-import React from 'react';
 import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import { PGrid, PGridItem, PHeadline, PDivider, PLinkPure } from '@porsche-design-system/components-react';
 import './App.css';

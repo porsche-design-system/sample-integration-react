@@ -1,13 +1,10 @@
 import { render } from '@testing-library/react';
-import React from 'react';
 import { SingleComponent } from '../components';
-
-jest.mock('@porsche-design-system/components-react', () => {
-  return require('@porsche-design-system/components-react/mocks/p-headline-mock');
-});
+import { componentsReady } from '@porsche-design-system/components-react';
 
 test('renders a headline from Porsche Design System', async () => {
   const { getByText } = render(<SingleComponent />);
-  const headLineElement = getByText('Show single mock usage');
+  await componentsReady();
+  const headLineElement = getByText('Show single custom element usage');
   expect(headLineElement).toBeInTheDocument();
 });

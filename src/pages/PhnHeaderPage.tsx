@@ -1,4 +1,3 @@
-import React from 'react';
 import { PButton, PIcon, PLinkPure } from '@porsche-design-system/components-react';
 
 export const PhnHeaderPage = (): JSX.Element => (
