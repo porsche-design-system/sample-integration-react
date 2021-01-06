@@ -1,13 +1,14 @@
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './App';
 import { applyPolyfills, defineCustomElements as definePorscheNavigation } from '@porschehn/navigation/loader';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root')
 );
 
