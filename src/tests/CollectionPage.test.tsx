@@ -1,17 +1,20 @@
+import { componentsReady } from '@porsche-design-system/components-react';
 import { fireEvent, render } from '@testing-library/react';
 import { CollectionPage } from '../pages';
 
 describe('CollectionPage', () => {
-  it('renders a headline from Porsche Design System', () => {
+  it('renders a headline from Porsche Design System', async () => {
     const { getByText } = render(<CollectionPage />);
+    await componentsReady();
     const submitButtonElement = getByText('Submit');
     fireEvent.click(submitButtonElement);
     const headLineElement = getByText(/Headline appears through Button click/i);
     expect(headLineElement).toBeInTheDocument();
   });
 
-  it('dismisses the headline from Porsche Design System', () => {
+  it('dismisses the headline from Porsche Design System', async () => {
     const { getByText } = render(<CollectionPage />);
+    await componentsReady();
     const submitButtonElement = getByText('Submit');
     fireEvent.click(submitButtonElement);
     const headLineElement = getByText('Headline appears through Button click');
@@ -21,22 +24,25 @@ describe('CollectionPage', () => {
     expect(headLineElement).not.toBeInTheDocument();
   });
 
-  it('a wrapped Link should navigate to #hashTest', () => {
+  it('a wrapped Link should navigate to #hashTest', async () => {
     const { getByText } = render(<CollectionPage />);
+    await componentsReady();
     const link = getByText(/Test PLinkPure/i);
 
     expect(link.closest('a')).toHaveAttribute('href', '#hashTest');
   });
 
-  it('a wrapped Link should navigate to #propHashTest', () => {
+  it('a wrapped Link should navigate to #propHashTest', async () => {
     const { getByText } = render(<CollectionPage />);
+    await componentsReady();
     const link = getByText(/Test propHash/i);
 
     expect(link).toHaveAttribute('href', '#propHashTest');
   });
 
-  it('pagination should return page 2', () => {
+  it('pagination should return page 2', async () => {
     const { container, getByText } = render(<CollectionPage />);
+    await componentsReady();
 
     if (!container.querySelector('li[value=NEXT_PAGE_LINK]')) {
       return;

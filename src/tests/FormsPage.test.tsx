@@ -1,9 +1,11 @@
+import { componentsReady } from '@porsche-design-system/components-react';
 import { fireEvent, render } from '@testing-library/react';
 import { FormsPage } from '../pages';
 
 describe('FormsPage', () => {
-  it('headline should be changed according the selected value', () => {
+  it('headline should be changed according the selected value', async () => {
     const { getByText, getByTestId } = render(<FormsPage />);
+    await componentsReady();
     expect(getByText('Change this Headline by selecting')).toBeInTheDocument();
 
     fireEvent.change(getByTestId('select'), { target: { value: 'Headline B' } });
@@ -13,24 +15,27 @@ describe('FormsPage', () => {
     expect(getByText('Headline C')).toBeInTheDocument();
   });
 
-  it('headline should be displayed after click on Checkbox', () => {
+  it('headline should be displayed after click on Checkbox', async () => {
     const { getByText, getByTestId } = render(<FormsPage />);
+    await componentsReady();
     const input = getByTestId('checkbox');
 
     input.click();
     expect(getByText('Checkbox Works')).toBeInTheDocument();
   });
 
-  it('headline should be displayed after click on RadioButton', () => {
+  it('headline should be displayed after click on RadioButton', async () => {
     const { getByText, getByTestId } = render(<FormsPage />);
+    await componentsReady();
     const input = getByTestId('radiobutton');
 
     input.click();
     expect(getByText('Radio Works')).toBeInTheDocument();
   });
 
-  it('headline should be changed according the typed value', () => {
+  it('headline should be changed according the typed value', async () => {
     const { getByText, getByTestId } = render(<FormsPage />);
+    await componentsReady();
     getByText('Change this Headline by typing');
 
     fireEvent.change(getByTestId('input'), { target: { value: 'Headline C' } });
@@ -41,9 +46,11 @@ describe('FormsPage', () => {
   });
 
   /* jsdom has some limitations. One of them is the fact that we cant change location. But we are able to test the closest href */
-  it('slotted Link should navigate to PDS while mocked', () => {
+  it('slotted Link should navigate to PDS', async () => {
     const { getByText } = render(<FormsPage />);
+    await componentsReady();
+    const link = getByText('Slotted Link');
 
-    expect(getByText('Slotted Link').closest('a')).toHaveAttribute('href', 'https://designsystem.porsche.com');
+    expect(link).toHaveAttribute('href', 'https://designsystem.porsche.com');
   });
 });
