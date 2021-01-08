@@ -18,20 +18,14 @@ export const App = (): JSX.Element => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    console.log('[]');
-    // TODO: this is broken until next release
     componentsReady().then(() => {
-      console.log('rdy []');
       setIsGlobalReady(true);
     });
   }, []);
 
   useEffect(() => {
-    console.log('pathname');
     setIsLocalReady(false);
-
     componentsReady().then(() => {
-      console.log('rdy pathname', pathname);
       setIsLocalReady(true);
     });
   }, [pathname]);
