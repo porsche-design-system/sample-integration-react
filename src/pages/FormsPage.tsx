@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import {
   PCheckboxWrapper,
   PDivider,
@@ -46,7 +46,7 @@ export const FormsPage = (): JSX.Element => {
         <PDivider className="divider" />
       </PFlexItem>
       <PFlexItem>
-        {/*To illustrate the mock procedure during the tests the selected value is displayed in the headline */}
+        {/*To illustrate working custom elements during the tests the selected value is displayed in the headline */}
         <PHeadline variant="headline-4">{select}</PHeadline>
         <form>
           <PSelectWrapper>
@@ -98,19 +98,9 @@ export const FormsPage = (): JSX.Element => {
             <PTextFieldWrapper>
               {/*Example of slotted links*/}
               <span slot="label">
-                Some label with a{' '}
-                <a data-testid="slottedHref" href="https://designsystem.porsche.com">
-                  Slotted Link
-                </a>
-                .
+                Some label with a <a href="https://designsystem.porsche.com">Slotted Link</a>.
               </span>
-              <input
-                data-testid="slottedInput"
-                type="text"
-                aria-invalid={true}
-                name="some-name"
-                onChange={(e) => handleTextField(e)}
-              />
+              <input type="text" aria-invalid={true} name="some-name" onChange={(e) => handleTextField(e)} />
             </PTextFieldWrapper>
           </PFlexItem>
         </form>

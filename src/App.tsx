@@ -1,24 +1,9 @@
-import React, {useEffect} from 'react';
 import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
-import { PGrid, PGridItem, PHeadline, PLinkPure, PDivider } from '@porsche-design-system/components-react';
+import { PGrid, PGridItem, PHeadline, PDivider, PLinkPure } from '@porsche-design-system/components-react';
 import './App.css';
-import { CollectionPage, FormsPage, PhnHeaderPage, UtilitiesPage } from './pages';
-import { CDN_BASE_URL, JS_MANIFEST } from '@porsche-design-system/browser-notification-banner';
+import { routes } from './routes';
 
 export const App = (): JSX.Element => {
-  const url = CDN_BASE_URL;
-  const initFileName = JS_MANIFEST.init;
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = `${url}/${initFileName}`;
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    }
-  }, [url, initFileName]);
-
   return (
     <Router>
       <div className="pageLayout">
@@ -32,38 +17,22 @@ export const App = (): JSX.Element => {
             <PDivider className="divider" />
           </PGridItem>
           <PGridItem size={12}>
-            <Link to="/collection" className="removeLinkStyle">
-              <PLinkPure>Components Collection</PLinkPure>
-            </Link>
-            <Link to="/forms" className="removeLinkStyle">
-              <PLinkPure>Forms</PLinkPure>
-            </Link>
-            <Link to="/utilities" className="removeLinkStyle">
-              <PLinkPure>Utilities</PLinkPure>
-            </Link>
-            <Link to="/phn-header" className="removeLinkStyle">
-              <PLinkPure>Phn Header</PLinkPure>
-            </Link>
+            {routes.map((route) => (
+              <PLinkPure key={route.path}>
+                <Link to={route.path} children={route.name} />
+              </PLinkPure>
+            ))}
           </PGridItem>
           <PGridItem size={12}>
             <PDivider className="divider" />
           </PGridItem>
         </PGrid>
         <Switch>
+          {routes.map((route) => (
+            <Route key={route.path} {...route} />
+          ))}
           <Route path="/" exact>
-            <Redirect to="/collection" />
-          </Route>
-          <Route path="/collection">
-            <CollectionPage />
-          </Route>
-          <Route path="/forms">
-            <FormsPage />
-          </Route>
-          <Route path="/utilities">
-            <UtilitiesPage />
-          </Route>
-          <Route path="/phn-header">
-            <PhnHeaderPage />
+            <Redirect to={routes.find((x) => x.name === 'Collection')?.path!} />
           </Route>
         </Switch>
       </div>
