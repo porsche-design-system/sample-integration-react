@@ -24,9 +24,11 @@
     -->
     <title>Sample Integration React</title>
     <!-- prettier-ignore -->
-    <%= require('@porsche-design-system/partials').getPorscheDesignSystemCoreStyles() %>
+    <%= require('@porsche-design-system/components-react/partials').getFontLinks({ weight: ['regular', 'semi-bold'] }) %>
     <!-- prettier-ignore -->
-    <%= require('@porsche-design-system/partials').getFontFaceCSS() %>
+    <%= require('@porsche-design-system/components-react/partials').getFontFaceStylesheet() %>
+    <!-- prettier-ignore -->
+    <%= require('@porsche-design-system/components-react/partials').getInitialStyles() %>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
