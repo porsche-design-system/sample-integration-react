@@ -1,10 +1,11 @@
 import { componentsReady } from '@porsche-design-system/components-react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import { CollectionPage } from '../pages';
+import { renderWithProvider } from './helper';
 
 describe('CollectionPage', () => {
   it('renders a headline from Porsche Design System', async () => {
-    const { getByText } = render(<CollectionPage />);
+    const { getByText } = renderWithProvider(<CollectionPage />);
     await componentsReady();
     const submitButtonElement = getByText('Submit');
     fireEvent.click(submitButtonElement);
@@ -13,7 +14,7 @@ describe('CollectionPage', () => {
   });
 
   it('dismisses the headline from Porsche Design System', async () => {
-    const { getByText } = render(<CollectionPage />);
+    const { getByText } = renderWithProvider(<CollectionPage />);
     await componentsReady();
     const submitButtonElement = getByText('Submit');
     fireEvent.click(submitButtonElement);
@@ -25,7 +26,7 @@ describe('CollectionPage', () => {
   });
 
   it('a wrapped Link should navigate to #hashTest', async () => {
-    const { getByText } = render(<CollectionPage />);
+    const { getByText } = renderWithProvider(<CollectionPage />);
     await componentsReady();
     const link = getByText(/Test PLinkPure/i);
 
@@ -33,7 +34,7 @@ describe('CollectionPage', () => {
   });
 
   it('a wrapped Link should navigate to #propHashTest', async () => {
-    const { getByText } = render(<CollectionPage />);
+    const { getByText } = renderWithProvider(<CollectionPage />);
     await componentsReady();
     const link = getByText(/Test propHash/i);
 
@@ -41,7 +42,7 @@ describe('CollectionPage', () => {
   });
 
   it('pagination should return page 2', async () => {
-    const { container, getByText } = render(<CollectionPage />);
+    const { container, getByText } = renderWithProvider(<CollectionPage />);
     await componentsReady();
 
     if (!container.querySelector('li[value=NEXT_PAGE_LINK]')) {
