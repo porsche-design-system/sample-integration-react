@@ -1,7 +1,8 @@
 import { useCallback, useState } from 'react';
 import { PButton } from '@porsche-design-system/components-react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { renderWithProvider } from './helper';
 
 const StyleReplace: React.FC = () => {
   const [state, setState] = useState<boolean>(false);
@@ -19,7 +20,7 @@ const StyleReplace: React.FC = () => {
 };
 
 it('style.replace is not a function', async () => {
-  render(<StyleReplace />);
+  renderWithProvider(<StyleReplace />);
   userEvent.click(screen.getByText('BUTTON'));
   await waitFor(() => {
     screen.getByText('true');

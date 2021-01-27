@@ -1,10 +1,11 @@
 import { componentsReady } from '@porsche-design-system/components-react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import { FormsPage } from '../pages';
+import { renderWithProvider } from './helper';
 
 describe('FormsPage', () => {
   it('headline should be changed according the selected value', async () => {
-    const { getByText, getByTestId } = render(<FormsPage />);
+    const { getByText, getByTestId } = renderWithProvider(<FormsPage />);
     await componentsReady();
     expect(getByText('Change this Headline by selecting')).toBeInTheDocument();
 
@@ -16,7 +17,7 @@ describe('FormsPage', () => {
   });
 
   it('headline should be displayed after click on Checkbox', async () => {
-    const { getByText, getByTestId } = render(<FormsPage />);
+    const { getByText, getByTestId } = renderWithProvider(<FormsPage />);
     await componentsReady();
     const input = getByTestId('checkbox');
 
@@ -25,7 +26,7 @@ describe('FormsPage', () => {
   });
 
   it('headline should be displayed after click on RadioButton', async () => {
-    const { getByText, getByTestId } = render(<FormsPage />);
+    const { getByText, getByTestId } = renderWithProvider(<FormsPage />);
     await componentsReady();
     const input = getByTestId('radiobutton');
 
@@ -34,7 +35,7 @@ describe('FormsPage', () => {
   });
 
   it('headline should be changed according the typed value', async () => {
-    const { getByText, getByTestId } = render(<FormsPage />);
+    const { getByText, getByTestId } = renderWithProvider(<FormsPage />);
     await componentsReady();
     getByText('Change this Headline by typing');
 
@@ -47,7 +48,7 @@ describe('FormsPage', () => {
 
   /* jsdom has some limitations. One of them is the fact that we cant change location. But we are able to test the closest href */
   it('slotted Link should navigate to PDS', async () => {
-    const { getByText } = render(<FormsPage />);
+    const { getByText } = renderWithProvider(<FormsPage />);
     await componentsReady();
     const link = getByText('Slotted Link');
 
