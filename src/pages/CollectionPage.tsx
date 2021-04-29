@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import type { PageChangeEvent, TabChangeEvent } from '@porsche-design-system/components-react';
 import {
   PButton,
@@ -38,11 +38,8 @@ export const CollectionPage = (): JSX.Element => {
 
   const openModal = useCallback(() => setIsModalOpen(true), []);
   const onModalClose = useCallback(() => setIsModalOpen(false), []);
-  const onPageChange = useCallback((event: CustomEvent<PageChangeEvent>) => setActivePage(event.detail.page), []);
-  const onTabChange = useCallback(
-    (event: CustomEvent<TabChangeEvent>) => setActiveTab(event.detail.activeTabIndex),
-    []
-  );
+  const onPageChange = useCallback((ev: CustomEvent<PageChangeEvent>) => setActivePage(ev.detail.page), []);
+  const onTabChange = useCallback((ev: CustomEvent<TabChangeEvent>) => setActiveTab(ev.detail.activeTabIndex), []);
 
   return (
     <PGrid>
