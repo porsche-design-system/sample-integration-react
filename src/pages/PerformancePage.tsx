@@ -42,10 +42,10 @@ export const PerformancePage = () => {
   return (
     <>
       <PGrid>
-        <PGridItem size="12">
+        <PGridItem size={12}>
           <PHeadline variant="headline-4">Choose Element and Count</PHeadline>
         </PGridItem>
-        <PGridItem size="4">
+        <PGridItem size={4}>
           <PSelectWrapper>
             <select value={element} onChange={onElementChange}>
               {SELECTABLE_ELEMENTS.map((value) => (
@@ -54,7 +54,7 @@ export const PerformancePage = () => {
             </select>
           </PSelectWrapper>
         </PGridItem>
-        <PGridItem size="4">
+        <PGridItem size={4}>
           <PSelectWrapper>
             <select value={count} onChange={onCountChange}>
               {SELECTABLE_COUNTS.map((value) => (
@@ -63,14 +63,14 @@ export const PerformancePage = () => {
             </select>
           </PSelectWrapper>
         </PGridItem>
-        <PGridItem size="4">
+        <PGridItem size={4}>
           <PCheckboxWrapper label="Render">
             <input type="checkbox" onChange={onShouldRenderChange} checked={shouldRender} />
           </PCheckboxWrapper>
         </PGridItem>
       </PGrid>
       <PGrid style={{ marginTop: '2rem' }}>
-        <PGridItem size="12">{shouldRender && Array.from(Array(count)).map((value, i) => createElement(i))}</PGridItem>
+        <PGridItem size={12}>{shouldRender && Array.from(Array(count)).map((value, i) => createElement(i))}</PGridItem>
       </PGrid>
     </>
   );
