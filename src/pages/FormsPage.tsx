@@ -94,15 +94,17 @@ export const FormsPage = (): JSX.Element => {
       </PFlexItem>
       <PFlexItem className="contentWrapperSmall">
         <form>
-          <PFlexItem>
-            <PTextFieldWrapper>
-              {/*Example of slotted links*/}
-              <span slot="label">
-                Some label with a <a href="https://designsystem.porsche.com">Slotted Link</a>.
-              </span>
-              <input type="text" aria-invalid={true} name="some-name" onChange={(e) => handleTextField(e)} />
-            </PTextFieldWrapper>
-          </PFlexItem>
+          <PFlex>
+            <PFlexItem>
+              <PTextFieldWrapper>
+                {/*Example of slotted links*/}
+                <span slot="label">
+                  Some label with a <a href="https://designsystem.porsche.com">Slotted Link</a>.
+                </span>
+                <input type="text" aria-invalid={true} name="some-name" onChange={(e) => handleTextField(e)} />
+              </PTextFieldWrapper>
+            </PFlexItem>
+          </PFlex>
         </form>
       </PFlexItem>
     </PFlex>
