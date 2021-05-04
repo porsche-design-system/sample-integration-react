@@ -18,10 +18,12 @@ describe('CollectionPage', () => {
     await componentsReady();
     const submitButtonElement = getByText('Submit');
     fireEvent.click(submitButtonElement);
+    await componentsReady();
     const headLineElement = getByText('Headline appears through Button click');
 
     const dismissButtonElement = getByText('Dismiss');
     fireEvent.click(dismissButtonElement);
+    await componentsReady();
     expect(headLineElement).not.toBeInTheDocument();
   });
 
