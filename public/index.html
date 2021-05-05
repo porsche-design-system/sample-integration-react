@@ -29,6 +29,8 @@
     <%= require('@porsche-design-system/components-react/partials').getFontLinks({ weights: ['regular', 'semi-bold'] }) %>
     <%= require('@porsche-design-system/components-react/partials').getFontFaceStylesheet() %>
     <%= require('@porsche-design-system/components-react/partials').getInitialStyles() %>
+    <%= require('@porsche-design-system/components-react/partials').getComponentChunkLinks({ components: ["button", "checkbox-wrapper", "divider", "flex", "grid", "headline", "link", "link-pure", "modal", "pagination", "radio-button-wrapper", "select-wrapper", "spinner", "tabs-bar", "text", "textarea-wrapper", "text-field-wrapper"] }) %>
+    <%= require('@porsche-design-system/components-react/partials').getMetaTagsAndIconLinks({ appTitle: 'Sample Integration React' }) %>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
