@@ -2146,17 +2146,17 @@
   resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/browser-notification/-/@porsche-design-system/browser-notification-2.0.0.tgz#4767d7d2bc1fedb226bc9766059947b0d8951151"
   integrity sha1-R2fX0rwf7bImvJdmBZlHsNiVEVE=
 
-"@porsche-design-system/components-js@2.2.0-beta.0":
-  version "2.2.0-beta.0"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-2.2.0-beta.0.tgz#f03b0971c9967ff6aa7879ac47baeff940653e3a"
-  integrity sha1-8DsJccmWf/aqeHmsR7rv+UBlPjo=
+"@porsche-design-system/components-js@2.2.0-beta.1":
+  version "2.2.0-beta.1"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-2.2.0-beta.1.tgz#31adccced74416051909ddd266f2f7bedc4cc999"
+  integrity sha1-Ma3MztdEFgUZCd3SZvL3vtxMyZk=
 
-"@porsche-design-system/components-react@2.2.0-beta.0":
-  version "2.2.0-beta.0"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-2.2.0-beta.0.tgz#77361cc047e70b403faa8430a3d030dd22d0dba4"
-  integrity sha1-dzYcwEfnC0A/qoQwo9Aw3SLQ26Q=
+"@porsche-design-system/components-react@2.2.0-beta.1":
+  version "2.2.0-beta.1"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-2.2.0-beta.1.tgz#bf0aa251e47db06f7f64ebbbf0ef1f2dbc804145"
+  integrity sha1-vwqiUeR9sG9/ZOu78O8fLbyAQUU=
   dependencies:
-    "@porsche-design-system/components-js" "2.2.0-beta.0"
+    "@porsche-design-system/components-js" "2.2.0-beta.1"
 
 "@porsche-design-system/partials@^2.2.0":
   version "2.3.0"
