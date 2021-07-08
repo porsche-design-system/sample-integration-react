@@ -35,14 +35,6 @@ describe('CollectionPage', () => {
     expect(link.closest('a')).toHaveAttribute('href', '#hashTest');
   });
 
-  it('a wrapped Link should navigate to #propHashTest', async () => {
-    const { getByText } = renderWithProvider(<CollectionPage />);
-    await componentsReady();
-    const link = getByText(/Test propHash/i);
-
-    expect(link).toHaveAttribute('href', '#propHashTest');
-  });
-
   it('pagination should return page 2', async () => {
     const { container, getByText } = renderWithProvider(<CollectionPage />);
     await componentsReady();
