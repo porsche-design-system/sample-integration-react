@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
-import type { PageChangeEvent, TabChangeEvent } from '@porsche-design-system/components-react';
+import type { AccordionChangeEvent, PageChangeEvent, TabChangeEvent } from '@porsche-design-system/components-react';
 import {
+  PAccordion,
   PButton,
   PButtonGroup,
   PButtonPure,
@@ -25,6 +26,9 @@ export const CollectionPage = (): JSX.Element => {
   const [activePage, setActivePage] = useState(1);
   const [isDisabled, setIsDisabled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAccordion1Open, setIsAccordion1Open] = useState<boolean>(false);
+  const [isAccordion2Open, setIsAccordion2Open] = useState<boolean>(false);
+
 
   const onButtonClick = useCallback(() => {
     setShowHeadline(true);
@@ -40,6 +44,16 @@ export const CollectionPage = (): JSX.Element => {
   const onModalClose = useCallback(() => setIsModalOpen(false), []);
   const onPageChange = useCallback((ev: CustomEvent<PageChangeEvent>) => setActivePage(ev.detail.page), []);
   const onTabChange = useCallback((ev: CustomEvent<TabChangeEvent>) => setActiveTab(ev.detail.activeTabIndex), []);
+  const onAccordion1Change = useCallback((e: CustomEvent<AccordionChangeEvent>) => {
+    setIsAccordion1Open(e.detail.open);
+  }, []);
+  const onAccordion2Change = useCallback((e: CustomEvent<AccordionChangeEvent>) => {
+    setIsAccordion2Open(e.detail.open);
+  }, []);
+
+  const content =
+    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et ' +
+    'dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.';
 
   return (
     <PGrid>
@@ -113,6 +127,24 @@ export const CollectionPage = (): JSX.Element => {
       </PGridItem>
       <PGridItem size={12}>
         <PIcon size="medium" name="highway" role="img" />
+      </PGridItem>
+
+      <PGridItem size={12}>
+        <PDivider className="divider" />
+        <PHeadline variant="headline-4">Accordion</PHeadline>
+        <PDivider className="divider" />
+      </PGridItem>
+      <PGridItem size={12}>
+        <div className="accordion-wrapper">
+          <PAccordion heading="Some Heading" tag="h3" open={isAccordion1Open} onAccordionChange={onAccordion1Change}>
+          <PText>{content}</PText>
+          <PText>{content}</PText>
+        </PAccordion>
+        <PAccordion heading="Some Heading" tag="h3" open={isAccordion2Open} onAccordionChange={onAccordion2Change}>
+          <PText>{content}</PText>
+          <PText>{content}</PText>
+        </PAccordion>
+        </div>
       </PGridItem>
 
       <PGridItem size={12}>
