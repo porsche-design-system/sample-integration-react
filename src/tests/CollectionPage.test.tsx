@@ -26,37 +26,4 @@ describe('CollectionPage', () => {
     await componentsReady();
     expect(headLineElement).not.toBeInTheDocument();
   });
-
-  it('a wrapped Link should navigate to #hashTest', async () => {
-    const { getByText } = renderWithProvider(<CollectionPage />);
-    await componentsReady();
-    const link = getByText(/Test PLinkPure/i);
-
-    expect(link.closest('a')).toHaveAttribute('href', '#hashTest');
-  });
-
-  it('a wrapped Link should navigate to #propHashTest', async () => {
-    const { getByText } = renderWithProvider(<CollectionPage />);
-    await componentsReady();
-    const link = getByText(/Test propHash/i);
-
-    expect(link).toHaveAttribute('href', '#propHashTest');
-  });
-
-  it('pagination should return page 2', async () => {
-    const { container, getByText } = renderWithProvider(<CollectionPage />);
-    await componentsReady();
-
-    if (!container.querySelector('li[value=NEXT_PAGE_LINK]')) {
-      return;
-    }
-    const nextButton = container.querySelector('li[value=NEXT_PAGE_LINK]');
-
-    if (!nextButton) {
-      return;
-    }
-    fireEvent.click(nextButton);
-
-    expect(getByText('You are on Page 2 Page')).toBeInTheDocument();
-  });
 });
