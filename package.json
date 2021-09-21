@@ -5,9 +5,9 @@
   "homepage": "https://porscheui.github.io/sample-integration-react",
   "dependencies": {
     "@porsche-design-system/browser-notification": "^2.0.0",
-    "@porsche-design-system/components-react": "2.3.0-beta.3",
+    "@porsche-design-system/components-react": "2.4.0-beta.2",
     "@porsche-design-system/partials": "^2.2.0",
-    "@porsche-design-system/utilities": "^4.1.0",
+    "@porsche-design-system/utilities": "^5.0.0",
     "@porschehn/navigation": "^2.5.0",
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
