@@ -1550,17 +1550,17 @@
   resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-2.5.0.tgz#f081daaa2a1387c93c27660771bd944fde4fe381"
   integrity sha1-8IHaqioTh8k8J2YHcb2UT95P44E=
 
-"@porsche-design-system/components-js@2.6.1":
-  version "2.6.1"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-2.6.1.tgz#d6e45219194b7354591838026e1e896df3765c5f"
-  integrity sha1-1uRSGRlLc1RZGDgCbh6JbfN2XF8=
+"@porsche-design-system/components-js@2.7.0-beta.2":
+  version "2.7.0-beta.2"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-2.7.0-beta.2.tgz#99ab87dde087d1a0b5a3d1e6734ef097e70a7cd0"
+  integrity sha1-mauH3eCH0aC1o9Hmc07wl+cKfNA=
 
-"@porsche-design-system/components-react@2.6.1":
-  version "2.6.1"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-2.6.1.tgz#54ec9b36fdc72bce329ca518b08a07d2650f39d3"
-  integrity sha1-VOybNv3HK84ynKUYsIoH0mUPOdM=
+"@porsche-design-system/components-react@2.7.0-beta.2":
+  version "2.7.0-beta.2"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-2.7.0-beta.2.tgz#b326900ccaf69771e6e57e9150e0b0e34433ba20"
+  integrity sha1-syaQDMr2l3Hm5X6RUOCw40QzuiA=
   dependencies:
-    "@porsche-design-system/components-js" "2.6.1"
+    "@porsche-design-system/components-js" "2.7.0-beta.2"
 
 "@porsche-design-system/partials@^2.2.0":
   version "2.3.0"

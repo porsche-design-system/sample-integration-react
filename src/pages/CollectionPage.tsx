@@ -17,6 +17,7 @@ import {
   PSpinner,
   PTabsBar,
   PText,
+  useToastManager,
 } from '@porsche-design-system/components-react';
 import './CollectionPage.scss';
 
@@ -28,7 +29,7 @@ export const CollectionPage = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isAccordion1Open, setIsAccordion1Open] = useState<boolean>(false);
   const [isAccordion2Open, setIsAccordion2Open] = useState<boolean>(false);
-
+  const [toastCounter, setToastCounter] = useState(1);
 
   const onButtonClick = useCallback(() => {
     setShowHeadline(true);
@@ -50,6 +51,13 @@ export const CollectionPage = (): JSX.Element => {
   const onAccordion2Change = useCallback((e: CustomEvent<AccordionChangeEvent>) => {
     setIsAccordion2Open(e.detail.open);
   }, []);
+
+  const { addMessage } = useToastManager();
+
+  const queueToast = () => {
+    addMessage({ text: `Some message ${toastCounter}`, state: 'neutral' });
+    setToastCounter((prev) => prev + 1);
+  };
 
   const content =
     'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et ' +
@@ -75,6 +83,7 @@ export const CollectionPage = (): JSX.Element => {
           <PHeadline variant="headline-4">Headline appears through Button click</PHeadline>
         </PGridItem>
       )}
+
       <PGridItem size={12} className="contentWrapperSmall">
         <PButton onClick={openModal}>Open Modal</PButton>
         <PModal heading="Some Heading" open={isModalOpen} onClose={onModalClose}>
@@ -86,6 +95,10 @@ export const CollectionPage = (): JSX.Element => {
             </PButton>
           </PButtonGroup>
         </PModal>
+      </PGridItem>
+
+      <PGridItem size={12} className="contentWrapperSmall">
+        <PButton onClick={queueToast}>Queue Toast</PButton>
       </PGridItem>
 
       <PGridItem size={12}>
@@ -137,13 +150,13 @@ export const CollectionPage = (): JSX.Element => {
       <PGridItem size={12}>
         <div className="accordion-wrapper">
           <PAccordion heading="Some Heading" tag="h3" open={isAccordion1Open} onAccordionChange={onAccordion1Change}>
-          <PText>{content}</PText>
-          <PText>{content}</PText>
-        </PAccordion>
-        <PAccordion heading="Some Heading" tag="h3" open={isAccordion2Open} onAccordionChange={onAccordion2Change}>
-          <PText>{content}</PText>
-          <PText>{content}</PText>
-        </PAccordion>
+            <PText>{content}</PText>
+            <PText>{content}</PText>
+          </PAccordion>
+          <PAccordion heading="Some Heading" tag="h3" open={isAccordion2Open} onAccordionChange={onAccordion2Change}>
+            <PText>{content}</PText>
+            <PText>{content}</PText>
+          </PAccordion>
         </div>
       </PGridItem>
 
