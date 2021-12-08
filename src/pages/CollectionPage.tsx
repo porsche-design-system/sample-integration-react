@@ -168,12 +168,10 @@ export const CollectionPage = (): JSX.Element => {
       <PGridItem size={12}>
         <PText>
           Lorem ipsum dolor sit amet, <PPopover>Some descriptive content</PPopover> consetetur sadipscing elitr, sed
-          diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,<PPopover
-          description="Short info opened top"
-          direction="top"
-          ></PPopover>
-        sed diam voluptua.
-      </PText>
+          diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          <PPopover description="Short info opened top" direction="top"></PPopover>
+          sed diam voluptua.
+        </PText>
       </PGridItem>
 
       <PGridItem size={12}>
