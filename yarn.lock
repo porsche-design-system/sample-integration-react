@@ -1564,22 +1564,22 @@
   resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/browser-notification/-/@porsche-design-system/browser-notification-4.1.1.tgz#f553e114b2fa4903dfe38ea4add682d13a47ec72"
   integrity sha1-9VPhFLL6SQPf446krdaC0TpH7HI=
 
-"@porsche-design-system/components-js@2.9.0-rc.1":
-  version "2.9.0-rc.1"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-2.9.0-rc.1.tgz#db913e7736cd7b26ac27936fb2e61f233d1fae37"
-  integrity sha512-d4g57H6m3PGCPnfEBO9qdiyQ4ez1ths1ShH3Mu+fawfyScj0wdgiCc9f19K9VVSdq2HewNERSWKAhAAPhnCKog==
+"@porsche-design-system/components-js@2.9.2-rc.1":
+  version "2.9.2-rc.1"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-2.9.2-rc.1.tgz#ede196e404c53e9cc8756a5506c0a0cd314b0251"
+  integrity sha512-O9XUAXtlOVBb8aGQxVfsT6ejE+b7XO6wD6trHhxwLckb/ifQVOdLcgAdl7JpK9RQyoRl2JL0zWDomk+8capVCg==
 
 "@porsche-design-system/components-js@^2.8.0":
   version "2.8.0"
   resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-2.8.0.tgz#b7f5600b43f0c249eb3b00bc1c6b259ad48c358f"
   integrity sha1-t/VgC0PwwknrOwC8HGslmtSMNY8=
 
-"@porsche-design-system/components-react@2.9.0-rc.1":
-  version "2.9.0-rc.1"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-2.9.0-rc.1.tgz#f15bc892add18ef23693b3d54690415a33889d7c"
-  integrity sha512-BSBER5fWYTzRnUxB6frILJZS18GrgREf4HOzni7aQpYtZs902y+bPC3re6CgjOEGubykeGAbpUNLKzqoTjw/fQ==
+"@porsche-design-system/components-react@2.9.2-rc.1":
+  version "2.9.2-rc.1"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-react/-/@porsche-design-system/components-react-2.9.2-rc.1.tgz#cd76da8c20a05be43e6c82fbfc63feeccfba720e"
+  integrity sha512-K7xjsDT5I13DvizlNB3r+UjM0UEnRreJB143TVksJgayiZKdvovOT0JgQuUtm5W/93KBMuTNF52jrNNlWzUXXA==
   dependencies:
-    "@porsche-design-system/components-js" "2.9.0-rc.1"
+    "@porsche-design-system/components-js" "2.9.2-rc.1"
 
 "@porsche-design-system/partials@^2.2.0":
   version "2.3.0"
