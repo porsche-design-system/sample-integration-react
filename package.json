@@ -8,7 +8,7 @@
     "@porsche-design-system/components-react": "2.9.2",
     "@porsche-design-system/partials": "^2.2.0",
     "@porsche-design-system/utilities": "^5.2.0",
-    "@porschehn/navigation": "^2.13.1",
+    "@porschehn/navigation": "~2.13.1",
     "postcss-normalize": "^10.0.1",
     "react": "^17.0.2",
     "react-app-polyfill": "^3.0.0",
