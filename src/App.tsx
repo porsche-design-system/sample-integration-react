@@ -1,4 +1,4 @@
-import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import { PGrid, PGridItem, PHeadline, PDivider, PLinkPure, PToast } from '@porsche-design-system/components-react';
 import './App.css';
 import { routes } from './routes';
@@ -28,14 +28,12 @@ export const App = (): JSX.Element => {
               <PDivider className="divider" />
             </PGridItem>
           </PGrid>
-          <Switch>
+          <Routes>
             {routes.map((route) => (
               <Route key={route.path} {...route} />
             ))}
-            <Route path="/" exact>
-              <Redirect to={routes.find((x) => x.name === 'Collection')?.path!} />
-            </Route>
-          </Switch>
+            <Route path="/" element={<Navigate replace to={routes.find((x) => x.name === 'Collection')?.path!} />} />
+          </Routes>
         </div>
       </Router>
       <PToast />
