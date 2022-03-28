@@ -25,6 +25,11 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <!-- phn-header -->
+    <!-- prettier-ignore -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.pchomenav.aws.porsche.cloud/porsche-navigation.css"/>
+    <%= require('@porschehn/navigation/dist/porsche-navigation/partials').partials() %>
+    <!-- porsche-design-system -->
     <!-- prettier-ignore -->
     <%= require('@porsche-design-system/components-react/partials').getFontLinks({ weights: ['regular', 'semi-bold'] }) %>
     <%= require('@porsche-design-system/components-react/partials').getFontFaceStylesheet() %>
