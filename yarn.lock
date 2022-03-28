@@ -1418,7 +1418,7 @@
   resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/browser-notification/-/@porsche-design-system/browser-notification-4.1.1.tgz#f553e114b2fa4903dfe38ea4add682d13a47ec72"
   integrity sha1-9VPhFLL6SQPf446krdaC0TpH7HI=
 
-"@porsche-design-system/components-js@2.9.2", "@porsche-design-system/components-js@^2.8.0":
+"@porsche-design-system/components-js@2.9.2", "@porsche-design-system/components-js@^2.9.1":
   version "2.9.2"
   resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche-design-system/components-js/-/@porsche-design-system/components-js-2.9.2.tgz#81e2b0cc22629922157068e431d168cecfc67862"
   integrity sha512-8KNzr/j+CBni3zoBXWZsKm5PZIMVChvQcG66SEB4u3nu5tztrDlpExkRZlDQEKDed2B0mHj7WxTpx2yfyqcq8g==
@@ -1447,17 +1447,16 @@
   dependencies:
     csstype "^3.0.9"
 
-"@porschehn/navigation@~2.13.1":
-  version "2.13.2"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porschehn/navigation/-/@porschehn/navigation-2.13.2.tgz#8aca9d235a16f46619919b53aa2b5f0c6a7d1df2"
-  integrity sha512-t4WEYEr/er4EMmsices/+tmxwC60LHj5aWSAdHh9YeZlHpYtquRK0jArVz5GBdCmIv7PiFpMvI72E2Qjt8+ZfA==
+"@porschehn/navigation@^2.14.2":
+  version "2.14.2"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porschehn/navigation/-/@porschehn/navigation-2.14.2.tgz#514f1fa7e9e4e4d89eeb0b9fcf9e2526dccbf98d"
+  integrity sha512-50cgs8fMFuMkPvvFyZdFBP4ZzUR8t0No7RYsukSPfOAMHb8ApGwQz8hO5cVhrM5C5ZgThYZDaZl0ilPMedzz0A==
   dependencies:
     "@openid/appauth" "^1.2.6"
-    "@porsche-design-system/components-js" "^2.8.0"
+    "@porsche-design-system/components-js" "^2.9.1"
     "@porsche-design-system/utilities" "^5.2.0"
     "@stencil/core" "2.13.0"
     "@stencil/store" "^1.5.0"
-    gsap "^3.4.2"
     uuid "^8.1.0"
 
 "@rollup/plugin-babel@^5.2.0":
@@ -4685,11 +4684,6 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4, 
   version "4.2.9"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.9.tgz#041b05df45755e587a24942279b9d113146e1c96"
   integrity sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==
-
-gsap@^3.4.2:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.9.1.tgz#d4c7443540497afee9ddc0824fd0180224e33360"
-  integrity sha512-JSGVYoC6da4pIjdF/yxFU6Rz8OojOIDkbooveZlfNg0+JIoFoRruyfWAEi6R/gUeNcuOiTqUIb0gi1nCNrHf8w==
 
 gzip-size@^6.0.0:
   version "6.0.0"
