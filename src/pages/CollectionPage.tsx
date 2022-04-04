@@ -17,7 +17,8 @@ import {
   PPopover,
   PSpinner,
   PTabsBar,
-  PText, useToastManager,
+  PText,
+  useToastManager,
 } from '@porsche-design-system/components-react';
 import './CollectionPage.scss';
 
@@ -113,7 +114,7 @@ export const CollectionPage = (): JSX.Element => {
         </PLink>
       </PGridItem>
       <PGridItem size={12} className="contentWrapperBig">
-        <PLinkPure>
+        <PLinkPure stretch={true}>
           <a href="#hashTest" className="removeLinkStyle">
             Test PLinkPure
           </a>
