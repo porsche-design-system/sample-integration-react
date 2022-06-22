@@ -6,7 +6,6 @@
   "dependencies": {
     "@porsche-design-system/browser-notification": "^4.1.2",
     "@porsche-design-system/components-react": "2.12.1",
-    "@porsche-design-system/partials": "^2.2.0",
     "@porsche-design-system/utilities": "^5.3.0",
     "@porschehn/navigation": "^2.16.0",
     "postcss-normalize": "^10.0.1",
