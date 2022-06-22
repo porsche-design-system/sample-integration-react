@@ -5,8 +5,8 @@
   "homepage": "https://porscheui.github.io/sample-integration-react",
   "dependencies": {
     "@porsche-design-system/browser-notification": "^4.1.2",
-    "@porsche-design-system/components-react": "2.12.1",
-    "@porsche-design-system/utilities": "^5.3.0",
+    "@porsche-design-system/components-react": "2.13.0-rc.3",
+    "@porsche-design-system/utilities": "5.3.1",
     "@porschehn/navigation": "^2.16.0",
     "postcss-normalize": "^10.0.1",
     "react": "^17.0.2",
@@ -53,5 +53,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+    "@porsche-design-system/components-js": "2.13.0-rc.3",
+    "@porsche-design-system/utilities": "5.3.1"
   }
 }
