@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
 import {
   PCheckboxWrapper,
   PDivider,
@@ -6,9 +6,13 @@ import {
   PFlexItem,
   PHeadline,
   PRadioButtonWrapper,
+  PSegmentedControl,
+  PSegmentedControlItem,
   PSelectWrapper,
+  PText,
   PTextareaWrapper,
   PTextFieldWrapper,
+  SegmentedControlChangeEvent,
 } from '@porsche-design-system/components-react';
 
 export const FormsPage = (): JSX.Element => {
@@ -16,6 +20,11 @@ export const FormsPage = (): JSX.Element => {
   const [checkBox, setCheckBox] = useState(false);
   const [radioButton, setRadioButton] = useState(false);
   const [textField, setTextField] = useState('Change this Headline by typing');
+  const [currentValue, setCurrentValue] = useState(1);
+
+  const onSegmentedControlChange = useCallback((e: CustomEvent<SegmentedControlChangeEvent>) => {
+    setCurrentValue(e.detail.value as number);
+  }, []);
 
   const handleSelect = (e: ChangeEvent<HTMLSelectElement>): void => {
     setSelect(e.target.value);
@@ -57,6 +66,21 @@ export const FormsPage = (): JSX.Element => {
             </select>
           </PSelectWrapper>
         </form>
+      </PFlexItem>
+      <PFlexItem>
+        <PSegmentedControl
+          style={{ marginTop: '1rem' }}
+          value={currentValue}
+          onSegmentedControlChange={onSegmentedControlChange}
+          aria-label="Choose an Option"
+        >
+          <PSegmentedControlItem value={1}>Option 1</PSegmentedControlItem>
+          <PSegmentedControlItem value={2}>Option 2</PSegmentedControlItem>
+          <PSegmentedControlItem value={3}>Option 3</PSegmentedControlItem>
+          <PSegmentedControlItem value={4}>Option 4</PSegmentedControlItem>
+          <PSegmentedControlItem value={5}>Option 5</PSegmentedControlItem>
+        </PSegmentedControl>
+        <PText>Current value of segmented-control: {currentValue}</PText>
       </PFlexItem>
       <PFlexItem>
         <PDivider className="divider" />
