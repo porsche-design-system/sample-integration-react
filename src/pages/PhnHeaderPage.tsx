@@ -2,7 +2,7 @@ import { PButton, PIcon, PLinkPure } from '@porsche-design-system/components-rea
 
 export const PhnHeaderPage = (): JSX.Element => (
   <>
-    <phn-header env="preview" style={{ position: 'absolute', left: 0, right: 0 }} />
+    <phn-header env="preview" locale="de-DE" style={{ position: 'absolute', left: 0, right: 0 }} />
 
     <div style={{ paddingTop: 150 }}>
       <div>
