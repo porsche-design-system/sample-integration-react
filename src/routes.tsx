@@ -1,5 +1,5 @@
 import { RouteProps } from 'react-router-dom';
-import { CollectionPage, FormsPage, PerformancePage, PhnHeaderPage, UtilitiesPage } from './pages';
+import { CollectionPage, FormsPage, PerformancePage, PhnHeaderPage, PSelectWrapperPage, UtilitiesPage } from './pages';
 
 export type RouteType = RouteProps & {
   name: string;
@@ -26,6 +26,11 @@ export const routes: RouteType[] = [
     name: 'Phn Header',
     path: '/phn-header',
     element: <PhnHeaderPage />,
+  },
+  {
+    name: 'PSelectWrapper',
+    path: '/p-select-wrapper',
+    element: <PSelectWrapperPage />,
   },
   {
     name: 'Utilities',
