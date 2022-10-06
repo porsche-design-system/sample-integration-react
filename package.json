@@ -2,7 +2,7 @@
   "name": "sample-integration-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://porscheui.github.io/sample-integration-react",
+  "homepage": "https://porsche-design-system.github.io/sample-integration-react",
   "dependencies": {
     "@porsche-design-system/components-react": "2.16.2",
     "@porsche-design-system/utilities": "5.3.1",
