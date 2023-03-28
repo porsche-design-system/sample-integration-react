@@ -1600,22 +1600,22 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@porsche-design-system/components-js@2.20.0-rc.1":
-  version "2.20.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-2.20.0-rc.1.tgz#1fff642b51168fd026d2b8c9217ce84f3a547761"
-  integrity sha512-vx8la5tb+G3jBryq7c3rcF8wFB1ZUY4lfinurZ29q7zqHUpFvOrhuNkCd6wT71UoQhh35ALFCnQJW/1Rm9pvyQ==
+"@porsche-design-system/components-js@2.21.0-rc.0":
+  version "2.21.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-2.21.0-rc.0.tgz#812d2fe1998ffc1a278d6d5a9a7dccc366a2e107"
+  integrity sha512-GpS/Gfa9rmPSKAq7SMul6qKCxBi4QySMgRs9d67a/PKZTvb7QlcPuqX/oyghqNCueNK8W8XR+HJ3+N5IVn7NwA==
 
 "@porsche-design-system/components-js@^2.17.0":
   version "2.18.0"
   resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-2.18.0.tgz#498fe25950174014156deab7d54569d6253049b2"
   integrity sha512-GXjApbCKzJM2HLaDvVo5S01LPF/sBXJPi6mFs4w190Het33fLNf7kzw9NZpxBVPFKmp8pCgNfjSjWT9hoZ+Myw==
 
-"@porsche-design-system/components-react@2.20.0-rc.1":
-  version "2.20.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-react/-/components-react-2.20.0-rc.1.tgz#33c671dd11edb3357fe3c70c22516093c7f466af"
-  integrity sha512-cEZR465FGMrFHm6nNVM4jHQLcszwjGzdTSldMtDg/qWel4GCiudTc7L0CnXeXyFgDJ6Wm42CCLFYoP19Hy9IfQ==
+"@porsche-design-system/components-react@2.21.0-rc.0":
+  version "2.21.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-react/-/components-react-2.21.0-rc.0.tgz#26e5209bf0a4ee6e81ededec181474bc67f48d88"
+  integrity sha512-oX3T4B/58tFVLZ0YNf+X9jn0rxRHaPsKLIJAw4m7ECh8TcE1vYDRAW8sSkdsN0srQqEN9x5oNNwQO6sVsBYu0Q==
   dependencies:
-    "@porsche-design-system/components-js" "2.20.0-rc.1"
+    "@porsche-design-system/components-js" "2.21.0-rc.0"
 
 "@porsche-design-system/prettier-config@^1.0.0":
   version "1.0.1"
@@ -6193,16 +6193,16 @@ json-stable-stringify-without-jsonify@^1.0.1:
   integrity sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==
 
 json5@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.1.tgz#779fb0018604fa854eacbf6252180d83543e3dbe"
-  integrity sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.2.tgz#63d98d60f21b313b77c4d6da18bfa69d80e1d593"
+  integrity sha512-g1MWMLBiz8FKi1e4w0UyVL3w+iJceWAFBAaBnnGKOpNa5f8TLktkbre1+s6oICydWAm+HRUGTmI+//xv2hvXYA==
   dependencies:
     minimist "^1.2.0"
 
 json5@^2.1.2, json5@^2.2.0, json5@^2.2.1:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.2.tgz#64471c5bdcc564c18f7c1d4df2e2297f2457c5ab"
-  integrity sha512-46Tk9JiOL2z7ytNQWFLpj99RZkVgeHf87yGQKsIkaPz1qSH9UczKH1rO7K3wgRselo0tYMUNfecYpm/p1vC7tQ==
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
+  integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
 jsonfile@^6.0.1:
   version "6.1.0"
