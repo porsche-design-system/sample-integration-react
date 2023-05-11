@@ -1,8 +1,8 @@
 import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
 import type {
-  SegmentedControlChangeEvent,
-  StepChangeEvent,
-  StepperState,
+  SegmentedControlUpdateEvent,
+  StepperHorizontalUpdateEvent,
+  StepperHorizontalItemState,
 } from '@porsche-design-system/components-react';
 import {
   PButton,
@@ -10,8 +10,7 @@ import {
   PCheckboxWrapper,
   PDivider,
   PFlex,
-  PFlexItem,
-  PHeadline,
+  PFlexItem, PHeading,
   PRadioButtonWrapper,
   PSegmentedControl,
   PSegmentedControlItem,
@@ -24,15 +23,15 @@ import {
 } from '@porsche-design-system/components-react';
 
 type StepperHorizontalItemProps = {
-  state?: StepperState;
+  state?: StepperHorizontalItemState;
   name: string;
 };
 
 export const FormsPage = (): JSX.Element => {
-  const [select, setSelect] = useState('Change this Headline by selecting');
+  const [select, setSelect] = useState('Change this Heading by selecting');
   const [checkBox, setCheckBox] = useState(false);
   const [radioButton, setRadioButton] = useState(false);
-  const [textField, setTextField] = useState('Change this Headline by typing');
+  const [textField, setTextField] = useState('Change this Heading by typing');
   const [currentValue, setCurrentValue] = useState(1);
   const [steps, setSteps] = useState<StepperHorizontalItemProps[]>([
     {
@@ -53,7 +52,7 @@ export const FormsPage = (): JSX.Element => {
     'A form with a password input field could be displayed here.',
   ];
 
-  const onSegmentedControlChange = useCallback((e: CustomEvent<SegmentedControlChangeEvent>) => {
+  const onSegmentedControlUpdate = useCallback((e: CustomEvent<SegmentedControlUpdateEvent>) => {
     setCurrentValue(e.detail.value as number);
   }, []);
 
@@ -95,7 +94,7 @@ export const FormsPage = (): JSX.Element => {
     setSteps(newState);
   };
 
-  const handleStepChange = (e: CustomEvent<StepChangeEvent>): void => {
+  const handleStepUpdate = (e: CustomEvent<StepperHorizontalUpdateEvent>): void => {
     const { activeStepIndex } = e.detail;
 
     const newState = [...steps];
@@ -110,20 +109,20 @@ export const FormsPage = (): JSX.Element => {
   return (
     <PFlex direction="column">
       <PFlexItem>
-        <PHeadline variant="headline-3">Form examples</PHeadline>
+        <PHeading size="medium">Form examples</PHeading>
       </PFlexItem>
       <PFlexItem>
         <PDivider className="divider" />
       </PFlexItem>
       <PFlexItem>
-        {/*To illustrate working custom elements during the tests the selected value is displayed in the headline */}
-        <PHeadline variant="headline-4">{select}</PHeadline>
+        {/*To illustrate working custom elements during the tests the selected value is displayed in the heading */}
+        <PHeading size="medium">{select}</PHeading>
         <form>
           <PSelectWrapper>
             <select data-testid="select" value={select} onChange={(e) => handleSelect(e)}>
-              <option value="Headline A">A</option>
-              <option value="Headline B">B</option>
-              <option value="Headline C">C</option>
+              <option value="Heading A">A</option>
+              <option value="Heading B">B</option>
+              <option value="Heading C">C</option>
             </select>
           </PSelectWrapper>
         </form>
@@ -132,7 +131,7 @@ export const FormsPage = (): JSX.Element => {
         <PSegmentedControl
           style={{ marginTop: '1rem' }}
           value={currentValue}
-          onSegmentedControlChange={onSegmentedControlChange}
+          onUpdate={onSegmentedControlUpdate}
           aria-label="Choose an Option"
         >
           <PSegmentedControlItem value={1}>Option 1</PSegmentedControlItem>
@@ -147,7 +146,7 @@ export const FormsPage = (): JSX.Element => {
         <PDivider className="divider" />
       </PFlexItem>
       <PFlexItem>
-        <PStepperHorizontal onStepChange={handleStepChange}>
+        <PStepperHorizontal onUpdate={handleStepUpdate}>
           {steps.map(({ state, name }) => (
             <PStepperHorizontalItem key={name} state={state}>
               {name}
@@ -160,7 +159,7 @@ export const FormsPage = (): JSX.Element => {
         <PButtonGroup>
           <PButton
             icon="arrow-head-left"
-            variant="tertiary"
+            variant="secondary"
             onClick={() => onNextPrevStep('prev')}
             disabled={getActiveStepIndex(steps) === 0}
           >
@@ -180,15 +179,15 @@ export const FormsPage = (): JSX.Element => {
         <PDivider className="divider" />
       </PFlexItem>
       <PFlexItem>
-        {/*Checking the Checkbox makes the headline appear*/}
-        {checkBox ? <PHeadline variant="headline-4">Checkbox Works</PHeadline> : ''}
+        {/*Checking the Checkbox makes the heading appear*/}
+        {checkBox ? <PHeading size="medium">Checkbox Works</PHeading> : ''}
         <PCheckboxWrapper label="Some label" hideLabel={false}>
           <input data-testid="checkbox" type="checkbox" name="TestBox" onInput={(e) => handleCheckBox(e)} />
         </PCheckboxWrapper>
       </PFlexItem>
       <PFlexItem className="contentWrapperSmall">
-        {/* Clicking the Radiobutton makes the headline appear*/}
-        {radioButton ? <PHeadline variant="headline-4">Radio Works</PHeadline> : ''}
+        {/* Clicking the Radiobutton makes the heading appear*/}
+        {radioButton ? <PHeading size="medium">Radio Works</PHeading> : ''}
         <PRadioButtonWrapper label="Some label" hideLabel={false}>
           <input data-testid="radiobutton" type="radio" name="RadioButton" onInput={(e) => handleRadioButton(e)} />
         </PRadioButtonWrapper>
@@ -204,8 +203,8 @@ export const FormsPage = (): JSX.Element => {
         </form>
       </PFlexItem>
       <PFlexItem className="contentWrapperSmall">
-        {/*The headline changes according to the text field input*/}
-        <PHeadline variant="headline-4">{textField}</PHeadline>
+        {/*The heading changes according to the text field input*/}
+        <PHeading size="medium">{textField}</PHeading>
         <PTextFieldWrapper label="Test TextField" hideLabel={false}>
           <input data-testid="input" type="text" name="Textfield" onChange={(e) => handleTextField(e)} />
         </PTextFieldWrapper>
