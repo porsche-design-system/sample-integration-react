@@ -8,7 +8,6 @@ import {
   PDivider,
   PGrid,
   PGridItem, PHeading,
-  PHeadline,
   PIcon,
   PLink,
   PLinkPure,
