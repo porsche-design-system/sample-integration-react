@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import type { AccordionChangeEvent, PageChangeEvent, TabChangeEvent } from '@porsche-design-system/components-react';
+import type { AccordionUpdateEvent, PaginationUpdateEvent, TabsUpdateEvent } from '@porsche-design-system/components-react';
 import {
   PAccordion,
   PButton,
@@ -7,7 +7,7 @@ import {
   PButtonPure,
   PDivider,
   PGrid,
-  PGridItem,
+  PGridItem, PHeading,
   PHeadline,
   PIcon,
   PLink,
@@ -23,7 +23,7 @@ import {
 import './CollectionPage.scss';
 
 export const CollectionPage = (): JSX.Element => {
-  const [showHeadline, setShowHeadline] = useState(false);
+  const [showHeading, setShowHeading] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [activePage, setActivePage] = useState(1);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -33,30 +33,30 @@ export const CollectionPage = (): JSX.Element => {
   const [toastCounter, setToastCounter] = useState(1);
 
   const onButtonClick = useCallback(() => {
-    setShowHeadline(true);
+    setShowHeading(true);
     setIsDisabled((prev) => !prev);
   }, []);
 
   const onButtonPureClick = useCallback(() => {
-    setShowHeadline(false);
+    setShowHeading(false);
     setIsDisabled((prev) => !prev);
   }, []);
 
   const openModal = useCallback(() => setIsModalOpen(true), []);
-  const onModalClose = useCallback(() => setIsModalOpen(false), []);
-  const onPageChange = useCallback((ev: CustomEvent<PageChangeEvent>) => setActivePage(ev.detail.page), []);
-  const onTabChange = useCallback((ev: CustomEvent<TabChangeEvent>) => setActiveTab(ev.detail.activeTabIndex), []);
-  const onAccordion1Change = useCallback((e: CustomEvent<AccordionChangeEvent>) => {
+  const onModalDismiss = useCallback(() => setIsModalOpen(false), []);
+  const onPageUpdate = useCallback((ev: CustomEvent<PaginationUpdateEvent>) => setActivePage(ev.detail.page), []);
+  const onTabUpdate = useCallback((ev: CustomEvent<TabsUpdateEvent>) => setActiveTab(ev.detail.activeTabIndex), []);
+  const onAccordion1Update = useCallback((e: CustomEvent<AccordionUpdateEvent>) => {
     setIsAccordion1Open(e.detail.open);
   }, []);
-  const onAccordion2Change = useCallback((e: CustomEvent<AccordionChangeEvent>) => {
+  const onAccordion2Update = useCallback((e: CustomEvent<AccordionUpdateEvent>) => {
     setIsAccordion2Open(e.detail.open);
   }, []);
 
   const { addMessage } = useToastManager();
 
   const queueToast = () => {
-    addMessage({ text: `Some message ${toastCounter}`, state: 'neutral' });
+    addMessage({ text: `Some message ${toastCounter}`, state: 'info' });
     setToastCounter((prev) => prev + 1);
   };
 
@@ -67,7 +67,7 @@ export const CollectionPage = (): JSX.Element => {
   return (
     <PGrid>
       <PGridItem size={12}>
-        <PHeadline variant="headline-4">Buttons</PHeadline>
+        <PHeading size="medium">Buttons</PHeading>
         <PDivider className="divider" />
         <PButton disabled={isDisabled} onClick={onButtonClick}>
           Submit
@@ -78,20 +78,20 @@ export const CollectionPage = (): JSX.Element => {
           Dismiss
         </PButtonPure>
       </PGridItem>
-      {showHeadline && (
+      {showHeading && (
         <PGridItem size={12} className="contentWrapperSmall">
           {/* To illustrate working custom elements during the tests the buttons insert/dismiss a headline */}
-          <PHeadline variant="headline-4">Headline appears through Button click</PHeadline>
+          <PHeading size="medium">Heading appears through Button click</PHeading>
         </PGridItem>
       )}
 
       <PGridItem size={12} className="contentWrapperSmall">
         <PButton onClick={openModal}>Open Modal</PButton>
-        <PModal heading="Some Heading" open={isModalOpen} onClose={onModalClose}>
+        <PModal heading="Some Heading" open={isModalOpen} onDismiss={onModalDismiss}>
           <PText>Some Content</PText>
           <PButtonGroup className="footer">
             <PButton>Save</PButton>
-            <PButton variant="tertiary" onClick={onModalClose}>
+            <PButton variant="secondary" onClick={onModalDismiss}>
               Close
             </PButton>
           </PButtonGroup>
@@ -104,7 +104,7 @@ export const CollectionPage = (): JSX.Element => {
 
       <PGridItem size={12}>
         <PDivider className="divider" />
-        <PHeadline variant="headline-4">Links</PHeadline>
+        <PHeading size="medium">Links</PHeading>
         <PDivider className="divider" />
 
         <PLink>
@@ -124,9 +124,9 @@ export const CollectionPage = (): JSX.Element => {
 
       <PGridItem size={12}>
         <PDivider className="divider" />
-        <PHeadline variant="headline-4">Tabs</PHeadline>
+        <PHeading size="medium">Tabs</PHeading>
         <PDivider className="divider" />
-        <PTabsBar activeTabIndex={activeTab} onTabChange={onTabChange}>
+        <PTabsBar activeTabIndex={activeTab} onUpdate={onTabUpdate}>
           <button>Tab 1</button>
           <button>Tab 2</button>
           <button>Tab 3</button>
@@ -135,7 +135,7 @@ export const CollectionPage = (): JSX.Element => {
 
       <PGridItem size={12}>
         <PDivider className="divider" />
-        <PHeadline variant="headline-4">Icons</PHeadline>
+        <PHeading size="medium">Icons</PHeading>
         <PDivider className="divider" />
         <PSpinner size="small" />
       </PGridItem>
@@ -145,16 +145,16 @@ export const CollectionPage = (): JSX.Element => {
 
       <PGridItem size={12}>
         <PDivider className="divider" />
-        <PHeadline variant="headline-4">Accordion</PHeadline>
+        <PHeading size="medium">Accordion</PHeading>
         <PDivider className="divider" />
       </PGridItem>
       <PGridItem size={12}>
         <div className="accordion-wrapper">
-          <PAccordion heading="Some Heading" tag="h3" open={isAccordion1Open} onAccordionChange={onAccordion1Change}>
+          <PAccordion heading="Some Heading" tag="h3" open={isAccordion1Open} onUpdate={onAccordion1Update}>
             <PText>{content}</PText>
             <PText>{content}</PText>
           </PAccordion>
-          <PAccordion heading="Some Heading" tag="h3" open={isAccordion2Open} onAccordionChange={onAccordion2Change}>
+          <PAccordion heading="Some Heading" tag="h3" open={isAccordion2Open} onUpdate={onAccordion2Update}>
             <PText>{content}</PText>
             <PText>{content}</PText>
           </PAccordion>
@@ -163,7 +163,7 @@ export const CollectionPage = (): JSX.Element => {
 
       <PGridItem size={12}>
         <PDivider className="divider" />
-        <PHeadline variant="headline-4">Popover</PHeadline>
+        <PHeading size="medium">Popover</PHeading>
         <PDivider className="divider" />
       </PGridItem>
       <PGridItem size={12}>
@@ -177,9 +177,9 @@ export const CollectionPage = (): JSX.Element => {
 
       <PGridItem size={12}>
         <PDivider className="divider" />
-        <PHeadline variant="headline-4">You are on Page {activePage} Page</PHeadline>
+        <PHeading size="medium">You are on Page {activePage}</PHeading>
         <PDivider className="divider" />
-        <PPagination totalItemsCount={11} itemsPerPage={3} activePage={activePage} onPageChange={onPageChange} />
+        <PPagination totalItemsCount={11} itemsPerPage={3} activePage={activePage} onUpdate={onPageUpdate} />
       </PGridItem>
     </PGrid>
   );

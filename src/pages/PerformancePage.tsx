@@ -5,7 +5,7 @@ import {
   PSelectWrapper,
   PGrid,
   PGridItem,
-  PHeadline,
+  PHeading,
 } from '@porsche-design-system/components-react';
 import { ChangeEvent, useState } from 'react';
 
@@ -43,7 +43,7 @@ export const PerformancePage = () => {
     <>
       <PGrid>
         <PGridItem size={12}>
-          <PHeadline variant="headline-4">Choose Element and Count</PHeadline>
+          <PHeading size="medium">Choose Element and Count</PHeading>
         </PGridItem>
         <PGridItem size={4}>
           <PSelectWrapper>
