@@ -1608,27 +1608,27 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@porsche-design-system/components-js@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.4.0.tgz#20adbe3a06ed176c463c567cddf3615951370885"
-  integrity sha512-uxQQnUHpvkie9B4b1wG3J54Trusz07R0P3dnLSP2aEeN+ihsJ6MkD4JA3T9ud6pFguHQtq8r1SCmQJO6n84MBA==
+"@porsche-design-system/components-js@3.5.0-rc.0":
+  version "3.5.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.5.0-rc.0.tgz#8d742ce24c18c9746b47e73310faa8a017e1ac80"
+  integrity sha512-I7C6qRLaeib+o8s8ihSvTj2c2uHZTU03sg9IeYFf/Zulg+Dhnt3AlAousP0VucVPSooFdV3HWeDFAayBFPWG9A==
 
 "@porsche-design-system/components-js@npm:@porsche-design-system/components-js@2.21.0":
   version "2.21.0"
   resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-2.21.0.tgz#916d523189ebaed53e73ae5ad48db97f4fb54d20"
   integrity sha512-qgbiTxKXlkn1iygGkvbcq4sSm2l6+MdUN35vd5m5dexwVS1hgcLcYH5sXnaf3G1wrNtvLeZ4Tt7vct7We6Q5pQ==
 
-"@porsche-design-system/components-js_3@npm:@porsche-design-system/components-js@3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.1.0.tgz#505bd5deb23934c011c77d1595b6c3d4b067a6c3"
-  integrity sha512-m/J24IQFXN0fo1xjtpmpWPa3FdIRWWURT85bp/3QGN1RvcmqT8uqlVwEqos6fncfnAxDCht0CB3+Ncm2ov8y0w==
+"@porsche-design-system/components-js_3@npm:@porsche-design-system/components-js@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.3.0.tgz#d34d724991694cef875da8227b338eed8a3a5738"
+  integrity sha512-9NIffl5nZKc6DlPylGj6LyKSEFvPceTbO/fMQNsrapFxZqKAjUgtg8+XygO3Xhv3TZXAZPIzhekyYEfMNdBAwg==
 
-"@porsche-design-system/components-react@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-react/-/components-react-3.4.0.tgz#fca689c2dff5dd92240aa7c78b99fb8118b15f8f"
-  integrity sha512-O4IlpPLd38I6noBBNjp7Vn3jgi2/8Hx4/ejrmYquy7Ots8bxodipjdVDu8Nv88cZVZdw+5JACR0WsnyfHzADYw==
+"@porsche-design-system/components-react@3.5.0-rc.0":
+  version "3.5.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-react/-/components-react-3.5.0-rc.0.tgz#b5b6e091fcd9898cdba9b60151a4179490ef7882"
+  integrity sha512-Xl8V8VdtfhcLrOSa9BOihiHuFgtI9W49BozrcRGifu4iBjWhsvnDF1upFwypYrVrcDXkHLfFORWYkMYG1ues5A==
   dependencies:
-    "@porsche-design-system/components-js" "3.4.0"
+    "@porsche-design-system/components-js" "3.5.0-rc.0"
 
 "@porsche-design-system/prettier-config@^1.0.0":
   version "1.0.1"
@@ -1652,15 +1652,15 @@
   resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porsche/globaldatalayer/-/@porsche/globaldatalayer-4.0.1.tgz#849b3d31563bb9106c5a27d77dcb2f08d099d991"
   integrity sha512-ZyLEa3ERr3spclscodJGSTWuh1flyRnkONk3YBOWhFIkFiZ9hU+af2GklaTu+4HfzJK/bfPMPWfcJyck5DvgLg==
 
-"@porschehn/navigation@3.1.4":
-  version "3.1.4"
-  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porschehn/navigation/-/@porschehn/navigation-3.1.4.tgz#54bb5f6ac85625b5fee956106e10ebc2d93c56c8"
-  integrity sha512-7n6vHfdyewFSRouuC3NpcbMOkBO9Dju7Se5j1CZgfnjrteD+Ux0ubwoGXKHScEY6MQ2FINsPxzdMw8HqIFbJcg==
+"@porschehn/navigation@3.2.0":
+  version "3.2.0"
+  resolved "https://porscheui.jfrog.io/porscheui/api/npm/npm/@porschehn/navigation/-/@porschehn/navigation-3.2.0.tgz#1e40097b37058930a0ae3214cda3a56a62eec93c"
+  integrity sha512-yhlFB3NoA6FKsyxQ7jm3jTQhsaB15UxubhCjyugfprMcLnatJM0g+Qf5/KnHoOkCWm2Ufj269Lhx7sjc5OJFwg==
   dependencies:
     "@auth0/auth0-spa-js" "^2.0.4"
     "@openid/appauth" "^1.3.1"
     "@porsche-design-system/components-js" "npm:@porsche-design-system/components-js@2.21.0"
-    "@porsche-design-system/components-js_3" "npm:@porsche-design-system/components-js@3.1.0"
+    "@porsche-design-system/components-js_3" "npm:@porsche-design-system/components-js@3.3.0"
     "@porsche-design-system/utilities" "npm:@porsche-design-system/utilities@5.4.1"
     "@porsche/globaldatalayer" "^4.0.0"
     "@porsche/globaldatalayer-events" "^0.1.18"
@@ -1668,10 +1668,10 @@
     "@stencil/store" "^2.0.5"
     uuid "^9.0.0"
 
-"@remix-run/router@1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.7.1.tgz#fea7ac35ae4014637c130011f59428f618730498"
-  integrity sha512-bgVQM4ZJ2u2CM8k1ey70o1ePFXsEzYVZoWghh6WjM8p59jQ7HxzbHW4SbnWFG7V9ig9chLawQxDTZ3xzOF8MkQ==
+"@remix-run/router@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.7.2.tgz#cba1cf0a04bc04cb66027c51fa600e9cbc388bc8"
+  integrity sha512-7Lcn7IqGMV+vizMPoEl5F0XDshcdDYtMI6uJLQdQz5CfZAwy3vvGKYSUk789qndt5dEC4HfSjviSYlSoHGL2+A==
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
@@ -1876,10 +1876,10 @@
     lz-string "^1.4.4"
     pretty-format "^27.0.2"
 
-"@testing-library/jest-dom@^5.16.5":
-  version "5.16.5"
-  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.16.5.tgz#3912846af19a29b2dbf32a6ae9c31ef52580074e"
-  integrity sha512-N5ixQ2qKpi5OLYfwQmUb/5mSV9LneAcaUfp32pn4yCnpb8r/Yz0pXFPck21dIicKmi+ta5WRAknkZCfA8refMA==
+"@testing-library/jest-dom@^5.17.0":
+  version "5.17.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.17.0.tgz#5e97c8f9a15ccf4656da00fecab505728de81e0c"
+  integrity sha512-ynmNeT7asXyH3aSVv4vvX4Rb+0qjOhdNHnO/3vuZNqPmhDpV/+rCSGwQ7bLcmU2cJ4dvoheIO85LQj0IbJHEtg==
   dependencies:
     "@adobe/css-tools" "^4.0.1"
     "@babel/runtime" "^7.9.2"
@@ -2125,10 +2125,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.2.tgz#8fd63447e3f99aba6c3168fd2ec4580d5b97886f"
   integrity sha512-CTO/wa8x+rZU626cL2BlbCDzydgnFNgc19h4YvizpTO88MFQxab8wqisxaofQJ/9bLGugRdWIuX/TbIs6VVF6g==
 
-"@types/node@^20.4.2":
-  version "20.4.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.4.2.tgz#129cc9ae69f93824f92fac653eebfb4812ab4af9"
-  integrity sha512-Dd0BYtWgnWJKwO1jkmTrzofjK2QXXcai0dmtzvIBhcA+RsG5h8R3xlyta0kGOZRNfL9GuRtb1knmPEhQrePCEw==
+"@types/node@^20.4.4":
+  version "20.4.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.4.4.tgz#c79c7cc22c9d0e97a7944954c9e663bcbd92b0cb"
+  integrity sha512-CukZhumInROvLq3+b5gLev+vgpsIqC2D0deQr/yS1WnxvmYLlJXZpaQrQiseMY+6xusl79E04UjWoqyr+t1/Ew==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -2209,10 +2209,10 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@^18.2.15":
-  version "18.2.15"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.15.tgz#14792b35df676c20ec3cf595b262f8c615a73066"
-  integrity sha512-oEjE7TQt1fFTFSbf8kkNuc798ahTUzn3Le67/PWjE8MAfYAD/qB7O8hSTcromLFqHCt9bcdOg5GXMokzTjJ5SA==
+"@types/react@^18.2.16":
+  version "18.2.16"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.16.tgz#403dda0e933caccac9efde569923239ac426786c"
+  integrity sha512-LLFWr12ZhBJ4YVw7neWLe6Pk7Ey5R9OCydfuMsz1L8bZxzaawJj2p06Q8/EFEHDeTBQNFLF62X+CG7B2zIyu0Q==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -7884,20 +7884,20 @@ react-refresh@^0.11.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
 
-react-router-dom@^6.14.1:
-  version "6.14.1"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.14.1.tgz#0ad7ba7abdf75baa61169d49f096f0494907a36f"
-  integrity sha512-ssF6M5UkQjHK70fgukCJyjlda0Dgono2QGwqGvuk7D+EDGHdacEN3Yke2LTMjkrpHuFwBfDFsEjGVXBDmL+bWw==
+react-router-dom@^6.14.2:
+  version "6.14.2"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.14.2.tgz#88f520118b91aa60233bd08dbd3fdcaea3a68488"
+  integrity sha512-5pWX0jdKR48XFZBuJqHosX3AAHjRAzygouMTyimnBPOLdY3WjzUSKhus2FVMihUFWzeLebDgr4r8UeQFAct7Bg==
   dependencies:
-    "@remix-run/router" "1.7.1"
-    react-router "6.14.1"
+    "@remix-run/router" "1.7.2"
+    react-router "6.14.2"
 
-react-router@6.14.1:
-  version "6.14.1"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.14.1.tgz#5e82bcdabf21add859dc04b1859f91066b3a5810"
-  integrity sha512-U4PfgvG55LdvbQjg5Y9QRWyVxIdO1LlpYT7x+tMAxd9/vmiPuJhIwdxZuIQLN/9e3O4KFDHYfR9gzGeYMasW8g==
+react-router@6.14.2:
+  version "6.14.2"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.14.2.tgz#1f60994d8c369de7b8ba7a78d8f7ec23df76b300"
+  integrity sha512-09Zss2dE2z+T1D03IheqAFtK4UzQyX8nFPWx6jkwdYzGLXd5ie06A6ezS2fO6zJfEb/SpG6UocN2O1hfD+2urQ==
   dependencies:
-    "@remix-run/router" "1.7.1"
+    "@remix-run/router" "1.7.2"
 
 react-scripts@^5.0.1:
   version "5.0.1"
@@ -8254,10 +8254,10 @@ sass-loader@^12.3.0:
     klona "^2.0.4"
     neo-async "^2.6.2"
 
-sass@^1.63.6:
-  version "1.63.6"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.63.6.tgz#481610e612902e0c31c46b46cf2dad66943283ea"
-  integrity sha512-MJuxGMHzaOW7ipp+1KdELtqKbfAWbH7OLIdoSMnVe3EXPMTmxTmlaZDCTsgIpPCs3w99lLo9/zDKkOrJuT5byw==
+sass@^1.64.1:
+  version "1.64.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.64.1.tgz#6a46f6d68e0fa5ad90aa59ce025673ddaa8441cf"
+  integrity sha512-16rRACSOFEE8VN7SCgBu1MpYCyN7urj9At898tyzdXFhC+a+yOX5dXwAR7L8/IdPJ1NB8OYoXmD55DM30B2kEQ==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
