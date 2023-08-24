@@ -1,5 +1,5 @@
 import { componentsReady } from '@porsche-design-system/components-react';
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
 import { FormsPage } from '../pages';
 import { renderWithProvider } from './helper';
 
@@ -22,7 +22,7 @@ describe('FormsPage', () => {
     const input = getByTestId('checkbox');
 
     input.click();
-    expect(getByText('Checkbox Works')).toBeInTheDocument();
+    waitFor(() => expect(getByText('Checkbox Works')).toBeInTheDocument());
   });
 
   it('heading should be displayed after click on RadioButton', async () => {
@@ -31,7 +31,7 @@ describe('FormsPage', () => {
     const input = getByTestId('radiobutton');
 
     input.click();
-    expect(getByText('Radio Works')).toBeInTheDocument();
+    waitFor(() => expect(getByText('Radio Works')).toBeInTheDocument());
   });
 
   it('heading should be changed according the typed value', async () => {

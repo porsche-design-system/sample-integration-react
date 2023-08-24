@@ -2,5 +2,8 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import '@porsche-design-system/components-react/jsdom-polyfill';
+
+// to silence deprecation warnings
+jest.spyOn(console, 'warn').mockImplementation();
