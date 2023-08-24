@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { componentsReady } from '@porsche-design-system/components-react';
 import { fireEvent } from '@testing-library/react';
 import { CollectionPage } from '../pages';

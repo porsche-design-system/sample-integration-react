@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom';
 import { SingleComponent } from '../components';
 import { componentsReady } from '@porsche-design-system/components-react';
 import { renderWithProvider } from './helper';
