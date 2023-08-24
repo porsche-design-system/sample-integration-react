@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://porsche-design-system.github.io/sample-integration-react",
   "dependencies": {
-    "@porsche-design-system/components-react": "3.6.0-rc.0",
+    "@porsche-design-system/components-react": "3.6.0-rc.1",
     "@porsche-design-system/utilities": "5.4.1",
     "@porschehn/navigation": "3.2.3",
     "postcss-normalize": "^10.0.1",
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@porsche-design-system/prettier-config": "^1.0.0",
-    "@testing-library/jest-dom": "^6.1.1",
+    "@testing-library/jest-dom": "^6.1.2",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.5.4",
