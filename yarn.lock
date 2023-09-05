@@ -1671,10 +1671,10 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@porsche-design-system/components-js@3.6.1-rc.0":
-  version "3.6.1-rc.0"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.6.1-rc.0.tgz#a92a8595e557be93b6a6774dede73f90961cb44f"
-  integrity sha512-K9KkNCI0ttNJt1tHW2XINIYT7baDbNkr0BH9BVgousQjShjBl45MnS9zVdZZd3osfYc65IjauvWHchQUQoG6YQ==
+"@porsche-design-system/components-js@3.7.0-rc.0":
+  version "3.7.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.7.0-rc.0.tgz#e17134da8b9432ec61111fb765c12eef2dde5be7"
+  integrity sha512-0qxzW5cSibY6Th2qq9rJoOUtL/LgpXDlRbWw66Pyu8qhq8lFycHmo1S+a5ugUdulXqlAgyYyB7/jwRE15K+lFA==
 
 "@porsche-design-system/components-js@npm:@porsche-design-system/components-js@2.21.0":
   version "2.21.0"
@@ -1686,12 +1686,12 @@
   resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.5.0.tgz#c32cd3143030d18f812ae1674ff1a689bd722b39"
   integrity sha512-GvxHudeW4HP+IKO6ZPDFQWR8deONd83UJdB6cU4FQZ3vubCYB3oslNqSrjqbSB3740vKZVjJe5F8UHO3ytygkw==
 
-"@porsche-design-system/components-react@3.6.1-rc.0":
-  version "3.6.1-rc.0"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-react/-/components-react-3.6.1-rc.0.tgz#e3cbdd8408ead58638716a9d2c66c97042a22ebe"
-  integrity sha512-qW3YZhz6IF20LQM7Q+JPXRmql6CpDa4d6y+rFIlPAsvSm0gnWuAnl/kauzpNqPY6XZctmUS8RsmKHZrFnHgSTw==
+"@porsche-design-system/components-react@3.7.0-rc.0":
+  version "3.7.0-rc.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-react/-/components-react-3.7.0-rc.0.tgz#9343204026979183f343ff0d0a8d17de848fade0"
+  integrity sha512-tqiS+h9OfQDJ+QKQI/B174lgv+moqeLO5nhFOQ1PKlP+AMP3h/0Qq8fdmVbl924qG0E62JEwOzLddgUYZlDsNw==
   dependencies:
-    "@porsche-design-system/components-js" "3.6.1-rc.0"
+    "@porsche-design-system/components-js" "3.7.0-rc.0"
 
 "@porsche-design-system/prettier-config@^1.0.0":
   version "1.0.1"
@@ -2153,9 +2153,9 @@
     pretty-format "^29.0.0"
 
 "@types/jquery@^3.5.5":
-  version "3.5.17"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.17.tgz#c38d964441f678cd358afb92f5688ecfcb6aaa2b"
-  integrity sha512-U40tNEAGSTZ7R1OC6kGkD7f4TKW5DoVx6jd9kTB9mo5truFMi1m9Yohnw9kl1WpTPvDdj7zAw38LfCHSqnk5kA==
+  version "3.5.18"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.18.tgz#2a4979866954e601361ddc62ea304c9e46311b77"
+  integrity sha512-sNm7O6LECFhHmF+3KYo6QIl2fIbjlPYa0PDgDQwfOaEJzwpK20Eub9Ke7VKkGsSJ2K0HUR50S266qYzRX4GlSw==
   dependencies:
     "@types/sizzle" "*"
 
@@ -2179,10 +2179,15 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-1.3.2.tgz#93e25bf9ee75fe0fd80b594bc4feb0e862111b5a"
   integrity sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
 
-"@types/node@*", "@types/node@^20.5.4":
+"@types/node@*":
   version "20.5.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.5.4.tgz#4666fb40f9974d60c53c4ff554315860ba4feab8"
   integrity sha512-Y9vbIAoM31djQZrPYjpTLo0XlaSwOIsrlfE3LpulZeRblttsLQRFRlBAppW0LOxyT3ALj2M5vU1ucQQayQH3jA==
+
+"@types/node@^20.5.9":
+  version "20.5.9"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.5.9.tgz#a70ec9d8fa0180a314c3ede0e20ea56ff71aed9a"
+  integrity sha512-PcGNd//40kHAS3sTlzKB9C9XL4K0sTup8nbG5lC14kzEteTNuAFh9u5nA0o5TWnSG2r/JNPRXFVcHJIIeRlmqQ==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -7752,10 +7757,10 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prettier@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.2.tgz#78fcecd6d870551aa5547437cdae39d4701dca5b"
-  integrity sha512-o2YR9qtniXvwEZlOKbveKfDQVyqxbEIWn48Z8m3ZJjBjcCmUy3xZGIv+7AkaeuaTr6yPXJjwv07ZWlsWbEy1rQ==
+prettier@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.0.3.tgz#432a51f7ba422d1469096c0fdc28e235db8f9643"
+  integrity sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==
 
 pretty-bytes@^5.3.0, pretty-bytes@^5.4.1:
   version "5.6.0"
@@ -9275,10 +9280,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@~5.1.6:
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.1.6.tgz#02f8ac202b6dad2c0dd5e0913745b47a37998274"
-  integrity sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==
+typescript@~5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.2.tgz#5ebb5e5a5b75f085f22bc3f8460fba308310fa78"
+  integrity sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
