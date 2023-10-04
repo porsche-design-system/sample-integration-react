@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "https://porsche-design-system.github.io/sample-integration-react",
   "dependencies": {
-    "@porsche-design-system/components-react": "3.7.0-rc.1",
+    "@porsche-design-system/components-react": "3.7.0-rc.2",
     "@porsche-design-system/utilities": "5.4.1",
-    "@porschehn/navigation": "3.2.4",
+    "@porschehn/navigation": "3.2.5",
     "postcss-normalize": "^10.0.1",
     "react": "^18.2.0",
     "react-app-polyfill": "^3.0.0",
@@ -25,7 +25,7 @@
     "@types/react-router-dom": "^5.3.3",
     "prettier": "^3.0.3",
     "react-scripts": "^5.0.1",
-    "sass": "^1.67.0",
+    "sass": "^1.68.0",
     "serve": "^14.2.1",
     "typescript": "~5.2.2"
   },
