@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksample_integration_react=self.webpackChunksample_integration_react||[]).push([[2713],{2713:function(e,a,t){e.exports=t.p+"static/media/shop-helper-f5127373.js.7e982b0abda471e93547.map"}}]);

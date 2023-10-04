@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksample_integration_react=self.webpackChunksample_integration_react||[]).push([[4909],{14909:function(e,n,t){t.r(n),t.d(n,{f:function(){return a}});var a=(0,t(66921).d)({savedSearchesCount:0,savedVehiclesCount:0})}}]);
+//# sourceMappingURL=4909.1809a600.chunk.js.map

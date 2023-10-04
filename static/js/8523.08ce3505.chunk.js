@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksample_integration_react=self.webpackChunksample_integration_react||[]).push([[8523],{48523:function(e,a,s){e.exports=s.p+"static/media/single-drawer-animation-sequences-e3d73dd8.js.55f407b88202c10183bc.map"}}]);

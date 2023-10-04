@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksample_integration_react=self.webpackChunksample_integration_react||[]).push([[6440],{16440:function(a,e,t){a.exports=t.p+"static/media/app-globals-d5619e9b.js.ad2515b257801ab8f041.map"}}]);
