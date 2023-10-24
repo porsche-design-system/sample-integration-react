@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksample_integration_react=self.webpackChunksample_integration_react||[]).push([[5633],{5633:function(a,e,t){a.exports=t.p+"static/media/animations-8383aa25.js.7b110b6934a2818aae76.map"}}]);

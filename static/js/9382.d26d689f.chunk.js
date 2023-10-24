@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksample_integration_react=self.webpackChunksample_integration_react||[]).push([[9382],{59382:function(e,a,t){e.exports=t.p+"static/media/double-drawer-animation-sequences-bda860c6.js.e42749eb4923d00d87a2.map"}}]);

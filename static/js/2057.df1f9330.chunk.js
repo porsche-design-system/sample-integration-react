@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksample_integration_react=self.webpackChunksample_integration_react||[]).push([[2057],{42057:function(e,a,t){e.exports=t.p+"static/media/phn-side-drawer.entry.js.6643dd076b0dab072681.map"}}]);
