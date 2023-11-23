@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksample_integration_react=self.webpackChunksample_integration_react||[]).push([[6444],{66444:function(e,t,s){e.exports=s.p+"static/media/menu-items-service-7741c024.js.d900613066d86795611e.map"}}]);
