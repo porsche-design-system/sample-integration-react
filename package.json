@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://porsche-design-system.github.io/sample-integration-react",
   "dependencies": {
-    "@porsche-design-system/components-react": "3.9.0-rc.0",
+    "@porsche-design-system/components-react": "3.10.0-rc.5",
     "@porsche-design-system/utilities": "5.4.1",
     "@porschehn/navigation": "3.3.0",
     "postcss-normalize": "^10.0.1",
@@ -53,5 +53,9 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@1.22.19",
+  "volta": {
+    "node": "20.10.0",
+    "yarn": "1.22.21"
+  }
 }
