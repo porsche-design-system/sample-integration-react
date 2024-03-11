@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sample-integration-react/static/css/main.180a30a5.css",
-    "main.js": "/sample-integration-react/static/js/main.183179e6.js",
+    "main.js": "/sample-integration-react/static/js/main.a274ab46.js",
     "polyfills-dom.js": "/sample-integration-react/static/js/polyfills-dom.2d2a2002.chunk.js",
     "polyfills-core-js.js": "/sample-integration-react/static/js/polyfills-core-js.4671371b.chunk.js",
     "static/js/2749.2798b5fc.chunk.js": "/sample-integration-react/static/js/2749.2798b5fc.chunk.js",
@@ -102,9 +102,9 @@
     "static/media/phn-single-drawer.entry.js.map": "/sample-integration-react/static/media/phn-single-drawer.entry.js.27aa1f67dbee7d240886.map",
     "static/media/menu-items-service-0969229a.js.map": "/sample-integration-react/static/media/menu-items-service-0969229a.js.ad808e95e4c5c0b01f7f.map",
     "static/media/helper-76937d0b.js.map": "/sample-integration-react/static/media/helper-76937d0b.js.ed5a9e47e248e422839c.map",
+    "index.html": "/sample-integration-react/index.html",
     "static/media/phn-menu-item.entry.js.map": "/sample-integration-react/static/media/phn-menu-item.entry.js.401992d9f82b352f859a.map",
     "static/media/animation-manager-2e28abcf.js.map": "/sample-integration-react/static/media/animation-manager-2e28abcf.js.deee9c0c037f7cd12a62.map",
-    "index.html": "/sample-integration-react/index.html",
     "static/media/phn-country-recommender.entry.js.map": "/sample-integration-react/static/media/phn-country-recommender.entry.js.4ed487982523b6ffe5c6.map",
     "static/media/routing-manager-2bba85b2.js.map": "/sample-integration-react/static/media/routing-manager-2bba85b2.js.787be38681f613582160.map",
     "static/media/ab-testing-constructor-service-d4355ec8.js.map": "/sample-integration-react/static/media/ab-testing-constructor-service-d4355ec8.js.b51855711f449be94587.map",
@@ -137,7 +137,7 @@
     "static/media/finder-state-store-313ab47f.js.map": "/sample-integration-react/static/media/finder-state-store-313ab47f.js.d0694bf8011fa60ca92c.map",
     "static/media/index.js.map": "/sample-integration-react/static/media/index.js.b1e4ac539ebabcef389c.map",
     "main.180a30a5.css.map": "/sample-integration-react/static/css/main.180a30a5.css.map",
-    "main.183179e6.js.map": "/sample-integration-react/static/js/main.183179e6.js.map",
+    "main.a274ab46.js.map": "/sample-integration-react/static/js/main.a274ab46.js.map",
     "polyfills-dom.2d2a2002.chunk.js.map": "/sample-integration-react/static/js/polyfills-dom.2d2a2002.chunk.js.map",
     "polyfills-core-js.4671371b.chunk.js.map": "/sample-integration-react/static/js/polyfills-core-js.4671371b.chunk.js.map",
     "2749.2798b5fc.chunk.js.map": "/sample-integration-react/static/js/2749.2798b5fc.chunk.js.map",
@@ -183,6 +183,6 @@
   },
   "entrypoints": [
     "static/css/main.180a30a5.css",
-    "static/js/main.183179e6.js"
+    "static/js/main.a274ab46.js"
   ]
 }
