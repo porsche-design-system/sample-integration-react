@@ -10,7 +10,11 @@ import {
   PCheckboxWrapper,
   PDivider,
   PFlex,
-  PFlexItem, PHeading,
+  PFlexItem,
+  PHeading,
+  PMultiSelect,
+  PMultiSelectOption,
+  PPinCode,
   PRadioButtonWrapper,
   PSegmentedControl,
   PSegmentedControlItem,
@@ -28,11 +32,11 @@ type StepperHorizontalItemProps = {
 };
 
 export const FormsPage = (): JSX.Element => {
-  const [select, setSelect] = useState('Change this Heading by selecting');
-  const [checkBox, setCheckBox] = useState(false);
-  const [radioButton, setRadioButton] = useState(false);
-  const [textField, setTextField] = useState('Change this Heading by typing');
-  const [currentValue, setCurrentValue] = useState(1);
+  const [selectValue, setSelectValue] = useState('Change this Heading by selecting');
+  const [isCheckboxActive, setIsCheckboxActive] = useState(false);
+  const [isRadioButtonActive, setIsRadioButtonActive] = useState(false);
+  const [textFieldValue, setTextFieldValue] = useState('Change this Heading by typing');
+  const [segmentedControlValue, setSegementedControlValue] = useState(1);
   const [steps, setSteps] = useState<StepperHorizontalItemProps[]>([
     {
       state: 'current',
@@ -53,28 +57,24 @@ export const FormsPage = (): JSX.Element => {
   ];
 
   const onSegmentedControlUpdate = useCallback((e: CustomEvent<SegmentedControlUpdateEvent>) => {
-    setCurrentValue(e.detail.value as number);
+    setSegementedControlValue(e.detail.value as number);
   }, []);
 
-  const handleSelect = (e: ChangeEvent<HTMLSelectElement>): void => {
-    setSelect(e.target.value);
-  };
+  const onSelectChange = useCallback((e: ChangeEvent<HTMLSelectElement>): void => {
+    setSelectValue(e.target.value);
+  }, []);
 
-  const handleCheckBox = (e: FormEvent<HTMLInputElement>): void => {
-    if (checkBox) {
-      setCheckBox(false);
-    } else {
-      setCheckBox(true);
-    }
-  };
+  const onCheckBoxInput = useCallback((e: FormEvent<HTMLInputElement>): void => {
+    setIsCheckboxActive((prev) => !prev);
+  }, []);
 
-  const handleRadioButton = (e: FormEvent<HTMLInputElement>): void => {
-    setRadioButton(true);
-  };
+  const onRadioButtonInput = useCallback((e: FormEvent<HTMLInputElement>): void => {
+    setIsRadioButtonActive(true);
+  }, []);
 
-  const handleTextField = (e: ChangeEvent<HTMLInputElement>): void => {
-    setTextField(e.target.value);
-  };
+  const onTextFieldChange = useCallback((e: ChangeEvent<HTMLInputElement>): void => {
+    setTextFieldValue(e.target.value);
+  }, []);
 
   const getActiveStepIndex = (steps: StepperHorizontalItemProps[]): number =>
     steps.findIndex((step) => step.state === 'current');
@@ -116,10 +116,10 @@ export const FormsPage = (): JSX.Element => {
       </PFlexItem>
       <PFlexItem>
         {/*To illustrate working custom elements during the tests the selected value is displayed in the heading */}
-        <PHeading size="medium">{select}</PHeading>
+        <PHeading size="medium">{selectValue}</PHeading>
         <form>
           <PSelectWrapper>
-            <select data-testid="select" value={select} onChange={(e) => handleSelect(e)}>
+            <select data-testid="select" value={selectValue} onChange={onSelectChange}>
               <option value="Heading A">A</option>
               <option value="Heading B">B</option>
               <option value="Heading C">C</option>
@@ -130,7 +130,7 @@ export const FormsPage = (): JSX.Element => {
       <PFlexItem>
         <PSegmentedControl
           style={{ marginTop: '1rem' }}
-          value={currentValue}
+          value={segmentedControlValue}
           onUpdate={onSegmentedControlUpdate}
           aria-label="Choose an Option"
         >
@@ -140,7 +140,7 @@ export const FormsPage = (): JSX.Element => {
           <PSegmentedControlItem value={4}>Option 4</PSegmentedControlItem>
           <PSegmentedControlItem value={5}>Option 5</PSegmentedControlItem>
         </PSegmentedControl>
-        <PText>Current value of segmented-control: {currentValue}</PText>
+        <PText>Current value of segmented-control: {segmentedControlValue}</PText>
       </PFlexItem>
       <PFlexItem>
         <PDivider className="divider" />
@@ -180,16 +180,16 @@ export const FormsPage = (): JSX.Element => {
       </PFlexItem>
       <PFlexItem>
         {/*Checking the Checkbox makes the heading appear*/}
-        {checkBox ? <PHeading size="medium">Checkbox Works</PHeading> : ''}
-        <PCheckboxWrapper label="Some label" hideLabel={false}>
-          <input data-testid="checkbox" type="checkbox" name="TestBox" onInput={(e) => handleCheckBox(e)} />
+        {isCheckboxActive && <PHeading size="medium">Checkbox Works</PHeading>}
+        <PCheckboxWrapper label="Some label">
+          <input data-testid="checkbox" type="checkbox" name="TestBox" onInput={onCheckBoxInput} />
         </PCheckboxWrapper>
       </PFlexItem>
       <PFlexItem className="contentWrapperSmall">
         {/* Clicking the Radiobutton makes the heading appear*/}
-        {radioButton ? <PHeading size="medium">Radio Works</PHeading> : ''}
-        <PRadioButtonWrapper label="Some label" hideLabel={false}>
-          <input data-testid="radiobutton" type="radio" name="RadioButton" onInput={(e) => handleRadioButton(e)} />
+        {isRadioButtonActive && <PHeading size="medium">Radio Works</PHeading>}
+        <PRadioButtonWrapper label="Some label">
+          <input data-testid="radiobutton" type="radio" name="RadioButton" onInput={onRadioButtonInput} />
         </PRadioButtonWrapper>
       </PFlexItem>
       <PFlexItem>
@@ -197,16 +197,16 @@ export const FormsPage = (): JSX.Element => {
       </PFlexItem>
       <PFlexItem>
         <form>
-          <PTextareaWrapper label="Test TextArea" hideLabel={false}>
+          <PTextareaWrapper label="Test TextArea">
             <textarea name="Testarea"></textarea>
           </PTextareaWrapper>
         </form>
       </PFlexItem>
       <PFlexItem className="contentWrapperSmall">
         {/*The heading changes according to the text field input*/}
-        <PHeading size="medium">{textField}</PHeading>
-        <PTextFieldWrapper label="Test TextField" hideLabel={false}>
-          <input data-testid="input" type="text" name="Textfield" onChange={(e) => handleTextField(e)} />
+        <PHeading size="medium">{textFieldValue}</PHeading>
+        <PTextFieldWrapper label="Test TextField">
+          <input data-testid="input" type="text" name="Textfield" onChange={onTextFieldChange} />
         </PTextFieldWrapper>
       </PFlexItem>
       <PFlexItem className="contentWrapperSmall">
@@ -218,11 +218,25 @@ export const FormsPage = (): JSX.Element => {
                 <span slot="label">
                   Some label with a <a href="https://designsystem.porsche.com">Slotted Link</a>.
                 </span>
-                <input type="text" aria-invalid={true} name="some-name" onChange={(e) => handleTextField(e)} />
+                <input type="text" aria-invalid={true} name="some-name" onChange={onTextFieldChange} />
               </PTextFieldWrapper>
             </PFlexItem>
           </PFlex>
         </form>
+      </PFlexItem>
+      <PFlexItem className="contentWrapperSmall">
+        <PPinCode label="Default" />
+        <PPinCode label="Type password" type="password" />
+      </PFlexItem>
+      <PFlexItem className="contentWrapperSmall">
+        <PMultiSelect name="name" label="Some Label" description="Some description" theme="light" required>
+          <PMultiSelectOption value="a">Option A</PMultiSelectOption>
+          <PMultiSelectOption value="b">Option B</PMultiSelectOption>
+          <PMultiSelectOption value="c">Option C</PMultiSelectOption>
+          <PMultiSelectOption value="d">Option D</PMultiSelectOption>
+          <PMultiSelectOption value="e">Option E</PMultiSelectOption>
+          <PMultiSelectOption value="f">Option F</PMultiSelectOption>
+        </PMultiSelect>
       </PFlexItem>
     </PFlex>
   );
