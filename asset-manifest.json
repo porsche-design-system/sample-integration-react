@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sample-integration-react/static/css/main.180a30a5.css",
-    "main.js": "/sample-integration-react/static/js/main.b296d961.js",
+    "main.js": "/sample-integration-react/static/js/main.48eb03a5.js",
     "polyfills-dom.js": "/sample-integration-react/static/js/polyfills-dom.2d2a2002.chunk.js",
     "polyfills-core-js.js": "/sample-integration-react/static/js/polyfills-core-js.4671371b.chunk.js",
     "static/js/2749.2798b5fc.chunk.js": "/sample-integration-react/static/js/2749.2798b5fc.chunk.js",
@@ -137,7 +137,7 @@
     "static/media/finder-state-store-313ab47f.js.map": "/sample-integration-react/static/media/finder-state-store-313ab47f.js.d0694bf8011fa60ca92c.map",
     "static/media/index.js.map": "/sample-integration-react/static/media/index.js.b1e4ac539ebabcef389c.map",
     "main.180a30a5.css.map": "/sample-integration-react/static/css/main.180a30a5.css.map",
-    "main.b296d961.js.map": "/sample-integration-react/static/js/main.b296d961.js.map",
+    "main.48eb03a5.js.map": "/sample-integration-react/static/js/main.48eb03a5.js.map",
     "polyfills-dom.2d2a2002.chunk.js.map": "/sample-integration-react/static/js/polyfills-dom.2d2a2002.chunk.js.map",
     "polyfills-core-js.4671371b.chunk.js.map": "/sample-integration-react/static/js/polyfills-core-js.4671371b.chunk.js.map",
     "2749.2798b5fc.chunk.js.map": "/sample-integration-react/static/js/2749.2798b5fc.chunk.js.map",
@@ -183,6 +183,6 @@
   },
   "entrypoints": [
     "static/css/main.180a30a5.css",
-    "static/js/main.b296d961.js"
+    "static/js/main.48eb03a5.js"
   ]
 }
