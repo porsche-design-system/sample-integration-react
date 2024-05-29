@@ -1671,22 +1671,22 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@porsche-design-system/components-js@3.15.0-rc.5":
-  version "3.15.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.15.0-rc.5.tgz#b4d0eaacaa5fb5dcaf3884a2d2b37bee267f9825"
-  integrity sha512-j3KePXC4ofJNgcFa414g/PPTBLGwuQ4rSgyLheh7QoruM9FVW1SiVlYB50CLiW824YD2fOFkjbERJszxS1AFnQ==
+"@porsche-design-system/components-js@3.15.2":
+  version "3.15.2"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.15.2.tgz#5584afa9dd232264accaafe246ee967ec63635d2"
+  integrity sha512-el4+Rp1wvx499A8hn8qM3gRpSo/jATrLQ4t72RIpUaKVA0iJpBmKOivz1uK8gmMIoJJIRCn9aHBNjvmKlb4fBg==
 
 "@porsche-design-system/components-js@3.8.0":
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.8.0.tgz#6ec9b53a032adf72f376da0f5cad2af371eac36b"
   integrity sha512-THbucP2s+LuXvuv4FJtFwH5lM1WUBgzH3gKyMQ9Z0oykvOP156DPWhzO75jnPEsu22BTJVC6nlTCIvspKg6Eyw==
 
-"@porsche-design-system/components-react@3.15.0-rc.5":
-  version "3.15.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-react/-/components-react-3.15.0-rc.5.tgz#965ecf83a404fabfd403ebb8ad62b4837e521e44"
-  integrity sha512-O4eMvU75x2fA4H2FJ0Bc5ERc5h4i/hp8nNyjv6XCjzTltzK/+X1ryAU520SWdrli2K8RAVPtJ9rY2ElJaHmGEA==
+"@porsche-design-system/components-react@3.15.2":
+  version "3.15.2"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-react/-/components-react-3.15.2.tgz#0ff3c7935a6b5c33ecf315f9aba0bc9699fd7b03"
+  integrity sha512-fTrgc8libcnIY+FtIIVlKlzZC1oc69mTICr0nD3Dz5A3+t1ymlcb/AVFY55dSBhAN6OFa08ajgEo92ExxJR8kw==
   dependencies:
-    "@porsche-design-system/components-js" "3.15.0-rc.5"
+    "@porsche-design-system/components-js" "3.15.2"
 
 "@porsche-design-system/prettier-config@^1.0.0":
   version "1.0.1"
@@ -9315,6 +9315,11 @@ unbox-primitive@^1.0.2:
     has-bigints "^1.0.2"
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
+
+undici-types@~5.26.4:
+  version "5.26.5"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-5.26.5.tgz#bcd539893d00b56e964fd2657a4866b221a65617"
+  integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.0"
