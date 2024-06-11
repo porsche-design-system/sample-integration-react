@@ -8,9 +8,9 @@
     "@porsche-design-system/utilities": "5.4.1",
     "@porschehn/navigation": "3.3.0",
     "postcss-normalize": "^10.0.1",
-    "react": "^18.2.0",
+    "react": "19.0.0-rc-cc1ec60d0d-20240607",
     "react-app-polyfill": "^3.0.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "19.0.0-rc-cc1ec60d0d-20240607",
     "react-router-dom": "^6.21.3"
   },
   "devDependencies": {
