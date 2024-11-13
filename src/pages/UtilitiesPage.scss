@@ -1,4 +1,4 @@
-@import '~@porsche-design-system/utilities/scss';
+@use '@porsche-design-system/utilities/scss' as *;
 
 .backgroundColorPds {
   background: $p-color-brand;

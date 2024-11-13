@@ -1,6 +1,6 @@
 import { componentsReady } from '@porsche-design-system/components-react';
 import { fireEvent, waitFor } from '@testing-library/react';
-import { FormsPage } from '../pages';
+import { FormsPage } from '../../pages';
 import { renderWithProvider } from './helper';
 
 describe('FormsPage', () => {
