@@ -1,6 +1,6 @@
 import { componentsReady } from '@porsche-design-system/components-react';
 import { fireEvent } from '@testing-library/react';
-import { CollectionPage } from '../pages';
+import { CollectionPage } from '../../pages';
 import { renderWithProvider } from './helper';
 
 describe('CollectionPage', () => {
