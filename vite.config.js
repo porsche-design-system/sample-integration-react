@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { createHtmlPlugin } from 'vite-plugin-html';
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import * as partials from '@porsche-design-system/components-react/partials';
 
 export default defineConfig(() => {
@@ -62,6 +63,7 @@ export default defineConfig(() => {
           },
         },
       }),
+      vanillaExtractPlugin(),
     ],
   };
 });

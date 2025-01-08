@@ -1,6 +1,6 @@
 import { HashRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import { PGrid, PGridItem, PHeadline, PDivider, PLinkPure, PToast } from '@porsche-design-system/components-react';
-import './App.css';
+import './pages/vanilla-extract.css';
 import { routes } from './routes';
 
 export const App = (): JSX.Element => {
