@@ -1,4 +1,4 @@
-FROM node:18.15.0-slim
+FROM node:20.11.1-slim
 
 ENV PATH="/opt/sample-integration/bin:${PATH}"
 
