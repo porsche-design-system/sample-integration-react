@@ -1,5 +1,6 @@
 import { RouteProps } from 'react-router-dom';
 import { CollectionPage, FormsPage, PerformancePage, PhnHeaderPage, PSelectWrapperPage, UtilitiesPage } from './pages';
+import { StylesPage } from './pages/StylesPage';
 
 export type RouteType = RouteProps & {
   name: string;
@@ -36,5 +37,10 @@ export const routes: RouteType[] = [
     name: 'Utilities',
     path: '/utilities',
     element: <UtilitiesPage />,
+  },
+  {
+    name: 'Styles',
+    path: '/styles',
+    element: <StylesPage />,
   },
 ];
