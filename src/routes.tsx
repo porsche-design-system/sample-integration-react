@@ -34,11 +34,6 @@ export const routes: RouteType[] = [
     element: <PSelectWrapperPage />,
   },
   {
-    name: 'Utilities',
-    path: '/utilities',
-    element: <UtilitiesPage />,
-  },
-  {
     name: 'Styles',
     path: '/styles',
     element: <StylesPage />,
