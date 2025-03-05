@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://porsche-design-system.github.io/sample-integration-react",
   "dependencies": {
-    "@porsche-design-system/components-react": "3.27.0-rc.6",
+    "@porsche-design-system/components-react": "3.27.1-rc.0",
     "@vitejs/plugin-react": "^4.3.4",
     "postcss-normalize": "^13.0.1",
     "react": "^19.0.0",
