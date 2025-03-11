@@ -797,17 +797,17 @@
     "@parcel/watcher-win32-ia32" "2.5.0"
     "@parcel/watcher-win32-x64" "2.5.0"
 
-"@porsche-design-system/components-js@3.27.0-rc.5":
-  version "3.27.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.27.0-rc.5.tgz#53b8e06bbefccb37ed7e3b101b1550800792cb84"
-  integrity sha512-YRUSf8erT9PVpDYrV3ZVDaCVLjFle5zT5qnQgihWaHS/289YdNjylPvUmsn3JRwbucwgoNR4MVwM2Uq6aWTQgg==
+"@porsche-design-system/components-js@3.27.1-rc.0":
+  version "3.27.1-rc.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-js/-/components-js-3.27.1-rc.0.tgz#2ffb602d983403a2ef6f660e706bd56c1a219eef"
+  integrity sha512-OjYz3yXKv/h2ylO6GdFV0SPgl/gGQV+hmN3Pm5nJt4Mt6S1BLyr50Aljfj+/92TmaKhn2CJsTZ7tJYhWAGsT/g==
 
-"@porsche-design-system/components-react@3.27.0-rc.5":
-  version "3.27.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-react/-/components-react-3.27.0-rc.5.tgz#a53caf9f9d5faed1369a2dcc41d88d1a3793d901"
-  integrity sha512-AIZscxh/d2ileSR2StvAeaTEl7/YAaA5up7qJOtkpRevdV+1qgCImaAO9b7dRV5HuxFbLAKtxboaKmNk6ysN6Q==
+"@porsche-design-system/components-react@3.27.1-rc.0":
+  version "3.27.1-rc.0"
+  resolved "https://registry.yarnpkg.com/@porsche-design-system/components-react/-/components-react-3.27.1-rc.0.tgz#d06e319684439d81d2584553f2002bb95b4a9609"
+  integrity sha512-vPwIntGA93AkhfN3cgBp56JHFJIGxd1ynI/trA3Qn/NZO9gXLQDbu2DaoO/zvltixaNmo8y6NDRs1mJqhTx4kQ==
   dependencies:
-    "@porsche-design-system/components-js" "3.27.0-rc.5"
+    "@porsche-design-system/components-js" "3.27.1-rc.0"
 
 "@porsche-design-system/prettier-config@^1.0.0":
   version "1.0.1"
@@ -1346,26 +1346,6 @@ acorn@^8.14.0, acorn@^8.8.2:
   version "8.14.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.14.0.tgz#063e2c70cac5fb4f6467f0b11152e04c682795b0"
   integrity sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==
-
-ag-charts-types@11.1.0:
-  version "11.1.0"
-  resolved "https://registry.yarnpkg.com/ag-charts-types/-/ag-charts-types-11.1.0.tgz#f651c746e558b17f2e1d4cdaa07565003b174fbc"
-  integrity sha512-9cu2vJuFZNrhf7o5USG5n/meTIJKhJfTIds5ziRV+FI3mT1QZME2nchu4WQnoIE8gft9ACkuhtCUgOyW44A2iQ==
-
-ag-grid-community@33.1.0, ag-grid-community@^33.1.0:
-  version "33.1.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-33.1.0.tgz#da4518ed4d44b7c8bc4b8834d31de47651690d7d"
-  integrity sha512-xPEgNjRuudfimbGytoDttjlgAjz/N+muq7Tgw2GTMuUeSG0z54kBObvJxhezOEEashVMKBpqb/YhzIE6e+opqQ==
-  dependencies:
-    ag-charts-types "11.1.0"
-
-ag-grid-react@^33.1.0:
-  version "33.1.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-33.1.0.tgz#ceb7377559485576270761cfd3aae5435ae4c507"
-  integrity sha512-YB/t6U+P7HPcGY+ukJiVYtQNbDsNVVocDITPANsy21pfh5ojvoNfKEdieC904IPTdgjSMTpNDQJogBzTpMLTCA==
-  dependencies:
-    ag-grid-community "33.1.0"
-    prop-types "^15.8.1"
 
 agent-base@^7.0.2, agent-base@^7.1.0:
   version "7.1.1"
@@ -2424,7 +2404,7 @@ jest-util@^29.7.0:
     graceful-fs "^4.2.9"
     picomatch "^2.2.3"
 
-"js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
+js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
@@ -2491,13 +2471,6 @@ lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
-
-loose-envify@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
-  integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
-  dependencies:
-    js-tokens "^3.0.0 || ^4.0.0"
 
 loupe@^3.1.0, loupe@^3.1.2:
   version "3.1.2"
@@ -2882,15 +2855,6 @@ promise@^8.1.0:
   dependencies:
     asap "~2.0.6"
 
-prop-types@^15.8.1:
-  version "15.8.1"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
-  integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
-  dependencies:
-    loose-envify "^1.4.0"
-    object-assign "^4.1.1"
-    react-is "^16.13.1"
-
 punycode@^2.1.0, punycode@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.3.1.tgz#027422e2faec0b25e1549c3e1bd8309b9133b6e5"
@@ -2941,11 +2905,6 @@ react-dom@^19.0.0:
   integrity sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==
   dependencies:
     scheduler "^0.25.0"
-
-react-is@^16.13.1:
-  version "16.13.1"
-  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
-  integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
 react-is@^17.0.1:
   version "17.0.2"
@@ -3414,6 +3373,11 @@ type-fest@^2.13.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-2.19.0.tgz#88068015bb33036a598b952e55e9311a60fd3a9b"
   integrity sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==
+
+typescript@~5.7.2:
+  version "5.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.2.tgz#3169cf8c4c8a828cde53ba9ecb3d2b1d5dd67be6"
+  integrity sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==
 
 ufo@^1.5.4:
   version "1.5.4"

@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://porsche-design-system.github.io/sample-integration-react",
   "dependencies": {
-    "@porsche-design-system/components-react": "3.27.0-rc.5",
+    "@porsche-design-system/components-react": "3.27.1-rc.0",
     "@vitejs/plugin-react": "^4.3.4",
     "ag-grid-community": "^33.1.0",
     "ag-grid-react": "^33.1.0",
@@ -33,6 +33,7 @@
     "prettier": "^3.4.2",
     "sass": "^1.83.1",
     "serve": "^14.2.4",
+    "typescript": "~5.7.2",
     "vitest": "^2.1.8"
   },
   "prettier": "@porsche-design-system/prettier-config",
