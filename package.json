@@ -4,8 +4,10 @@
   "private": true,
   "homepage": "https://porsche-design-system.github.io/sample-integration-react",
   "dependencies": {
-    "@porsche-design-system/components-react": "3.27.1-rc.0",
+    "@porsche-design-system/components-react": "3.27.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "ag-grid-community": "^33.1.0",
+    "ag-grid-react": "^33.1.0",
     "postcss-normalize": "^13.0.1",
     "react": "^19.0.0",
     "react-app-polyfill": "^3.0.0",
@@ -40,7 +42,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "test": "vitest --config src/tests/config/vitest.config.ts",
-    "prettier": "prettier --write 'src/**/*.{ts,tsx}'"
+    "prettier": "prettier --write 'src/**/*.{ts,tsx}'",
+    "lint": "yarn eslint ."
   },
   "eslintConfig": {
     "extends": "react-app"
